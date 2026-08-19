@@ -48,7 +48,17 @@ export const Route = createFileRoute("/features")({
   component: FeaturesPage,
 });
 
-const CATEGORIES = [
+type Category = {
+  icon: React.ReactNode;
+  title: string;
+  copy: string;
+  visibility: string;
+  matters: string;
+  image?: string;
+  alt?: string;
+};
+
+const CATEGORIES: Category[] = [
   {
     icon: <Receipt className="h-5 w-5" />,
     title: "Billing & Invoicing",
