@@ -103,7 +103,7 @@ export function SectionHeading({
       )}
     >
       {eyebrow ? <p className="eyebrow">{eyebrow}</p> : null}
-      <h2 className="mt-3 text-3xl font-bold leading-[1.08] sm:text-4xl lg:text-5xl">
+      <h2 className="mt-3 text-3xl leading-[1.06] sm:text-4xl lg:text-5xl">
         {title}
       </h2>
       {copy ? (

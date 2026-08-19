@@ -5,7 +5,7 @@ import logoMark from "@/assets/logo-mark.png";
 
 export function SiteFooter() {
   return (
-    <footer className="border-t border-hairline bg-sidebar">
+    <footer className="border-t border-hairline bg-surface">
       <div className="mx-auto grid w-full max-w-7xl gap-12 px-5 py-14 sm:px-8 lg:grid-cols-[1.4fr_1fr_1.2fr] lg:py-20">
         <div>
           <div className="flex items-center gap-2.5">
@@ -17,7 +17,7 @@ export function SiteFooter() {
               loading="lazy"
               className="h-8 w-8"
             />
-            <span className="font-display text-lg font-bold">Wheelint</span>
+            <span className="font-display text-xl">Wheelint</span>
           </div>
           <p className="mt-4 max-w-sm text-sm leading-relaxed text-muted-foreground">
             Automobile business management software for workshops, dealerships,
