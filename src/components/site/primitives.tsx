@@ -167,33 +167,29 @@ export function CtaBand({
   copy?: string;
 }) {
   return (
-    <Section>
-      <Reveal className="surface-panel relative overflow-hidden rounded-2xl px-6 py-14 text-center sm:px-12 sm:py-20">
-        <div
-          aria-hidden="true"
-          className="pointer-events-none absolute inset-x-0 -top-40 mx-auto h-72 w-72 rounded-full bg-primary/20 blur-3xl"
-        />
+    <Section className="bg-surface border-t border-hairline">
+      <Reveal className="relative overflow-hidden px-2 py-6 text-center sm:px-12">
         <div className="relative">
-          <h2 className="mx-auto max-w-2xl text-3xl font-bold leading-tight sm:text-4xl lg:text-5xl">
+          <h2 className="mx-auto max-w-2xl text-3xl leading-tight sm:text-4xl lg:text-5xl">
             {title}
           </h2>
-          <p className="mx-auto mt-5 max-w-xl text-base text-muted-foreground sm:text-lg">
+          <p className="mx-auto mt-5 max-w-xl text-sm text-muted-foreground sm:text-base">
             {copy}
           </p>
           <div className="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row">
-            <Button asChild size="lg" className="w-full sm:w-auto">
-              <Link to="/contact">Request a Demo</Link>
+            <Button asChild size="sm" className="w-full sm:w-auto">
+              <Link to="/contact">Request a demo</Link>
             </Button>
             <Button
               asChild
-              size="lg"
+              size="sm"
               variant="outline"
               className="w-full sm:w-auto"
             >
-              <Link to="/pricing">Start Free Trial</Link>
+              <Link to="/pricing">Start free trial</Link>
             </Button>
-            <Button asChild size="lg" variant="ghost" className="w-full sm:w-auto">
-              <Link to="/contact">Talk to Sales</Link>
+            <Button asChild size="sm" variant="ghost" className="w-full sm:w-auto">
+              <Link to="/contact">Talk to sales</Link>
             </Button>
           </div>
         </div>
