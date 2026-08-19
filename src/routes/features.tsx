@@ -60,7 +60,7 @@ type Category = {
 
 const CATEGORIES: Category[] = [
   {
-    icon: <Receipt className="h-5 w-5" />,
+    icon: <Receipt className="h-7 w-7" />,
     title: "Billing & Invoicing",
     copy: "Create service, parts and combined invoices with tax and discount handling built in.",
     visibility: "Every invoice stays linked to the vehicle, job and payment status behind it.",
@@ -69,14 +69,14 @@ const CATEGORIES: Category[] = [
     alt: "Automobile tax invoice screen with parts and labour line items and payment summary",
   },
   {
-    icon: <ClipboardList className="h-5 w-5" />,
+    icon: <ClipboardList className="h-7 w-7" />,
     title: "Job Cards & Service Management",
     copy: "Take a vehicle from estimate to job card to delivery with clear ownership at each step.",
     visibility: "Live status of every open job, assigned technician and pending approval.",
     matters: "Nothing sits unnoticed and customers get honest answers on timelines.",
   },
   {
-    icon: <Boxes className="h-5 w-5" />,
+    icon: <Boxes className="h-7 w-7" />,
     title: "Spare Parts & Inventory",
     copy: "Manage parts, stock locations, purchases and consumption in one register.",
     visibility: "Stock levels, reorder alerts and the value tied up in inventory.",
@@ -85,21 +85,21 @@ const CATEGORIES: Category[] = [
     alt: "Spare parts inventory screen with stock levels, low stock alerts and supplier details",
   },
   {
-    icon: <Users className="h-5 w-5" />,
+    icon: <Users className="h-7 w-7" />,
     title: "Customers & Vehicles",
     copy: "Maintain owners, vehicles, service history and follow-ups against a single record.",
     visibility: "Complete visit history and due services for any vehicle in seconds.",
     matters: "Repeat business becomes easier because the relationship is documented.",
   },
   {
-    icon: <Wrench className="h-5 w-5" />,
+    icon: <Wrench className="h-7 w-7" />,
     title: "Workshop Operations",
     copy: "Plan appointments, bay allocation and technician workload across the working day.",
     visibility: "Where capacity is free, where it is stretched and what is scheduled next.",
     matters: "The floor runs to a plan instead of reacting to whatever arrives.",
   },
   {
-    icon: <BarChart3 className="h-5 w-5" />,
+    icon: <BarChart3 className="h-7 w-7" />,
     title: "Reports & Analytics",
     copy: "Turn daily activity into revenue, service, parts and performance reporting.",
     visibility: "Trends over time and comparison across branches or outlets.",

@@ -56,32 +56,32 @@ export const Route = createFileRoute("/")({
 
 const CAPABILITIES = [
   {
-    icon: <Receipt className="h-5 w-5" />,
+    icon: <Receipt className="h-7 w-7" />,
     title: "Billing & Invoicing",
     copy: "Raise service and parts invoices with tax handling, discounts and payment status tracked against every vehicle.",
   },
   {
-    icon: <ClipboardList className="h-5 w-5" />,
+    icon: <ClipboardList className="h-7 w-7" />,
     title: "Job Cards & Service",
     copy: "Move a vehicle from estimate to delivery with clear status, assigned technicians and a complete service record.",
   },
   {
-    icon: <Boxes className="h-5 w-5" />,
+    icon: <Boxes className="h-7 w-7" />,
     title: "Parts & Inventory",
     copy: "Track stock across stores, watch reorder levels and keep parts consumption tied to the job that used them.",
   },
   {
-    icon: <Users className="h-5 w-5" />,
+    icon: <Users className="h-7 w-7" />,
     title: "Customers & Vehicles",
     copy: "Keep every owner, vehicle and past visit in one place so your team answers questions without digging.",
   },
   {
-    icon: <Wrench className="h-5 w-5" />,
+    icon: <Wrench className="h-7 w-7" />,
     title: "Workshop Operations",
     copy: "Plan appointments, bay load and technician workload so the day is organised before it starts.",
   },
   {
-    icon: <BarChart3 className="h-5 w-5" />,
+    icon: <BarChart3 className="h-7 w-7" />,
     title: "Reports & Analytics",
     copy: "See revenue, service throughput, parts movement and branch performance without building spreadsheets.",
   },
@@ -215,7 +215,7 @@ function HomePage() {
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {PILLARS.map((item, index) => (
             <Reveal key={item.title} delay={index * 80}>
-              <FeatureCard {...item} />
+              <FeatureCard {...item} tone={TONES[index % TONES.length]} />
             </Reveal>
           ))}
         </div>
@@ -341,23 +341,23 @@ function HomePage() {
         <div className="mt-12 grid gap-5 sm:grid-cols-3">
           {[
             {
-              icon: <Wrench className="h-5 w-5" />,
+              icon: <Wrench className="h-7 w-7" />,
               title: "Automobile-focused",
               copy: "Built around vehicles, job cards and parts rather than adapted from generic business software.",
             },
             {
-              icon: <Building2 className="h-5 w-5" />,
+              icon: <Building2 className="h-7 w-7" />,
               title: "Scales with you",
               copy: "Start with a single workshop and grow into a multi-location or enterprise setup on the same platform.",
             },
             {
-              icon: <BarChart3 className="h-5 w-5" />,
+              icon: <BarChart3 className="h-7 w-7" />,
               title: "Clear information",
               copy: "Records stay connected, so reports reflect what actually happened on the floor.",
             },
           ].map((item, index) => (
             <Reveal key={item.title} delay={index * 70}>
-              <FeatureCard {...item} />
+              <FeatureCard {...item} tone={TONES[index % TONES.length]} />
             </Reveal>
           ))}
         </div>

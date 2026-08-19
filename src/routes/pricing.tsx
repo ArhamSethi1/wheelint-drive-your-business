@@ -167,13 +167,13 @@ function PricingPage() {
         <div className="mt-12 grid gap-5 sm:grid-cols-2">
           {[
             {
-              icon: <Wrench className="h-5 w-5" />,
+              icon: <Wrench className="h-7 w-7" />,
               label: "Workshop or dealership",
               arrow: "Standard Plan",
               copy: "A single business location running service, billing and parts.",
             },
             {
-              icon: <Building2 className="h-5 w-5" />,
+              icon: <Building2 className="h-7 w-7" />,
               label: "OEM, dealer network or multi-location enterprise",
               arrow: "Enterprise ERP",
               copy: "Several outlets or branches that need network-wide management.",
