@@ -34,7 +34,9 @@ function Wordmark() {
         height={32}
         className="h-8 w-8"
       />
-      <span className="font-display text-xl tracking-tight">Wheelint</span>
+      <span className="font-display text-lg font-bold tracking-tight">
+        Wheelint
+      </span>
     </Link>
   );
 }
@@ -43,13 +45,13 @@ export function SiteHeader() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 bg-background/70 backdrop-blur-xl transition-colors">
-      <div className="mx-auto flex h-16 w-full max-w-7xl items-center gap-4 px-5 sm:px-8">
+    <header className="sticky top-0 z-50 border-b border-hairline bg-background/85 backdrop-blur-xl">
+      <div className="mx-auto flex h-16 w-full max-w-7xl items-center gap-4 px-5 sm:px-8 lg:h-18">
         <div className="min-w-0 flex-1">
           <Wordmark />
         </div>
 
-        <nav aria-label="Main" className="hidden items-center gap-7 lg:flex">
+        <nav aria-label="Main" className="hidden items-center gap-1 lg:flex">
           {NAV.map((item) => (
             <Link
               key={item.to}
@@ -57,16 +59,16 @@ export function SiteHeader() {
               activeOptions={{ exact: item.to === "/" }}
               activeProps={{ className: "text-foreground" }}
               inactiveProps={{ className: "text-muted-foreground" }}
-              className="relative py-2 text-xs font-medium transition-colors after:absolute after:inset-x-0 after:bottom-1 after:h-px after:origin-left after:scale-x-0 after:bg-foreground after:transition-transform after:duration-300 hover:text-foreground hover:after:scale-x-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+              className="rounded-md px-3.5 py-2 text-sm font-medium transition-colors hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
             >
               {item.label}
             </Link>
           ))}
         </nav>
 
-        <div className="ml-7 hidden shrink-0 lg:block">
-          <Button asChild size="sm">
-            <Link to="/contact">Get started</Link>
+        <div className="hidden shrink-0 lg:block">
+          <Button asChild>
+            <Link to="/contact">Request a Demo</Link>
           </Button>
         </div>
 

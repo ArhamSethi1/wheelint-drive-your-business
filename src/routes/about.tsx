@@ -71,7 +71,7 @@ const PHILOSOPHY = [
 function AboutPage() {
   return (
     <>
-      <section className="bg-sky-wash relative overflow-hidden">
+      <section className="relative overflow-hidden border-b border-hairline">
         <div
           aria-hidden="true"
           className="grid-lines pointer-events-none absolute inset-0 opacity-30"
@@ -79,7 +79,7 @@ function AboutPage() {
         <div className="relative mx-auto w-full max-w-3xl px-5 py-16 sm:px-8 sm:py-24">
           <Reveal>
             <p className="eyebrow">About Wheelint</p>
-            <h1 className="mt-4 text-4xl leading-[1.04] sm:text-5xl">
+            <h1 className="mt-4 text-4xl font-bold leading-[1.06] sm:text-5xl">
               Making automobile business management simpler, clearer and more
               connected
             </h1>
@@ -135,7 +135,7 @@ function AboutPage() {
         </div>
       </Section>
 
-      <Section className="bg-sand-wash border-y border-hairline">
+      <Section className="border-y border-hairline bg-sidebar">
         <SectionHeading
           eyebrow="Product philosophy"
           title="What guides how we build Wheelint"

@@ -103,7 +103,7 @@ export function SectionHeading({
       )}
     >
       {eyebrow ? <p className="eyebrow">{eyebrow}</p> : null}
-      <h2 className="mt-3 text-3xl leading-[1.06] sm:text-4xl lg:text-5xl">
+      <h2 className="mt-3 text-3xl font-bold leading-[1.08] sm:text-4xl lg:text-5xl">
         {title}
       </h2>
       {copy ? (
@@ -131,16 +131,16 @@ export function FeatureCard({
   return (
     <div
       className={cn(
-        "surface-panel hover-lift group h-full rounded-2xl p-6 sm:p-7",
+        "surface-panel group h-full rounded-xl p-6 transition-transform duration-300 hover:-translate-y-1 sm:p-7",
         className,
       )}
     >
       {icon ? (
-        <div className="mb-5 inline-flex h-10 w-10 items-center justify-center rounded-lg border border-hairline bg-surface-2 text-foreground transition-colors group-hover:citron-mark group-hover:border-transparent">
+        <div className="mb-5 inline-flex h-11 w-11 items-center justify-center rounded-lg border border-hairline bg-surface-2 text-primary transition-colors group-hover:border-primary/40">
           {icon}
         </div>
       ) : null}
-      <h3 className="text-xl sm:text-2xl">{title}</h3>
+      <h3 className="text-lg font-semibold sm:text-xl">{title}</h3>
       <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{copy}</p>
       {points?.length ? (
         <ul className="mt-5 space-y-2 text-sm text-muted-foreground">
@@ -167,29 +167,33 @@ export function CtaBand({
   copy?: string;
 }) {
   return (
-    <Section className="bg-surface border-t border-hairline">
-      <Reveal className="relative overflow-hidden px-2 py-6 text-center sm:px-12">
+    <Section>
+      <Reveal className="surface-panel relative overflow-hidden rounded-2xl px-6 py-14 text-center sm:px-12 sm:py-20">
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-x-0 -top-40 mx-auto h-72 w-72 rounded-full bg-primary/20 blur-3xl"
+        />
         <div className="relative">
-          <h2 className="mx-auto max-w-2xl text-3xl leading-tight sm:text-4xl lg:text-5xl">
+          <h2 className="mx-auto max-w-2xl text-3xl font-bold leading-tight sm:text-4xl lg:text-5xl">
             {title}
           </h2>
-          <p className="mx-auto mt-5 max-w-xl text-sm text-muted-foreground sm:text-base">
+          <p className="mx-auto mt-5 max-w-xl text-base text-muted-foreground sm:text-lg">
             {copy}
           </p>
           <div className="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row">
-            <Button asChild size="sm" className="w-full sm:w-auto">
-              <Link to="/contact">Request a demo</Link>
+            <Button asChild size="lg" className="w-full sm:w-auto">
+              <Link to="/contact">Request a Demo</Link>
             </Button>
             <Button
               asChild
-              size="sm"
+              size="lg"
               variant="outline"
               className="w-full sm:w-auto"
             >
-              <Link to="/pricing">Start free trial</Link>
+              <Link to="/pricing">Start Free Trial</Link>
             </Button>
-            <Button asChild size="sm" variant="ghost" className="w-full sm:w-auto">
-              <Link to="/contact">Talk to sales</Link>
+            <Button asChild size="lg" variant="ghost" className="w-full sm:w-auto">
+              <Link to="/contact">Talk to Sales</Link>
             </Button>
           </div>
         </div>
@@ -216,7 +220,7 @@ export function ScreenFrame({
   return (
     <div
       className={cn(
-        "surface-panel hover-lift overflow-hidden rounded-2xl p-2",
+        "surface-panel overflow-hidden rounded-xl p-2 transition-transform duration-500 hover:-translate-y-1",
         className,
       )}
     >
@@ -226,7 +230,7 @@ export function ScreenFrame({
         width={width}
         height={height}
         loading={priority ? "eager" : "lazy"}
-        className="h-auto w-full rounded-xl"
+        className="h-auto w-full rounded-lg"
       />
     </div>
   );

@@ -5,7 +5,7 @@ import logoMark from "@/assets/logo-mark.png";
 
 export function SiteFooter() {
   return (
-    <footer className="border-t border-hairline bg-surface">
+    <footer className="border-t border-hairline bg-sidebar">
       <div className="mx-auto grid w-full max-w-7xl gap-12 px-5 py-14 sm:px-8 lg:grid-cols-[1.4fr_1fr_1.2fr] lg:py-20">
         <div>
           <div className="flex items-center gap-2.5">
@@ -17,7 +17,7 @@ export function SiteFooter() {
               loading="lazy"
               className="h-8 w-8"
             />
-            <span className="font-display text-xl">Wheelint</span>
+            <span className="font-display text-lg font-bold">Wheelint</span>
           </div>
           <p className="mt-4 max-w-sm text-sm leading-relaxed text-muted-foreground">
             Automobile business management software for workshops, dealerships,
@@ -26,7 +26,7 @@ export function SiteFooter() {
         </div>
 
         <nav aria-label="Footer">
-          <h2 className="eyebrow">
+          <h2 className="font-display text-sm font-semibold uppercase tracking-widest text-foreground">
             Explore
           </h2>
           <ul className="mt-4 space-y-2.5 text-sm text-muted-foreground">
@@ -50,7 +50,7 @@ export function SiteFooter() {
         </nav>
 
         <div>
-          <h2 className="eyebrow">
+          <h2 className="font-display text-sm font-semibold uppercase tracking-widest text-foreground">
             Contact
           </h2>
           <address className="mt-4 space-y-3 text-sm not-italic text-muted-foreground">
@@ -85,15 +85,6 @@ export function SiteFooter() {
           <p>© {new Date().getFullYear()} Wheelint. All rights reserved.</p>
           <p>Automobile billing, workshop, dealership and ERP management.</p>
         </div>
-      </div>
-
-      <div className="citron-mark overflow-hidden">
-        <p
-          aria-hidden="true"
-          className="font-display select-none whitespace-nowrap px-4 text-center text-[18vw] leading-[0.86] tracking-tight"
-        >
-          Wheelint
-        </p>
       </div>
     </footer>
   );

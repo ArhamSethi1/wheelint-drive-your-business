@@ -147,7 +147,7 @@ const SOLUTIONS = [
 function FeaturesPage() {
   return (
     <>
-      <section className="bg-sky-wash relative overflow-hidden">
+      <section className="relative overflow-hidden border-b border-hairline">
         <div
           aria-hidden="true"
           className="grid-lines pointer-events-none absolute inset-0 opacity-30"
@@ -155,7 +155,7 @@ function FeaturesPage() {
         <div className="relative mx-auto grid w-full max-w-7xl gap-12 px-5 py-16 sm:px-8 sm:py-20 lg:grid-cols-[1fr_1.05fr] lg:items-center lg:gap-16 lg:py-24">
           <Reveal>
             <p className="eyebrow">Features & solutions</p>
-            <h1 className="mt-4 text-4xl leading-[1.04] sm:text-5xl">
+            <h1 className="mt-4 text-4xl font-bold leading-[1.06] sm:text-5xl">
               The major operations of an automobile business, in one platform
             </h1>
             <p className="mt-6 max-w-xl text-base leading-relaxed text-muted-foreground sm:text-lg">
@@ -192,16 +192,16 @@ function FeaturesPage() {
                 }`}
               >
                 <div className={index % 2 === 1 ? "lg:order-2" : undefined}>
-                  <div className="mb-5 inline-flex h-11 w-11 items-center justify-center rounded-lg border border-hairline bg-surface-2 text-foreground">
+                  <div className="mb-5 inline-flex h-11 w-11 items-center justify-center rounded-lg border border-hairline bg-surface-2 text-primary">
                     {item.icon}
                   </div>
-                  <h3 className="text-2xl sm:text-3xl">{item.title}</h3>
+                  <h3 className="text-2xl font-bold sm:text-3xl">{item.title}</h3>
                   <p className="mt-4 text-base leading-relaxed text-muted-foreground">
                     {item.copy}
                   </p>
                   <dl className="mt-7 space-y-5 border-t border-hairline pt-6">
                     <div>
-                      <dt className="eyebrow">
+                      <dt className="font-display text-xs font-semibold uppercase tracking-widest text-primary">
                         Visibility
                       </dt>
                       <dd className="mt-1.5 text-sm text-muted-foreground">
@@ -209,7 +209,7 @@ function FeaturesPage() {
                       </dd>
                     </div>
                     <div>
-                      <dt className="eyebrow">
+                      <dt className="font-display text-xs font-semibold uppercase tracking-widest text-primary">
                         Why it matters
                       </dt>
                       <dd className="mt-1.5 text-sm text-muted-foreground">
@@ -228,7 +228,7 @@ function FeaturesPage() {
                     />
                   ) : (
                     <div className="surface-panel grid-lines rounded-xl p-8 sm:p-10">
-                      <p className="eyebrow">
+                      <p className="font-display text-sm font-semibold uppercase tracking-widest text-primary">
                         In practice
                       </p>
                       <p className="mt-4 text-lg leading-relaxed sm:text-xl">
@@ -246,7 +246,7 @@ function FeaturesPage() {
         </div>
       </Section>
 
-      <Section className="bg-sand-wash border-y border-hairline">
+      <Section className="border-y border-hairline bg-sidebar">
         <SectionHeading
           eyebrow="Solutions"
           title="Shaped to the kind of business you run"
