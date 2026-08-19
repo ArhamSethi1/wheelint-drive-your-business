@@ -10,6 +10,7 @@ import {
 import workshopImage from "@/assets/workshop.jpg";
 import {
   CtaBand,
+  TONES,
   FeatureCard,
   Reveal,
   Section,
@@ -42,27 +43,27 @@ export const Route = createFileRoute("/about")({
 
 const PHILOSOPHY = [
   {
-    icon: <Settings2 className="h-5 w-5" />,
+    icon: <Settings2 className="h-7 w-7" />,
     title: "Practical technology",
     copy: "Software should fit the working day of a service floor, not demand that the floor change to fit it.",
   },
   {
-    icon: <Layers className="h-5 w-5" />,
+    icon: <Layers className="h-7 w-7" />,
     title: "Clear information",
     copy: "One record for a vehicle, a job, a part and a customer — so the same answer holds everywhere.",
   },
   {
-    icon: <Eye className="h-5 w-5" />,
+    icon: <Eye className="h-7 w-7" />,
     title: "Better operational visibility",
     copy: "What is open, what is pending and what needs attention should be obvious, not investigated.",
   },
   {
-    icon: <Gauge className="h-5 w-5" />,
+    icon: <Gauge className="h-7 w-7" />,
     title: "Scalable management",
     copy: "A single workshop and a multi-location network should be manageable on the same foundation.",
   },
   {
-    icon: <Wrench className="h-5 w-5" />,
+    icon: <Wrench className="h-7 w-7" />,
     title: "Automobile-focused workflows",
     copy: "Job cards, estimates, spares and service history are first-class, not adapted afterthoughts.",
   },
@@ -143,7 +144,7 @@ function AboutPage() {
         <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {PHILOSOPHY.map((item, index) => (
             <Reveal key={item.title} delay={index * 60}>
-              <FeatureCard {...item} />
+              <FeatureCard {...item} tone={TONES[index % TONES.length]} />
             </Reveal>
           ))}
         </div>

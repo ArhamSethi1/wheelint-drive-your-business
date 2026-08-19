@@ -72,11 +72,11 @@ export function Section({
       id={id}
       className={cn(
         "relative px-5 sm:px-8",
-        tight ? "py-14 sm:py-20" : "py-20 sm:py-28 lg:py-32",
+        tight ? "py-16 sm:py-24" : "py-24 sm:py-32 lg:py-40",
         className,
       )}
     >
-      <div className="mx-auto w-full max-w-7xl">{children}</div>
+      <div className="mx-auto w-full max-w-[88rem]">{children}</div>
     </section>
   );
 }
@@ -103,11 +103,11 @@ export function SectionHeading({
       )}
     >
       {eyebrow ? <p className="eyebrow">{eyebrow}</p> : null}
-      <h2 className="mt-3 text-3xl leading-[1.06] sm:text-4xl lg:text-5xl">
+      <h2 className="mt-4 text-4xl font-semibold leading-[1.05] sm:text-5xl lg:text-6xl">
         {title}
       </h2>
       {copy ? (
-        <p className="mt-5 text-base leading-relaxed text-muted-foreground sm:text-lg">
+        <p className="mt-6 text-lg leading-relaxed text-muted-foreground sm:text-xl">
           {copy}
         </p>
       ) : null}
@@ -115,40 +115,67 @@ export function SectionHeading({
   );
 }
 
+export type CardTone = "blue" | "orange" | "navy" | "cyan";
+
+export const TONES: CardTone[] = ["blue", "orange", "navy", "cyan"];
+
+const TONE_SURFACE: Record<CardTone, string> = {
+  blue: "tint-blue",
+  orange: "tint-orange",
+  navy: "tint-navy",
+  cyan: "tint-cyan",
+};
+
+const TONE_CHIP: Record<CardTone, string> = {
+  blue: "chip-blue",
+  orange: "chip-orange",
+  navy: "chip-navy",
+  cyan: "chip-cyan",
+};
+
 export function FeatureCard({
   icon,
   title,
   copy,
   points,
   className,
+  tone = "blue",
 }: {
   icon?: ReactNode;
   title: string;
   copy: string;
   points?: string[];
   className?: string;
+  tone?: CardTone;
 }) {
+  const dim = tone === "navy" ? "opacity-80" : "text-muted-foreground";
   return (
     <div
       className={cn(
-        "surface-panel hover-lift group h-full rounded-2xl p-6 sm:p-7",
+        "hover-lift group h-full rounded-3xl p-7 shadow-[var(--shadow-panel)] sm:p-9",
+        TONE_SURFACE[tone],
         className,
       )}
     >
       {icon ? (
-        <div className="mb-5 inline-flex h-10 w-10 items-center justify-center rounded-lg border border-hairline bg-surface-2 text-foreground transition-colors group-hover:citron-mark group-hover:border-transparent">
+        <div
+          className={cn(
+            "mb-6 inline-flex h-14 w-14 items-center justify-center rounded-2xl transition-transform duration-300 group-hover:-translate-y-1 group-hover:rotate-3",
+            TONE_CHIP[tone],
+          )}
+        >
           {icon}
         </div>
       ) : null}
-      <h3 className="text-xl sm:text-2xl">{title}</h3>
-      <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{copy}</p>
+      <h3 className="text-2xl font-semibold sm:text-3xl">{title}</h3>
+      <p className={cn("mt-4 text-base leading-relaxed sm:text-lg", dim)}>{copy}</p>
       {points?.length ? (
-        <ul className="mt-5 space-y-2 text-sm text-muted-foreground">
+        <ul className={cn("mt-6 space-y-3 text-base", dim)}>
           {points.map((point) => (
             <li key={point} className="flex gap-2.5">
               <span
                 aria-hidden="true"
-                className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-primary"
+                className="mt-2.5 h-2 w-2 shrink-0 rounded-full bg-current opacity-70"
               />
               <span>{point}</span>
             </li>
@@ -167,28 +194,28 @@ export function CtaBand({
   copy?: string;
 }) {
   return (
-    <Section className="bg-surface border-t border-hairline">
+    <Section className="bg-sand-wash border-t border-hairline">
       <Reveal className="relative overflow-hidden px-2 py-6 text-center sm:px-12">
         <div className="relative">
-          <h2 className="mx-auto max-w-2xl text-3xl leading-tight sm:text-4xl lg:text-5xl">
+          <h2 className="mx-auto max-w-3xl text-4xl font-semibold leading-[1.05] sm:text-5xl lg:text-6xl">
             {title}
           </h2>
-          <p className="mx-auto mt-5 max-w-xl text-sm text-muted-foreground sm:text-base">
+          <p className="mx-auto mt-6 max-w-2xl text-lg text-muted-foreground sm:text-xl">
             {copy}
           </p>
           <div className="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row">
-            <Button asChild size="sm" className="w-full sm:w-auto">
+            <Button asChild size="lg" className="h-14 w-full px-8 text-base sm:w-auto">
               <Link to="/contact">Request a demo</Link>
             </Button>
             <Button
               asChild
-              size="sm"
+              size="lg"
               variant="outline"
-              className="w-full sm:w-auto"
+              className="h-14 w-full px-8 text-base sm:w-auto"
             >
               <Link to="/pricing">Start free trial</Link>
             </Button>
-            <Button asChild size="sm" variant="ghost" className="w-full sm:w-auto">
+            <Button asChild size="lg" variant="ghost" className="h-14 w-full px-8 text-base sm:w-auto">
               <Link to="/contact">Talk to sales</Link>
             </Button>
           </div>
@@ -216,7 +243,7 @@ export function ScreenFrame({
   return (
     <div
       className={cn(
-        "surface-panel hover-lift overflow-hidden rounded-2xl p-2",
+        "surface-panel hover-lift overflow-hidden rounded-3xl p-3",
         className,
       )}
     >
@@ -226,7 +253,7 @@ export function ScreenFrame({
         width={width}
         height={height}
         loading={priority ? "eager" : "lazy"}
-        className="h-auto w-full rounded-xl"
+        className="h-auto w-full rounded-2xl"
       />
     </div>
   );

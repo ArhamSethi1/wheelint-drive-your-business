@@ -9,11 +9,14 @@ import {
 } from "lucide-react";
 
 import dashboardHero from "@/assets/dashboard-hero.jpg";
+import phoneApp from "@/assets/phone-app.jpg";
 import screenAnalytics from "@/assets/screen-analytics.jpg";
 import screenBilling from "@/assets/screen-billing.jpg";
 import screenInventory from "@/assets/screen-inventory.jpg";
+import { DeviceMockup } from "@/components/site/device-mockup";
 import {
   CtaBand,
+  TONES,
   FeatureCard,
   Reveal,
   ScreenFrame,
@@ -60,7 +63,7 @@ type Category = {
 
 const CATEGORIES: Category[] = [
   {
-    icon: <Receipt className="h-5 w-5" />,
+    icon: <Receipt className="h-7 w-7" />,
     title: "Billing & Invoicing",
     copy: "Create service, parts and combined invoices with tax and discount handling built in.",
     visibility: "Every invoice stays linked to the vehicle, job and payment status behind it.",
@@ -69,14 +72,14 @@ const CATEGORIES: Category[] = [
     alt: "Automobile tax invoice screen with parts and labour line items and payment summary",
   },
   {
-    icon: <ClipboardList className="h-5 w-5" />,
+    icon: <ClipboardList className="h-7 w-7" />,
     title: "Job Cards & Service Management",
     copy: "Take a vehicle from estimate to job card to delivery with clear ownership at each step.",
     visibility: "Live status of every open job, assigned technician and pending approval.",
     matters: "Nothing sits unnoticed and customers get honest answers on timelines.",
   },
   {
-    icon: <Boxes className="h-5 w-5" />,
+    icon: <Boxes className="h-7 w-7" />,
     title: "Spare Parts & Inventory",
     copy: "Manage parts, stock locations, purchases and consumption in one register.",
     visibility: "Stock levels, reorder alerts and the value tied up in inventory.",
@@ -85,21 +88,21 @@ const CATEGORIES: Category[] = [
     alt: "Spare parts inventory screen with stock levels, low stock alerts and supplier details",
   },
   {
-    icon: <Users className="h-5 w-5" />,
+    icon: <Users className="h-7 w-7" />,
     title: "Customers & Vehicles",
     copy: "Maintain owners, vehicles, service history and follow-ups against a single record.",
     visibility: "Complete visit history and due services for any vehicle in seconds.",
     matters: "Repeat business becomes easier because the relationship is documented.",
   },
   {
-    icon: <Wrench className="h-5 w-5" />,
+    icon: <Wrench className="h-7 w-7" />,
     title: "Workshop Operations",
     copy: "Plan appointments, bay allocation and technician workload across the working day.",
     visibility: "Where capacity is free, where it is stretched and what is scheduled next.",
     matters: "The floor runs to a plan instead of reacting to whatever arrives.",
   },
   {
-    icon: <BarChart3 className="h-5 w-5" />,
+    icon: <BarChart3 className="h-7 w-7" />,
     title: "Reports & Analytics",
     copy: "Turn daily activity into revenue, service, parts and performance reporting.",
     visibility: "Trends over time and comparison across branches or outlets.",
@@ -152,27 +155,50 @@ function FeaturesPage() {
           aria-hidden="true"
           className="grid-lines pointer-events-none absolute inset-0 opacity-30"
         />
-        <div className="relative mx-auto grid w-full max-w-7xl gap-12 px-5 py-16 sm:px-8 sm:py-20 lg:grid-cols-[1fr_1.05fr] lg:items-center lg:gap-16 lg:py-24">
-          <Reveal>
-            <p className="eyebrow">Features & solutions</p>
-            <h1 className="mt-4 text-4xl leading-[1.04] sm:text-5xl">
-              The major operations of an automobile business, in one platform
+        <div className="relative mx-auto grid w-full max-w-[88rem] items-center gap-14 px-5 py-20 sm:px-8 sm:py-24 lg:grid-cols-[0.95fr_1.05fr] lg:gap-16">
+          <div>
+            <p className="eyebrow rise-in">Features &amp; solutions</p>
+            <h1
+              className="rise-in mt-6 text-5xl font-semibold leading-[1.03] sm:text-6xl lg:text-7xl"
+              style={{ animationDelay: "90ms" }}
+            >
+              Every operation,{" "}
+              <span className="text-ember">one platform</span>
             </h1>
-            <p className="mt-6 max-w-xl text-base leading-relaxed text-muted-foreground sm:text-lg">
+            <p
+              className="rise-in mt-7 max-w-xl text-lg leading-relaxed text-muted-foreground sm:text-xl"
+              style={{ animationDelay: "180ms" }}
+            >
               Wheelint covers billing, service, spare parts, customers and
               reporting as one connected system — so information entered once is
               useful everywhere else.
             </p>
-          </Reveal>
-          <Reveal delay={100}>
-            <ScreenFrame
-              src={dashboardHero}
-              alt="Wheelint dashboard showing service jobs, revenue overview and technician allocation"
-              width={1600}
-              height={1008}
-              priority
-            />
-          </Reveal>
+            <div
+              className="rise-in mt-10 flex flex-wrap gap-3"
+              style={{ animationDelay: "260ms" }}
+            >
+              {["Billing", "Job cards", "Inventory", "Analytics"].map((chip, i) => (
+                <span
+                  key={chip}
+                  className={`rounded-full px-5 py-2.5 text-sm font-semibold ${
+                    ["tint-blue", "tint-orange", "tint-cyan", "tint-navy"][i]
+                  }`}
+                >
+                  {chip}
+                </span>
+              ))}
+            </div>
+          </div>
+          <div className="rise-in" style={{ animationDelay: "300ms" }}>
+            <div className="float-slow">
+              <DeviceMockup
+                laptopSrc={dashboardHero}
+                phoneSrc={phoneApp}
+                alt="Wheelint dashboard on a laptop with the mobile app alongside"
+                priority
+              />
+            </div>
+          </div>
         </div>
       </section>
 
@@ -192,11 +218,11 @@ function FeaturesPage() {
                 }`}
               >
                 <div className={index % 2 === 1 ? "lg:order-2" : undefined}>
-                  <div className="mb-5 inline-flex h-11 w-11 items-center justify-center rounded-lg border border-hairline bg-surface-2 text-foreground">
+                  <div className="chip-blue mb-6 inline-flex h-16 w-16 items-center justify-center rounded-2xl">
                     {item.icon}
                   </div>
-                  <h3 className="text-2xl sm:text-3xl">{item.title}</h3>
-                  <p className="mt-4 text-base leading-relaxed text-muted-foreground">
+                  <h3 className="text-3xl font-semibold sm:text-4xl">{item.title}</h3>
+                  <p className="mt-5 text-lg leading-relaxed text-muted-foreground">
                     {item.copy}
                   </p>
                   <dl className="mt-7 space-y-5 border-t border-hairline pt-6">
@@ -204,7 +230,7 @@ function FeaturesPage() {
                       <dt className="eyebrow">
                         Visibility
                       </dt>
-                      <dd className="mt-1.5 text-sm text-muted-foreground">
+                      <dd className="mt-2 text-base text-muted-foreground">
                         {item.visibility}
                       </dd>
                     </div>
@@ -212,7 +238,7 @@ function FeaturesPage() {
                       <dt className="eyebrow">
                         Why it matters
                       </dt>
-                      <dd className="mt-1.5 text-sm text-muted-foreground">
+                      <dd className="mt-2 text-base text-muted-foreground">
                         {item.matters}
                       </dd>
                     </div>
@@ -259,6 +285,7 @@ function FeaturesPage() {
                 title={item.title}
                 copy={item.copy}
                 points={item.points}
+                tone={TONES[index % TONES.length]}
               />
             </Reveal>
           ))}

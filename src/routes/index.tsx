@@ -10,11 +10,14 @@ import {
 } from "lucide-react";
 
 import dashboardHero from "@/assets/dashboard-hero.jpg";
+import phoneApp from "@/assets/phone-app.jpg";
 import workshopImage from "@/assets/workshop.jpg";
 import screenAnalytics from "@/assets/screen-analytics.jpg";
+import { DeviceMockup } from "@/components/site/device-mockup";
 import {
   CtaBand,
   FeatureCard,
+  TONES,
   Reveal,
   ScreenFrame,
   Section,
@@ -53,32 +56,32 @@ export const Route = createFileRoute("/")({
 
 const CAPABILITIES = [
   {
-    icon: <Receipt className="h-5 w-5" />,
+    icon: <Receipt className="h-7 w-7" />,
     title: "Billing & Invoicing",
     copy: "Raise service and parts invoices with tax handling, discounts and payment status tracked against every vehicle.",
   },
   {
-    icon: <ClipboardList className="h-5 w-5" />,
+    icon: <ClipboardList className="h-7 w-7" />,
     title: "Job Cards & Service",
     copy: "Move a vehicle from estimate to delivery with clear status, assigned technicians and a complete service record.",
   },
   {
-    icon: <Boxes className="h-5 w-5" />,
+    icon: <Boxes className="h-7 w-7" />,
     title: "Parts & Inventory",
     copy: "Track stock across stores, watch reorder levels and keep parts consumption tied to the job that used them.",
   },
   {
-    icon: <Users className="h-5 w-5" />,
+    icon: <Users className="h-7 w-7" />,
     title: "Customers & Vehicles",
     copy: "Keep every owner, vehicle and past visit in one place so your team answers questions without digging.",
   },
   {
-    icon: <Wrench className="h-5 w-5" />,
+    icon: <Wrench className="h-7 w-7" />,
     title: "Workshop Operations",
     copy: "Plan appointments, bay load and technician workload so the day is organised before it starts.",
   },
   {
-    icon: <BarChart3 className="h-5 w-5" />,
+    icon: <BarChart3 className="h-7 w-7" />,
     title: "Reports & Analytics",
     copy: "See revenue, service throughput, parts movement and branch performance without building spreadsheets.",
   },
@@ -103,6 +106,33 @@ const AUDIENCES = [
   },
 ];
 
+const PILLARS = [
+  {
+    tone: "blue" as const,
+    icon: <Wrench className="h-7 w-7" />,
+    title: "Service",
+    copy: "Job cards to delivery, with live status on every vehicle in the workshop.",
+  },
+  {
+    tone: "orange" as const,
+    icon: <Receipt className="h-7 w-7" />,
+    title: "Sales",
+    copy: "Enquiries to invoices, with tax, discounts and payments all handled.",
+  },
+  {
+    tone: "navy" as const,
+    icon: <Boxes className="h-7 w-7" />,
+    title: "Spares",
+    copy: "Stock to consumption, tied to the exact job that used each part.",
+  },
+  {
+    tone: "cyan" as const,
+    icon: <BarChart3 className="h-7 w-7" />,
+    title: "Accounts",
+    copy: "Billing to reporting, with numbers that match the floor every day.",
+  },
+];
+
 function HomePage() {
   return (
     <>
@@ -111,52 +141,70 @@ function HomePage() {
           aria-hidden="true"
           className="grid-lines pointer-events-none absolute inset-0 opacity-30"
         />
-        <div className="relative mx-auto w-full max-w-5xl px-5 pb-0 pt-20 text-center sm:px-8 sm:pt-28">
-          <p className="eyebrow rise-in">Automobile business management</p>
-          <h1
-            className="rise-in mt-6 text-4xl leading-[1.02] tracking-tight sm:text-6xl lg:text-[4.6rem]"
-            style={{ animationDelay: "90ms" }}
-          >
-            Automobile operations,
-            <br />
-            <span className="text-ember">built for clarity</span>
-          </h1>
-          <p
-            className="rise-in mx-auto mt-6 max-w-xl text-sm leading-relaxed text-muted-foreground sm:text-base"
-            style={{ animationDelay: "180ms" }}
-          >
-            Billing, job cards, spare parts, customers and reporting in one
-            connected platform — for workshops, dealerships and dealer networks.
-          </p>
-          <div
-            className="rise-in mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row"
-            style={{ animationDelay: "260ms" }}
-          >
-            <Button asChild size="sm" className="w-full sm:w-auto">
-              <Link to="/contact">Request a demo</Link>
-            </Button>
-            <Button
-              asChild
-              size="sm"
-              variant="outline"
-              className="w-full sm:w-auto"
+        <div className="relative mx-auto grid w-full max-w-[88rem] items-center gap-14 px-5 pb-20 pt-16 sm:px-8 sm:pb-24 sm:pt-24 lg:grid-cols-[0.95fr_1.05fr] lg:gap-16">
+          <div>
+            <p className="eyebrow rise-in">Automobile business management</p>
+            <h1
+              className="rise-in mt-6 text-5xl font-semibold leading-[1.02] tracking-tight sm:text-6xl lg:text-7xl"
+              style={{ animationDelay: "90ms" }}
             >
-              <Link to="/features">Explore the platform</Link>
-            </Button>
+              Automobile operations,
+              <br />
+              <span className="text-ember">built for clarity</span>
+            </h1>
+            <p
+              className="rise-in mt-7 max-w-xl text-lg leading-relaxed text-muted-foreground sm:text-xl"
+              style={{ animationDelay: "180ms" }}
+            >
+              Billing, job cards, spare parts, customers and reporting in one
+              connected platform — for workshops, dealerships and dealer networks.
+            </p>
+            <div
+              className="rise-in mt-10 flex flex-col gap-4 sm:flex-row"
+              style={{ animationDelay: "260ms" }}
+            >
+              <Button
+                asChild
+                size="lg"
+                className="h-16 w-full rounded-full px-10 text-lg sm:w-auto"
+              >
+                <Link to="/contact">Request a demo</Link>
+              </Button>
+              <Button
+                asChild
+                size="lg"
+                variant="outline"
+                className="h-16 w-full rounded-full px-10 text-lg sm:w-auto"
+              >
+                <Link to="/features">Explore the platform</Link>
+              </Button>
+            </div>
+            <div
+              className="rise-in mt-10 flex flex-wrap gap-3"
+              style={{ animationDelay: "340ms" }}
+            >
+              {["Workshops", "Dealerships", "Dealer networks", "OEM outlets"].map(
+                (chip, i) => (
+                  <span
+                    key={chip}
+                    className={`rounded-full px-5 py-2.5 text-sm font-semibold ${
+                      ["tint-blue", "tint-orange", "tint-cyan", "tint-navy"][i]
+                    }`}
+                  >
+                    {chip}
+                  </span>
+                ),
+              )}
+            </div>
           </div>
 
-          <div
-            className="rise-in mt-16 sm:mt-20"
-            style={{ animationDelay: "340ms" }}
-          >
+          <div className="rise-in" style={{ animationDelay: "300ms" }}>
             <div className="float-slow">
-              <ScreenFrame
-                src={dashboardHero}
-                alt="Wheelint workshop dashboard showing job cards, revenue and technician workload"
-                width={1600}
-                height={1008}
+              <DeviceMockup
+                laptopSrc={dashboardHero}
+                phoneSrc={phoneApp}
+                alt="Wheelint workshop dashboard shown on a laptop with the mobile app alongside"
                 priority
-                className="mx-auto max-w-4xl translate-y-10"
               />
             </div>
           </div>
@@ -164,16 +212,10 @@ function HomePage() {
       </section>
 
       <Section tight>
-        <div className="grid grid-cols-2 gap-x-8 gap-y-6 border-t border-hairline pt-10 sm:grid-cols-4">
-          {[
-            { label: "Service", note: "Job cards to delivery" },
-            { label: "Sales", note: "Enquiries to invoices" },
-            { label: "Spares", note: "Stock to consumption" },
-            { label: "Accounts", note: "Billing to reporting" },
-          ].map((item, index) => (
-            <Reveal key={item.label} delay={index * 70}>
-              <p className="eyebrow">{item.label}</p>
-              <p className="mt-2 text-sm text-muted-foreground">{item.note}</p>
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          {PILLARS.map((item, index) => (
+            <Reveal key={item.title} delay={index * 80}>
+              <FeatureCard {...item} tone={TONES[index % TONES.length]} />
             </Reveal>
           ))}
         </div>
@@ -190,18 +232,24 @@ function HomePage() {
             />
             <Reveal
               delay={120}
-              className="mt-10 grid gap-5 sm:grid-cols-2"
+              className="mt-10 grid gap-6 sm:grid-cols-2"
               as="div"
             >
-              {AUDIENCES.map((item) => (
+              {AUDIENCES.map((item, index) => (
                 <div
                   key={item.title}
-                  className="rounded-xl border border-hairline bg-surface p-5"
+                  className={`hover-lift rounded-3xl p-7 shadow-[var(--shadow-panel)] ${
+                    ["tint-blue", "tint-orange", "tint-cyan", "tint-navy"][index % 4]
+                  }`}
                 >
-                  <h3 className="font-display text-base font-semibold">
+                  <h3 className="font-display text-2xl font-semibold">
                     {item.title}
                   </h3>
-                  <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                  <p
+                    className={`mt-3 text-base leading-relaxed ${
+                      index % 4 === 3 ? "opacity-80" : "text-muted-foreground"
+                    }`}
+                  >
                     {item.copy}
                   </p>
                 </div>
@@ -209,14 +257,14 @@ function HomePage() {
             </Reveal>
           </div>
           <Reveal delay={80}>
-            <div className="surface-panel overflow-hidden rounded-2xl p-2">
+            <div className="surface-panel overflow-hidden rounded-3xl p-3">
               <img
                 src={workshopImage}
                 alt="Automobile service workshop with vehicles on lifts during evening shift"
                 width={1600}
                 height={912}
                 loading="lazy"
-                className="h-auto w-full rounded-xl object-cover"
+                className="h-auto w-full rounded-2xl object-cover"
               />
             </div>
           </Reveal>
@@ -229,15 +277,20 @@ function HomePage() {
           title="Every core operation, connected"
           copy="A quick view of what Wheelint manages day to day. The Features page goes deeper into each area."
         />
-        <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {CAPABILITIES.map((item, index) => (
             <Reveal key={item.title} delay={index * 60}>
-              <FeatureCard {...item} />
+              <FeatureCard {...item} tone={TONES[index % TONES.length]} />
             </Reveal>
           ))}
         </div>
-        <Reveal delay={120} className="mt-10">
-          <Button asChild variant="outline" size="lg">
+        <Reveal delay={120} className="mt-12">
+          <Button
+            asChild
+            variant="outline"
+            size="lg"
+            className="h-14 rounded-full px-9 text-base"
+          >
             <Link to="/features">See all features in detail</Link>
           </Button>
         </Reveal>
@@ -288,23 +341,23 @@ function HomePage() {
         <div className="mt-12 grid gap-5 sm:grid-cols-3">
           {[
             {
-              icon: <Wrench className="h-5 w-5" />,
+              icon: <Wrench className="h-7 w-7" />,
               title: "Automobile-focused",
               copy: "Built around vehicles, job cards and parts rather than adapted from generic business software.",
             },
             {
-              icon: <Building2 className="h-5 w-5" />,
+              icon: <Building2 className="h-7 w-7" />,
               title: "Scales with you",
               copy: "Start with a single workshop and grow into a multi-location or enterprise setup on the same platform.",
             },
             {
-              icon: <BarChart3 className="h-5 w-5" />,
+              icon: <BarChart3 className="h-7 w-7" />,
               title: "Clear information",
               copy: "Records stay connected, so reports reflect what actually happened on the floor.",
             },
           ].map((item, index) => (
             <Reveal key={item.title} delay={index * 70}>
-              <FeatureCard {...item} />
+              <FeatureCard {...item} tone={TONES[index % TONES.length]} />
             </Reveal>
           ))}
         </div>
