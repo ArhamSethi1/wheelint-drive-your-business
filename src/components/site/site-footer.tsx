@@ -86,6 +86,15 @@ export function SiteFooter() {
           <p>Automobile billing, workshop, dealership and ERP management.</p>
         </div>
       </div>
+
+      <div className="citron-mark overflow-hidden">
+        <p
+          aria-hidden="true"
+          className="font-display select-none whitespace-nowrap px-4 text-center text-[18vw] leading-[0.86] tracking-tight"
+        >
+          Wheelint
+        </p>
+      </div>
     </footer>
   );
 }
