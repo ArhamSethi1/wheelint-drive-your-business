@@ -106,76 +106,79 @@ const AUDIENCES = [
 function HomePage() {
   return (
     <>
-      <section className="relative overflow-hidden border-b border-hairline">
+      <section className="bg-sky-wash relative overflow-hidden">
         <div
           aria-hidden="true"
-          className="grid-lines pointer-events-none absolute inset-0 opacity-40"
+          className="grid-lines pointer-events-none absolute inset-0 opacity-30"
         />
-        <div
-          aria-hidden="true"
-          className="pointer-events-none absolute -right-24 -top-32 h-[28rem] w-[28rem] rounded-full bg-primary/15 blur-3xl"
-        />
-        <div className="relative mx-auto grid w-full max-w-7xl gap-14 px-5 py-16 sm:px-8 sm:py-24 lg:grid-cols-[1.05fr_1fr] lg:items-center lg:gap-16 lg:py-28">
-          <div>
-            <Reveal>
-              <p className="eyebrow">Automobile business management</p>
-              <h1 className="mt-4 text-4xl font-bold leading-[1.05] sm:text-5xl lg:text-6xl">
-                Run the whole{" "}
-                <span className="text-ember">automobile business</span> from one
-                platform
-              </h1>
-              <p className="mt-6 max-w-xl text-base leading-relaxed text-muted-foreground sm:text-lg">
-                Wheelint connects billing, job cards, spare parts, customers and
-                reporting so workshops, dealerships and dealer networks work from
-                one accurate source of information.
-              </p>
-            </Reveal>
-
-            <Reveal delay={120} className="mt-9 flex flex-col gap-3 sm:flex-row">
-              <Button asChild size="lg" className="w-full sm:w-auto">
-                <Link to="/contact">Request a Demo</Link>
-              </Button>
-              <Button
-                asChild
-                size="lg"
-                variant="outline"
-                className="w-full sm:w-auto"
-              >
-                <Link to="/features">Explore the platform</Link>
-              </Button>
-            </Reveal>
-
-            <Reveal
-              delay={200}
-              className="mt-12 grid grid-cols-2 gap-x-6 gap-y-5 border-t border-hairline pt-8 sm:grid-cols-4"
+        <div className="relative mx-auto w-full max-w-5xl px-5 pb-0 pt-20 text-center sm:px-8 sm:pt-28">
+          <p className="eyebrow rise-in">Automobile business management</p>
+          <h1
+            className="rise-in mt-6 text-4xl leading-[1.02] tracking-tight sm:text-6xl lg:text-[4.6rem]"
+            style={{ animationDelay: "90ms" }}
+          >
+            Automobile operations,
+            <br />
+            <span className="text-ember">built for clarity</span>
+          </h1>
+          <p
+            className="rise-in mx-auto mt-6 max-w-xl text-sm leading-relaxed text-muted-foreground sm:text-base"
+            style={{ animationDelay: "180ms" }}
+          >
+            Billing, job cards, spare parts, customers and reporting in one
+            connected platform — for workshops, dealerships and dealer networks.
+          </p>
+          <div
+            className="rise-in mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row"
+            style={{ animationDelay: "260ms" }}
+          >
+            <Button asChild size="sm" className="w-full sm:w-auto">
+              <Link to="/contact">Request a demo</Link>
+            </Button>
+            <Button
+              asChild
+              size="sm"
+              variant="outline"
+              className="w-full sm:w-auto"
             >
-              {[
-                { label: "Service", note: "Job cards to delivery" },
-                { label: "Sales", note: "Enquiries to invoices" },
-                { label: "Spares", note: "Stock to consumption" },
-                { label: "Accounts", note: "Billing to reporting" },
-              ].map((item) => (
-                <div key={item.label}>
-                  <p className="font-display text-sm font-semibold uppercase tracking-widest text-primary">
-                    {item.label}
-                  </p>
-                  <p className="mt-1 text-xs text-muted-foreground">{item.note}</p>
-                </div>
-              ))}
-            </Reveal>
+              <Link to="/features">Explore the platform</Link>
+            </Button>
           </div>
 
-          <Reveal delay={100}>
-            <ScreenFrame
-              src={dashboardHero}
-              alt="Wheelint workshop dashboard showing job cards, revenue and technician workload"
-              width={1600}
-              height={1008}
-              priority
-            />
-          </Reveal>
+          <div
+            className="rise-in mt-16 sm:mt-20"
+            style={{ animationDelay: "340ms" }}
+          >
+            <div className="float-slow">
+              <ScreenFrame
+                src={dashboardHero}
+                alt="Wheelint workshop dashboard showing job cards, revenue and technician workload"
+                width={1600}
+                height={1008}
+                priority
+                className="mx-auto max-w-4xl translate-y-10"
+              />
+            </div>
+          </div>
         </div>
       </section>
+
+      <Section tight>
+        <div className="grid grid-cols-2 gap-x-8 gap-y-6 border-t border-hairline pt-10 sm:grid-cols-4">
+          {[
+            { label: "Service", note: "Job cards to delivery" },
+            { label: "Sales", note: "Enquiries to invoices" },
+            { label: "Spares", note: "Stock to consumption" },
+            { label: "Accounts", note: "Billing to reporting" },
+          ].map((item, index) => (
+            <Reveal key={item.label} delay={index * 70}>
+              <p className="eyebrow">{item.label}</p>
+              <p className="mt-2 text-sm text-muted-foreground">{item.note}</p>
+            </Reveal>
+          ))}
+        </div>
+      </Section>
+
 
       <Section>
         <div className="grid gap-12 lg:grid-cols-[1fr_1.05fr] lg:items-center lg:gap-16">
