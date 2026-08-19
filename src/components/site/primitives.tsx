@@ -131,16 +131,16 @@ export function FeatureCard({
   return (
     <div
       className={cn(
-        "surface-panel group h-full rounded-xl p-6 transition-transform duration-300 hover:-translate-y-1 sm:p-7",
+        "surface-panel hover-lift group h-full rounded-2xl p-6 sm:p-7",
         className,
       )}
     >
       {icon ? (
-        <div className="mb-5 inline-flex h-11 w-11 items-center justify-center rounded-lg border border-hairline bg-surface-2 text-primary transition-colors group-hover:border-primary/40">
+        <div className="mb-5 inline-flex h-10 w-10 items-center justify-center rounded-lg border border-hairline bg-surface-2 text-foreground transition-colors group-hover:citron-mark group-hover:border-transparent">
           {icon}
         </div>
       ) : null}
-      <h3 className="text-lg font-semibold sm:text-xl">{title}</h3>
+      <h3 className="text-xl sm:text-2xl">{title}</h3>
       <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{copy}</p>
       {points?.length ? (
         <ul className="mt-5 space-y-2 text-sm text-muted-foreground">
