@@ -26,7 +26,7 @@ export function SiteFooter() {
         </div>
 
         <nav aria-label="Footer">
-          <h2 className="font-display text-sm font-semibold uppercase tracking-widest text-foreground">
+          <h2 className="eyebrow">
             Explore
           </h2>
           <ul className="mt-4 space-y-2.5 text-sm text-muted-foreground">
@@ -50,7 +50,7 @@ export function SiteFooter() {
         </nav>
 
         <div>
-          <h2 className="font-display text-sm font-semibold uppercase tracking-widest text-foreground">
+          <h2 className="eyebrow">
             Contact
           </h2>
           <address className="mt-4 space-y-3 text-sm not-italic text-muted-foreground">
