@@ -10,11 +10,14 @@ import {
 } from "lucide-react";
 
 import dashboardHero from "@/assets/dashboard-hero.jpg";
+import phoneApp from "@/assets/phone-app.jpg";
 import workshopImage from "@/assets/workshop.jpg";
 import screenAnalytics from "@/assets/screen-analytics.jpg";
+import { DeviceMockup } from "@/components/site/device-mockup";
 import {
   CtaBand,
   FeatureCard,
+  TONES,
   Reveal,
   ScreenFrame,
   Section,
