@@ -201,7 +201,7 @@ function FeaturesPage() {
                   </p>
                   <dl className="mt-7 space-y-5 border-t border-hairline pt-6">
                     <div>
-                      <dt className="font-display text-xs font-semibold uppercase tracking-widest text-foreground">
+                      <dt className="eyebrow">
                         Visibility
                       </dt>
                       <dd className="mt-1.5 text-sm text-muted-foreground">
@@ -209,7 +209,7 @@ function FeaturesPage() {
                       </dd>
                     </div>
                     <div>
-                      <dt className="font-display text-xs font-semibold uppercase tracking-widest text-foreground">
+                      <dt className="eyebrow">
                         Why it matters
                       </dt>
                       <dd className="mt-1.5 text-sm text-muted-foreground">
@@ -228,7 +228,7 @@ function FeaturesPage() {
                     />
                   ) : (
                     <div className="surface-panel grid-lines rounded-xl p-8 sm:p-10">
-                      <p className="font-display text-sm font-semibold uppercase tracking-widest text-foreground">
+                      <p className="eyebrow">
                         In practice
                       </p>
                       <p className="mt-4 text-lg leading-relaxed sm:text-xl">
