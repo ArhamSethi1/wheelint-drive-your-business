@@ -294,9 +294,9 @@ function Field({
   id: string;
   label: string;
   value: string;
-  error?: string;
+  error?: string | undefined;
   onChange: (value: string) => void;
-  type?: string;
+  type?: string | undefined;
 }) {
   return (
     <div>
