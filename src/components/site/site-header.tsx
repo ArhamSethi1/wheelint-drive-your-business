@@ -65,7 +65,7 @@ export function SiteHeader() {
         </nav>
 
         <div className="ml-7 hidden shrink-0 lg:block">
-          <Button asChild size="sm">
+          <Button asChild size="lg" className="h-12 rounded-full px-7 text-base">
             <Link to="/contact">Get started</Link>
           </Button>
         </div>
