@@ -30,11 +30,11 @@ function Wordmark() {
       <img
         src={logoMark}
         alt="Wheelint logo"
-        width={32}
-        height={32}
-        className="h-8 w-8"
+        width={44}
+        height={44}
+        className="h-11 w-11"
       />
-      <span className="font-display text-xl tracking-tight">Wheelint</span>
+      <span className="font-display text-2xl font-bold tracking-tight lg:text-3xl">Wheelint</span>
     </Link>
   );
 }
@@ -43,8 +43,8 @@ export function SiteHeader() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 bg-background/70 backdrop-blur-xl transition-colors">
-      <div className="mx-auto flex h-16 w-full max-w-7xl items-center gap-4 px-5 sm:px-8">
+    <header className="sticky top-0 z-50 border-b border-hairline bg-background/80 backdrop-blur-xl transition-colors">
+      <div className="mx-auto flex h-20 w-full max-w-[88rem] items-center gap-4 px-5 sm:px-8 lg:h-24">
         <div className="min-w-0 flex-1">
           <Wordmark />
         </div>
@@ -57,7 +57,7 @@ export function SiteHeader() {
               activeOptions={{ exact: item.to === "/" }}
               activeProps={{ className: "text-foreground" }}
               inactiveProps={{ className: "text-muted-foreground" }}
-              className="relative py-2 text-xs font-medium transition-colors after:absolute after:inset-x-0 after:bottom-1 after:h-px after:origin-left after:scale-x-0 after:bg-foreground after:transition-transform after:duration-300 hover:text-foreground hover:after:scale-x-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+              className="relative py-2 text-base font-semibold transition-colors after:absolute after:inset-x-0 after:bottom-1 after:h-px after:origin-left after:scale-x-0 after:bg-foreground after:transition-transform after:duration-300 hover:text-foreground hover:after:scale-x-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
             >
               {item.label}
             </Link>
@@ -72,8 +72,8 @@ export function SiteHeader() {
 
         <Sheet open={open} onOpenChange={setOpen}>
           <SheetTrigger asChild className="lg:hidden">
-            <Button variant="outline" size="icon" aria-label="Open menu">
-              <Menu className="h-5 w-5" />
+            <Button variant="outline" size="icon" aria-label="Open menu" className="h-12 w-12">
+              <Menu className="h-6 w-6" />
             </Button>
           </SheetTrigger>
           <SheetContent side="right" className="w-[86vw] max-w-sm border-hairline">
