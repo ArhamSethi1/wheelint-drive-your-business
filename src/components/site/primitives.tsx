@@ -216,7 +216,7 @@ export function ScreenFrame({
   return (
     <div
       className={cn(
-        "surface-panel overflow-hidden rounded-xl p-2 transition-transform duration-500 hover:-translate-y-1",
+        "surface-panel hover-lift overflow-hidden rounded-2xl p-2",
         className,
       )}
     >
@@ -226,7 +226,7 @@ export function ScreenFrame({
         width={width}
         height={height}
         loading={priority ? "eager" : "lazy"}
-        className="h-auto w-full rounded-lg"
+        className="h-auto w-full rounded-xl"
       />
     </div>
   );
