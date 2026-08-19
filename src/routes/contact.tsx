@@ -108,7 +108,7 @@ function ContactPage() {
 
   return (
     <>
-      <section className="relative overflow-hidden border-b border-hairline">
+      <section className="bg-sky-wash relative overflow-hidden">
         <div
           aria-hidden="true"
           className="grid-lines pointer-events-none absolute inset-0 opacity-30"
@@ -116,7 +116,7 @@ function ContactPage() {
         <div className="relative mx-auto w-full max-w-3xl px-5 py-16 text-center sm:px-8 sm:py-20">
           <Reveal>
             <p className="eyebrow">Contact</p>
-            <h1 className="mt-4 text-4xl font-bold leading-[1.06] sm:text-5xl">
+            <h1 className="mt-4 text-4xl leading-[1.04] sm:text-5xl">
               Let's talk about your automobile business
             </h1>
             <p className="mt-6 text-base leading-relaxed text-muted-foreground sm:text-lg">
@@ -136,7 +136,7 @@ function ContactPage() {
               noValidate
               className="surface-panel rounded-2xl p-6 sm:p-9"
             >
-              <h2 className="text-2xl font-bold sm:text-3xl">Request an enquiry</h2>
+              <h2 className="text-2xl sm:text-3xl">Request an enquiry</h2>
               <p className="mt-3 text-sm text-muted-foreground">
                 Fill in a few details and we will be in touch.
               </p>
@@ -236,20 +236,20 @@ function ContactPage() {
                   Tylect Technologies Pvt. Ltd.
                 </p>
                 <p className="flex gap-3">
-                  <MapPin aria-hidden="true" className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
+                  <MapPin aria-hidden="true" className="mt-0.5 h-4 w-4 shrink-0 text-foreground" />
                   <span>
                     1st Floor, F-27, Gautam Marg, Sector 6, Vaishali Nagar,
                     Jaipur, Rajasthan, 302021
                   </span>
                 </p>
                 <p className="flex items-center gap-3">
-                  <Phone aria-hidden="true" className="h-4 w-4 shrink-0 text-primary" />
+                  <Phone aria-hidden="true" className="h-4 w-4 shrink-0 text-foreground" />
                   <a href="tel:+919358002457" className="hover:text-foreground">
                     +91 93580 02457
                   </a>
                 </p>
                 <p className="flex items-center gap-3">
-                  <Mail aria-hidden="true" className="h-4 w-4 shrink-0 text-primary" />
+                  <Mail aria-hidden="true" className="h-4 w-4 shrink-0 text-foreground" />
                   <a href="mailto:teams@wheelint.com" className="hover:text-foreground">
                     teams@wheelint.com
                   </a>

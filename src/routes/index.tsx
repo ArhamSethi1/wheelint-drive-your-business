@@ -223,7 +223,7 @@ function HomePage() {
         </div>
       </Section>
 
-      <Section className="border-y border-hairline bg-sidebar">
+      <Section className="bg-sand-wash border-y border-hairline">
         <SectionHeading
           eyebrow="Product breadth"
           title="Every core operation, connected"
@@ -279,7 +279,7 @@ function HomePage() {
         </div>
       </Section>
 
-      <Section className="border-t border-hairline bg-sidebar" tight>
+      <Section className="bg-surface border-t border-hairline" tight>
         <SectionHeading
           align="center"
           eyebrow="Why teams choose Wheelint"

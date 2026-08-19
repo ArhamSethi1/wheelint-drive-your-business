@@ -80,13 +80,13 @@ function PlanCard({
     >
       <p className="eyebrow">{name}</p>
       <p className="mt-3 text-sm text-muted-foreground">{audience}</p>
-      <p className="mt-7 font-display text-3xl font-bold sm:text-4xl">{price}</p>
+      <p className="mt-7 font-display text-3xl sm:text-4xl">{price}</p>
       <p className="mt-2 text-xs text-muted-foreground">{priceNote}</p>
 
       <ul className="mt-8 space-y-3 border-t border-hairline pt-7 text-sm text-muted-foreground">
         {includes.map((item) => (
           <li key={item} className="flex gap-3">
-            <Check aria-hidden="true" className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
+            <Check aria-hidden="true" className="mt-0.5 h-4 w-4 shrink-0 text-foreground" />
             <span>{item}</span>
           </li>
         ))}
@@ -109,7 +109,7 @@ function PlanCard({
 function PricingPage() {
   return (
     <>
-      <section className="relative overflow-hidden border-b border-hairline">
+      <section className="bg-sky-wash relative overflow-hidden">
         <div
           aria-hidden="true"
           className="grid-lines pointer-events-none absolute inset-0 opacity-30"
@@ -117,7 +117,7 @@ function PricingPage() {
         <div className="relative mx-auto w-full max-w-3xl px-5 py-16 text-center sm:px-8 sm:py-24">
           <Reveal>
             <p className="eyebrow">Pricing</p>
-            <h1 className="mt-4 text-4xl font-bold leading-[1.06] sm:text-5xl">
+            <h1 className="mt-4 text-4xl leading-[1.04] sm:text-5xl">
               Two ways to run Wheelint
             </h1>
             <p className="mt-6 text-base leading-relaxed text-muted-foreground sm:text-lg">
@@ -158,7 +158,7 @@ function PricingPage() {
         </div>
       </Section>
 
-      <Section className="border-y border-hairline bg-sidebar">
+      <Section className="bg-sand-wash border-y border-hairline">
         <SectionHeading
           align="center"
           eyebrow="Which plan is right for you?"
@@ -181,11 +181,11 @@ function PricingPage() {
           ].map((item, index) => (
             <Reveal key={item.arrow} delay={index * 80}>
               <div className="surface-panel h-full rounded-xl p-7">
-                <div className="inline-flex h-11 w-11 items-center justify-center rounded-lg border border-hairline bg-surface-2 text-primary">
+                <div className="inline-flex h-11 w-11 items-center justify-center rounded-lg border border-hairline bg-surface-2 text-foreground">
                   {item.icon}
                 </div>
                 <p className="mt-5 text-base font-medium">{item.label}</p>
-                <p className="mt-4 font-display text-2xl font-bold text-ember">
+                <p className="mt-4 font-display text-2xl text-ember">
                   → {item.arrow}
                 </p>
                 <p className="mt-3 text-sm text-muted-foreground">{item.copy}</p>
