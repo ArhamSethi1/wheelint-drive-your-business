@@ -149,14 +149,17 @@ function HomePage() {
               delay={200}
               className="mt-12 grid grid-cols-2 gap-x-6 gap-y-5 border-t border-hairline pt-8 sm:grid-cols-4"
             >
-              {["Service", "Sales", "Spares", "Accounts"].map((item) => (
-                <div key={item}>
+              {[
+                { label: "Service", note: "Job cards to delivery" },
+                { label: "Sales", note: "Enquiries to invoices" },
+                { label: "Spares", note: "Stock to consumption" },
+                { label: "Accounts", note: "Billing to reporting" },
+              ].map((item) => (
+                <div key={item.label}>
                   <p className="font-display text-sm font-semibold uppercase tracking-widest text-primary">
-                    {item}
+                    {item.label}
                   </p>
-                  <p className="mt-1 text-xs text-muted-foreground">
-                    Managed in one place
-                  </p>
+                  <p className="mt-1 text-xs text-muted-foreground">{item.note}</p>
                 </div>
               ))}
             </Reveal>
