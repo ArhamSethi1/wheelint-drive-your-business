@@ -51,136 +51,56 @@ const ENTERPRISE_INCLUDES = [
   "Onboarding and implementation support",
 ];
 
-type TermTone = "plain" | "blue" | "green";
-
-const TERM_STYLES: Record<
-  TermTone,
-  { card: string; price: string; check: string; badge: string; save: string; cta: string }
-> = {
-  plain: {
-    card: "border-hairline",
-    price: "text-foreground",
-    check: "text-brand",
-    badge: "",
-    save: "",
-    cta: "",
-  },
-  blue: {
-    card: "border-brand/35 ring-1 ring-brand/25",
-    price: "text-brand",
-    check: "text-brand",
-    badge: "bg-brand text-primary-foreground",
-    save: "tint-blue text-brand",
-    cta: "",
-  },
-  green: {
-    card: "border-[oklch(0.5_0.13_165_/_40%)] ring-1 ring-[oklch(0.5_0.13_165_/_25%)]",
-    price: "text-[oklch(0.45_0.13_165)]",
-    check: "text-[oklch(0.5_0.13_165)]",
-    badge: "chip-green",
-    save: "tint-green text-[oklch(0.42_0.12_165)]",
-    cta: "",
-  },
-};
-
-const TERMS: Array<{
+function PlanCard({
+  name,
+  audience,
+  price,
+  priceNote,
+  includes,
+  primary,
+  primaryHref,
+  secondary,
+  featured,
+}: {
   name: string;
-  note: string;
+  audience: string;
   price: string;
-  was?: string;
-  unit: string;
-  save?: string;
-  badge?: string;
-  tone: TermTone;
-}> = [
-  {
-    name: "Annual",
-    note: "1 year commitment",
-    price: "₹12,000",
-    unit: "/ year",
-    tone: "plain",
-  },
-  {
-    name: "2-Year Plan",
-    note: "Best balance of savings & flexibility",
-    price: "₹19,200",
-    was: "₹24,000",
-    unit: "/ 2 years",
-    save: "Save 20% — you save ₹4,800",
-    badge: "Most Popular",
-    tone: "blue",
-  },
-  {
-    name: "3-Year Plan",
-    note: "Maximum savings for long-term growth",
-    price: "₹25,200",
-    was: "₹36,000",
-    unit: "/ 3 years",
-    save: "Save 30% — you save ₹10,800",
-    badge: "Best Value",
-    tone: "green",
-  },
-];
-
-function TermCard({ term }: { term: (typeof TERMS)[number] }) {
-  const s = TERM_STYLES[term.tone];
+  priceNote: string;
+  includes: string[];
+  primary: string;
+  primaryHref: "/contact" | "/pricing";
+  secondary?: string;
+  featured?: boolean;
+}) {
   return (
     <div
-      className={`hover-glow relative flex h-full flex-col rounded-2xl border bg-card p-6 shadow-[var(--shadow-panel)] sm:p-7 ${s.card}`}
+      className={`surface-panel relative flex h-full flex-col rounded-2xl p-7 sm:p-9 ${
+        featured ? "ring-1 ring-primary/40" : ""
+      }`}
     >
-      {term.badge ? (
-        <span
-          className={`absolute -top-3 left-6 rounded-full px-3 py-1 text-[0.7rem] font-bold uppercase tracking-[0.12em] ${s.badge}`}
-        >
-          {term.badge}
-        </span>
-      ) : null}
+      <p className="eyebrow">{name}</p>
+      <p className="mt-3 text-base text-muted-foreground">{audience}</p>
+      <p className="mt-7 font-display text-3xl sm:text-4xl">{price}</p>
+      <p className="mt-2 text-sm text-muted-foreground">{priceNote}</p>
 
-      <h3 className="mt-2 text-2xl font-semibold sm:text-3xl">{term.name}</h3>
-      <p className="mt-2 text-base text-muted-foreground">{term.note}</p>
-
-      <div className="mt-6 border-t border-hairline pt-6">
-        <p className="flex flex-wrap items-baseline gap-2">
-          {term.was ? (
-            <span className="text-base text-muted-foreground line-through">
-              {term.was}
-            </span>
-          ) : null}
-          <span className={`font-display text-4xl font-bold sm:text-5xl ${s.price}`}>
-            {term.price}
-          </span>
-          <span className="text-base text-muted-foreground">{term.unit}</span>
-        </p>
-        <p className="mt-2 text-sm text-muted-foreground">per business location</p>
-        {term.save ? (
-          <p
-            className={`mt-4 inline-flex items-center gap-2 rounded-full px-3.5 py-1.5 text-sm font-semibold ${s.save}`}
-          >
-            <ArrowDown aria-hidden="true" className="h-4 w-4" />
-            {term.save}
-          </p>
-        ) : null}
-      </div>
-
-      <ul className="mt-7 space-y-3 text-base text-muted-foreground">
-        {STANDARD_INCLUDES.map((item) => (
+      <ul className="mt-8 space-y-3 border-t border-hairline pt-7 text-base text-muted-foreground">
+        {includes.map((item) => (
           <li key={item} className="flex gap-3">
-            <CheckCircle2
-              aria-hidden="true"
-              className={`mt-0.5 h-5 w-5 shrink-0 ${s.check}`}
-            />
+            <Check aria-hidden="true" className="mt-0.5 h-4 w-4 shrink-0 text-foreground" />
             <span>{item}</span>
           </li>
         ))}
       </ul>
 
-      <div className="mt-auto flex flex-col gap-3 pt-8">
+      <div className="mt-9 flex flex-col gap-3 pt-2">
         <Button asChild size="lg">
-          <Link to="/contact">Start Free Trial</Link>
+          <Link to={primaryHref}>{primary}</Link>
         </Button>
-        <Button asChild size="lg" variant="outline">
-          <Link to="/contact">Request a Demo</Link>
-        </Button>
+        {secondary ? (
+          <Button asChild size="lg" variant="outline">
+            <Link to="/contact">{secondary}</Link>
+          </Button>
+        ) : null}
       </div>
     </div>
   );
@@ -201,8 +121,8 @@ function PricingPage() {
               Two ways to run Wheelint
             </h1>
             <p className="mt-6 text-base leading-relaxed text-muted-foreground sm:text-lg">
-              Commit annually, or lock in longer terms and save. Enterprise ERP
-              stays custom-priced for OEMs, dealer networks and multi-location
+              One annual subscription for an individual automobile business, and
+              an enterprise ERP path for OEMs, dealer networks and multi-location
               operations.
             </p>
           </Reveal>
@@ -210,73 +130,33 @@ function PricingPage() {
       </section>
 
       <Section>
-        <div className="grid gap-6 xl:grid-cols-[3fr_1fr]">
-          <Reveal className="rounded-3xl border border-hairline bg-surface p-5 sm:p-7">
-            <span className="tint-blue inline-block rounded-full px-3.5 py-1.5 text-[0.7rem] font-bold uppercase tracking-[0.12em] text-brand">
-              Single business setup
-            </span>
-            <p className="mt-3 text-base text-muted-foreground">
-              Flexible terms for one workshop, service centre or dealership.
-              Commit longer, save more.
-            </p>
-            <div className="mt-7 grid gap-6 lg:grid-cols-3">
-              {TERMS.map((term, index) => (
-                <Reveal key={term.name} delay={index * 140}>
-                  <TermCard term={term} />
-                </Reveal>
-              ))}
-            </div>
+        <div className="grid gap-6 lg:grid-cols-2">
+          <Reveal>
+            <PlanCard
+              featured
+              name="Standard Plan"
+              audience="For individual workshops, service centres and dealerships."
+              price="₹XX,XXX / year"
+              priceNote="Placeholder price — final pricing to be announced."
+              includes={STANDARD_INCLUDES}
+              primary="Start Free Trial"
+              primaryHref="/contact"
+              secondary="Request a Demo"
+            />
           </Reveal>
-
-          <Reveal
-            delay={220}
-            className="rounded-3xl border border-orange/40 bg-[oklch(0.985_0.02_70)] p-5 sm:p-7"
-          >
-            <span className="tint-orange inline-block rounded-full px-3.5 py-1.5 text-[0.7rem] font-bold uppercase tracking-[0.12em] text-[oklch(0.5_0.14_48)]">
-              Multi-location setup
-            </span>
-            <p className="mt-3 text-base text-muted-foreground">
-              Tailored setup for dealer networks and OEM operations.
-            </p>
-
-            <div className="hover-glow mt-7 flex h-[calc(100%-6.5rem)] flex-col rounded-2xl border border-orange/40 bg-card p-6 shadow-[var(--shadow-panel)] sm:p-7">
-              <h3 className="text-2xl font-semibold sm:text-3xl">Enterprise ERP</h3>
-              <p className="mt-2 text-base text-muted-foreground">
-                For OEMs, dealer networks and multi-location enterprises
-              </p>
-              <div className="mt-6 border-t border-hairline pt-6">
-                <p className="font-display text-3xl font-bold text-[oklch(0.62_0.18_45)] sm:text-4xl">
-                  Custom Pricing
-                </p>
-                <p className="mt-2 text-sm text-muted-foreground">
-                  Scoped to your network size, locations and requirements.
-                </p>
-              </div>
-              <ul className="mt-7 space-y-3 text-base text-muted-foreground">
-                {ENTERPRISE_INCLUDES.map((item) => (
-                  <li key={item} className="flex gap-3">
-                    <CheckCircle2
-                      aria-hidden="true"
-                      className="mt-0.5 h-5 w-5 shrink-0 text-[oklch(0.62_0.18_45)]"
-                    />
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
-              <div className="mt-auto pt-8">
-                <Button
-                  asChild
-                  size="lg"
-                  className="w-full bg-[oklch(0.66_0.18_45)] text-[oklch(0.99_0_0)] hover:bg-[oklch(0.6_0.18_45)]"
-                >
-                  <Link to="/contact">Talk to Sales</Link>
-                </Button>
-              </div>
-            </div>
+          <Reveal delay={90}>
+            <PlanCard
+              name="Enterprise ERP"
+              audience="For OEMs, dealer networks and multi-location enterprises."
+              price="Custom Pricing"
+              priceNote="Scoped to your network size, locations and requirements."
+              includes={ENTERPRISE_INCLUDES}
+              primary="Talk to Sales"
+              primaryHref="/contact"
+            />
           </Reveal>
         </div>
       </Section>
-
 
       <Section className="bg-sand-wash border-y border-hairline">
         <SectionHeading
