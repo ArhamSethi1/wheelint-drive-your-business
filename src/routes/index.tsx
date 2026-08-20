@@ -311,10 +311,13 @@ function HomePage() {
                 "Branch and outlet comparison for multi-location groups",
                 "Exportable reports for accounts and management review",
               ].map((line) => (
-                <div key={line} className="flex gap-3 text-sm text-muted-foreground">
+                <div
+                  key={line}
+                  className="tint-blue flex items-start gap-3 rounded-2xl px-5 py-4 text-base"
+                >
                   <span
                     aria-hidden="true"
-                    className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-primary"
+                    className="chip-blue mt-1 h-2.5 w-2.5 shrink-0 rounded-full"
                   />
                   <span>{line}</span>
                 </div>
@@ -332,7 +335,7 @@ function HomePage() {
         </div>
       </Section>
 
-      <Section className="bg-surface border-t border-hairline" tight>
+      <Section className="bg-sand-wash border-t border-hairline" tight>
         <SectionHeading
           align="center"
           eyebrow="Why teams choose Wheelint"
