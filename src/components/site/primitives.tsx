@@ -120,6 +120,8 @@ export function SectionHeading({
 
 export type CardTone = "blue" | "orange" | "navy" | "cyan";
 
+export type CardTone = "blue" | "orange" | "navy" | "cyan" | "green";
+
 export const TONES: CardTone[] = ["blue", "orange", "navy", "cyan"];
 
 const TONE_SURFACE: Record<CardTone, string> = {
@@ -127,6 +129,7 @@ const TONE_SURFACE: Record<CardTone, string> = {
   orange: "tint-orange",
   navy: "tint-navy",
   cyan: "tint-cyan",
+  green: "tint-green",
 };
 
 const TONE_CHIP: Record<CardTone, string> = {
@@ -134,7 +137,9 @@ const TONE_CHIP: Record<CardTone, string> = {
   orange: "chip-orange",
   navy: "chip-navy",
   cyan: "chip-cyan",
+  green: "chip-green",
 };
+
 
 export function FeatureCard({
   icon,
