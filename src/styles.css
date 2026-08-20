@@ -4,7 +4,7 @@
 
 @custom-variant dark (&:is(.dark *));
 
-@source inline("chip-blue chip-orange chip-navy chip-cyan tint-blue tint-orange tint-navy tint-cyan");
+@source inline("chip-blue chip-orange chip-navy chip-cyan chip-green tint-blue tint-orange tint-navy tint-cyan tint-green");
 
 /*
  * Wheelint — editorial light design system.
