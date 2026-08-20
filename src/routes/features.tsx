@@ -180,7 +180,7 @@ function FeaturesPage() {
               {["Billing", "Job cards", "Inventory", "Analytics"].map((chip, i) => (
                 <span
                   key={chip}
-                  className={`rounded-full px-5 py-2.5 text-sm font-semibold ${
+                  className={`rounded-full px-5 py-2.5 text-base font-semibold ${
                     ["tint-blue", "tint-orange", "tint-cyan", "tint-navy"][i]
                   }`}
                 >
@@ -260,7 +260,7 @@ function FeaturesPage() {
                       <p className="mt-4 text-lg leading-relaxed sm:text-xl">
                         {item.visibility}
                       </p>
-                      <p className="mt-4 text-sm text-muted-foreground">
+                      <p className="mt-4 text-base text-muted-foreground">
                         {item.matters}
                       </p>
                     </div>

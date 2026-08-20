@@ -79,11 +79,11 @@ function PlanCard({
       }`}
     >
       <p className="eyebrow">{name}</p>
-      <p className="mt-3 text-sm text-muted-foreground">{audience}</p>
+      <p className="mt-3 text-base text-muted-foreground">{audience}</p>
       <p className="mt-7 font-display text-3xl sm:text-4xl">{price}</p>
-      <p className="mt-2 text-xs text-muted-foreground">{priceNote}</p>
+      <p className="mt-2 text-sm text-muted-foreground">{priceNote}</p>
 
-      <ul className="mt-8 space-y-3 border-t border-hairline pt-7 text-sm text-muted-foreground">
+      <ul className="mt-8 space-y-3 border-t border-hairline pt-7 text-base text-muted-foreground">
         {includes.map((item) => (
           <li key={item} className="flex gap-3">
             <Check aria-hidden="true" className="mt-0.5 h-4 w-4 shrink-0 text-foreground" />
@@ -117,7 +117,7 @@ function PricingPage() {
         <div className="relative mx-auto w-full max-w-3xl px-5 py-16 text-center sm:px-8 sm:py-24">
           <Reveal>
             <p className="eyebrow">Pricing</p>
-            <h1 className="mt-4 text-4xl leading-[1.04] sm:text-5xl">
+            <h1 className="mt-4 text-5xl font-semibold leading-[1.03] sm:text-6xl lg:text-7xl">
               Two ways to run Wheelint
             </h1>
             <p className="mt-6 text-base leading-relaxed text-muted-foreground sm:text-lg">
@@ -188,7 +188,7 @@ function PricingPage() {
                 <p className="mt-4 font-display text-2xl text-ember">
                   → {item.arrow}
                 </p>
-                <p className="mt-3 text-sm text-muted-foreground">{item.copy}</p>
+                <p className="mt-3 text-base text-muted-foreground">{item.copy}</p>
               </div>
             </Reveal>
           ))}
@@ -202,7 +202,7 @@ function PricingPage() {
           copy="Both paths run on the same Wheelint platform. Enterprise ERP adds what a network needs beyond a single location."
         />
         <Reveal delay={80} className="mt-12 overflow-hidden rounded-2xl border border-hairline">
-          <table className="w-full min-w-[36rem] text-left text-sm">
+          <table className="w-full min-w-[36rem] text-left text-base">
             <caption className="sr-only">
               Comparison of the Wheelint Standard Plan and Enterprise ERP
             </caption>

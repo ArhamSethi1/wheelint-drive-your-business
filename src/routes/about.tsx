@@ -80,7 +80,7 @@ function AboutPage() {
         <div className="relative mx-auto w-full max-w-3xl px-5 py-16 sm:px-8 sm:py-24">
           <Reveal>
             <p className="eyebrow">About Wheelint</p>
-            <h1 className="mt-4 text-4xl leading-[1.04] sm:text-5xl">
+            <h1 className="mt-4 text-5xl font-semibold leading-[1.03] sm:text-6xl lg:text-7xl">
               Making automobile business management simpler, clearer and more
               connected
             </h1>
@@ -102,7 +102,7 @@ function AboutPage() {
               title="Designed around real operational needs"
               copy="Wheelint is built around how automobile businesses actually work: vehicles arriving, estimates approved, parts issued, jobs closed, invoices raised and customers returning."
             />
-            <Reveal delay={100} className="mt-8 space-y-5 text-sm leading-relaxed text-muted-foreground sm:text-base">
+            <Reveal delay={100} className="mt-8 space-y-5 text-base leading-relaxed text-muted-foreground sm:text-base">
               <p>
                 Workshops, dealerships and larger automobile networks share the
                 same underlying problem: the information needed to run the

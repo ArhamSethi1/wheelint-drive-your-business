@@ -116,7 +116,7 @@ function ContactPage() {
         <div className="relative mx-auto w-full max-w-3xl px-5 py-16 text-center sm:px-8 sm:py-20">
           <Reveal>
             <p className="eyebrow">Contact</p>
-            <h1 className="mt-4 text-4xl leading-[1.04] sm:text-5xl">
+            <h1 className="mt-4 text-5xl font-semibold leading-[1.03] sm:text-6xl lg:text-7xl">
               Let's talk about your automobile business
             </h1>
             <p className="mt-6 text-base leading-relaxed text-muted-foreground sm:text-lg">
@@ -137,7 +137,7 @@ function ContactPage() {
               className="surface-panel rounded-2xl p-6 sm:p-9"
             >
               <h2 className="text-2xl sm:text-3xl">Request an enquiry</h2>
-              <p className="mt-3 text-sm text-muted-foreground">
+              <p className="mt-3 text-base text-muted-foreground">
                 Fill in a few details and we will be in touch.
               </p>
 
@@ -198,7 +198,7 @@ function ContactPage() {
                     </SelectContent>
                   </Select>
                   {errors.businessType ? (
-                    <p id="businessType-error" className="mt-2 text-xs text-destructive">
+                    <p id="businessType-error" className="mt-2 text-sm text-destructive">
                       {errors.businessType}
                     </p>
                   ) : null}
@@ -231,7 +231,7 @@ function ContactPage() {
           <Reveal delay={90} className="space-y-6">
             <div className="surface-panel rounded-2xl p-6 sm:p-8">
               <h2 className="font-display text-lg font-semibold">Contact details</h2>
-              <address className="mt-5 space-y-4 text-sm not-italic text-muted-foreground">
+              <address className="mt-5 space-y-4 text-base not-italic text-muted-foreground">
                 <p className="font-display text-base font-semibold text-foreground">
                   Tylect Technologies Pvt. Ltd.
                 </p>
@@ -261,7 +261,7 @@ function ContactPage() {
               <h2 className="font-display text-lg font-semibold">
                 Prefer to speak directly?
               </h2>
-              <p className="mt-3 text-sm text-muted-foreground">
+              <p className="mt-3 text-base text-muted-foreground">
                 Book a walkthrough of Wheelint, or talk to our team about an
                 enterprise rollout across your network.
               </p>
@@ -311,7 +311,7 @@ function Field({
         className="mt-2"
       />
       {error ? (
-        <p id={`${id}-error`} className="mt-2 text-xs text-destructive">
+        <p id={`${id}-error`} className="mt-2 text-sm text-destructive">
           {error}
         </p>
       ) : null}
