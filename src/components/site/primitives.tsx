@@ -118,8 +118,6 @@ export function SectionHeading({
   );
 }
 
-export type CardTone = "blue" | "orange" | "navy" | "cyan";
-
 export type CardTone = "blue" | "orange" | "navy" | "cyan" | "green";
 
 export const TONES: CardTone[] = ["blue", "orange", "navy", "cyan"];
