@@ -72,7 +72,7 @@ export function Section({
       id={id}
       className={cn(
         "relative px-5 sm:px-8",
-        tight ? "py-16 sm:py-24" : "py-24 sm:py-32 lg:py-40",
+        tight ? "py-14 sm:py-18" : "py-18 sm:py-24 lg:py-28",
         className,
       )}
     >

@@ -4,6 +4,8 @@
 
 @custom-variant dark (&:is(.dark *));
 
+@source inline("chip-blue chip-orange chip-navy chip-cyan tint-blue tint-orange tint-navy tint-cyan");
+
 /*
  * Wheelint — editorial light design system.
  * Pale-sky + warm-sand gradients, near-black ink, single citron accent.
