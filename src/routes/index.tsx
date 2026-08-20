@@ -148,9 +148,9 @@ function HomePage() {
               className="rise-in mt-6 text-5xl font-semibold leading-[1.02] tracking-tight sm:text-6xl lg:text-7xl"
               style={{ animationDelay: "90ms" }}
             >
-              Automobile operations,
+              AutoMobile Operations,
               <br />
-              <span className="text-ember">built for clarity</span>
+              <span className="text-ember">Built for Clarity</span>
             </h1>
             <p
               className="rise-in mt-7 max-w-xl text-lg leading-relaxed text-muted-foreground sm:text-xl"
