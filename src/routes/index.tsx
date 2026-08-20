@@ -215,7 +215,7 @@ function HomePage() {
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {PILLARS.map((item, index) => (
             <Reveal key={item.title} delay={index * 80}>
-              <FeatureCard {...item} tone={TONES[index % TONES.length]} />
+              <FeatureCard {...item} tone={TONES[index % TONES.length]!} />
             </Reveal>
           ))}
         </div>
@@ -280,7 +280,7 @@ function HomePage() {
         <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {CAPABILITIES.map((item, index) => (
             <Reveal key={item.title} delay={index * 60}>
-              <FeatureCard {...item} tone={TONES[index % TONES.length]} />
+              <FeatureCard {...item} tone={TONES[index % TONES.length]!} />
             </Reveal>
           ))}
         </div>
@@ -357,7 +357,7 @@ function HomePage() {
             },
           ].map((item, index) => (
             <Reveal key={item.title} delay={index * 70}>
-              <FeatureCard {...item} tone={TONES[index % TONES.length]} />
+              <FeatureCard {...item} tone={TONES[index % TONES.length]!} />
             </Reveal>
           ))}
         </div>

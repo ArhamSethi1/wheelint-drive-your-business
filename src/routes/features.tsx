@@ -285,7 +285,7 @@ function FeaturesPage() {
                 title={item.title}
                 copy={item.copy}
                 points={item.points}
-                tone={TONES[index % TONES.length]}
+                tone={TONES[index % TONES.length]!}
               />
             </Reveal>
           ))}

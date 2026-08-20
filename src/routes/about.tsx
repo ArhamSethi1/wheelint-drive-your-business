@@ -144,7 +144,7 @@ function AboutPage() {
         <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {PHILOSOPHY.map((item, index) => (
             <Reveal key={item.title} delay={index * 60}>
-              <FeatureCard {...item} tone={TONES[index % TONES.length]} />
+              <FeatureCard {...item} tone={TONES[index % TONES.length]!} />
             </Reveal>
           ))}
         </div>
