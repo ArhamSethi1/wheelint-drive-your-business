@@ -218,7 +218,9 @@ function FeaturesPage() {
                 }`}
               >
                 <div className={index % 2 === 1 ? "lg:order-2" : undefined}>
-                  <div className="chip-blue mb-6 inline-flex h-16 w-16 items-center justify-center rounded-2xl">
+                  <div
+                    className={`mb-6 inline-flex h-16 w-16 items-center justify-center rounded-2xl chip-${TONES[index % TONES.length]}`}
+                  >
                     {item.icon}
                   </div>
                   <h3 className="text-3xl font-semibold sm:text-4xl">{item.title}</h3>
