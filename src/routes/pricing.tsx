@@ -126,7 +126,7 @@ function TermCard({ term }: { term: (typeof TERMS)[number] }) {
   const s = TERM_STYLES[term.tone];
   return (
     <div
-      className={`hover-glow relative flex h-full flex-col rounded-2xl border bg-card p-5 shadow-[var(--shadow-panel)] ${s.card}`}
+      className={`hover-glow plan-card group relative flex h-full flex-col rounded-2xl border bg-card p-5 shadow-[var(--shadow-panel)] ${s.card}`}
     >
       <div className="flex min-h-6 items-start justify-between gap-2">
         <h3 className="text-lg font-semibold">{term.name}</h3>
@@ -178,10 +178,10 @@ function TermCard({ term }: { term: (typeof TERMS)[number] }) {
       </ul>
 
       <div className="mt-auto flex flex-col gap-2 pt-5">
-        <Button asChild size="sm">
+        <Button asChild size="sm" className="cta-anim">
           <Link to="/contact">Start Free Trial</Link>
         </Button>
-        <Button asChild size="sm" variant="outline">
+        <Button asChild size="sm" variant="outline" className="cta-anim">
           <Link to="/contact">Request a Demo</Link>
         </Button>
       </div>
