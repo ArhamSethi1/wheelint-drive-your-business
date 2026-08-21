@@ -126,65 +126,69 @@ function TermCard({ term }: { term: (typeof TERMS)[number] }) {
   const s = TERM_STYLES[term.tone];
   return (
     <div
-      className={`hover-glow relative flex h-full flex-col rounded-2xl border bg-card p-6 shadow-[var(--shadow-panel)] sm:p-7 ${s.card}`}
+      className={`hover-glow relative flex h-full flex-col rounded-2xl border bg-card p-5 shadow-[var(--shadow-panel)] ${s.card}`}
     >
-      {term.badge ? (
-        <span
-          className={`absolute -top-3 left-6 rounded-full px-3 py-1 text-[0.7rem] font-bold uppercase tracking-[0.12em] ${s.badge}`}
-        >
-          {term.badge}
-        </span>
-      ) : null}
+      <div className="flex min-h-6 items-start justify-between gap-2">
+        <h3 className="text-lg font-semibold">{term.name}</h3>
+        {term.badge ? (
+          <span
+            className={`shrink-0 rounded-full px-2.5 py-1 text-[0.6rem] font-bold uppercase tracking-[0.1em] ${s.badge}`}
+          >
+            {term.badge}
+          </span>
+        ) : null}
+      </div>
+      <p className="mt-1 text-xs text-muted-foreground">{term.note}</p>
 
-      <h3 className="mt-2 text-2xl font-semibold sm:text-3xl">{term.name}</h3>
-      <p className="mt-2 text-base text-muted-foreground">{term.note}</p>
-
-      <div className="mt-6 border-t border-hairline pt-6">
-        <p className="flex flex-wrap items-baseline gap-2">
+      <div className="mt-4 border-t border-hairline pt-4">
+        <p className="flex flex-wrap items-baseline gap-1.5">
           {term.was ? (
-            <span className="text-base text-muted-foreground line-through">
+            <span className="text-xs text-muted-foreground line-through">
               {term.was}
             </span>
           ) : null}
-          <span className={`font-display text-4xl font-bold sm:text-5xl ${s.price}`}>
+          <span className={`font-display text-2xl font-bold ${s.price}`}>
             {term.price}
           </span>
-          <span className="text-base text-muted-foreground">{term.unit}</span>
+          <span className="text-xs text-muted-foreground">{term.unit}</span>
         </p>
-        <p className="mt-2 text-sm text-muted-foreground">per business location</p>
+        <p className="mt-1 text-[0.7rem] text-muted-foreground">
+          per business location
+        </p>
         {term.save ? (
           <p
-            className={`mt-4 inline-flex items-center gap-2 rounded-full px-3.5 py-1.5 text-sm font-semibold ${s.save}`}
+            className={`mt-3 inline-flex items-center gap-1.5 rounded-full px-2.5 py-1 text-[0.7rem] font-semibold ${s.save}`}
           >
-            <ArrowDown aria-hidden="true" className="h-4 w-4" />
+            <ArrowDown aria-hidden="true" className="h-3 w-3" />
             {term.save}
           </p>
         ) : null}
       </div>
 
-      <ul className="mt-7 space-y-3 text-base text-muted-foreground">
+      <ul className="mt-4 space-y-1.5 text-xs text-muted-foreground">
         {STANDARD_INCLUDES.map((item) => (
-          <li key={item} className="flex gap-3">
+          <li key={item} className="flex gap-2">
             <CheckCircle2
               aria-hidden="true"
-              className={`mt-0.5 h-5 w-5 shrink-0 ${s.check}`}
+              className={`mt-0.5 h-3.5 w-3.5 shrink-0 ${s.check}`}
             />
             <span>{item}</span>
           </li>
         ))}
       </ul>
 
-      <div className="mt-auto flex flex-col gap-3 pt-8">
-        <Button asChild size="lg">
+      <div className="mt-auto flex flex-col gap-2 pt-5">
+        <Button asChild size="sm">
           <Link to="/contact">Start Free Trial</Link>
         </Button>
-        <Button asChild size="lg" variant="outline">
+        <Button asChild size="sm" variant="outline">
           <Link to="/contact">Request a Demo</Link>
         </Button>
       </div>
     </div>
   );
 }
+
 
 function PricingPage() {
   return (
