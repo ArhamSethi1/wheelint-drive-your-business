@@ -29,21 +29,21 @@ export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       {
-        title: "Wheelint — Automobile Business Management Software",
+        title: "Wheelint — Automobile Operations, Built for Clarity",
       },
       {
         name: "description",
         content:
-          "Wheelint brings billing, job cards, inventory, customers and reporting for workshops, dealerships and automobile networks into one connected platform.",
+          "Wheelint is a software for Automobile Billing, job cards, spare parts, customers and reporting in one connected platform — for workshops, dealerships and dealer networks.",
       },
       {
         property: "og:title",
-        content: "Wheelint — Automobile Business Management Software",
+        content: "Wheelint — Automobile Operations, Built for Clarity",
       },
       {
         property: "og:description",
         content:
-          "Run service, sales, parts and accounts for your automobile business from a single platform built for workshops, dealerships and dealer networks.",
+          "Wheelint is a software for Automobile Billing, job cards, spare parts, customers and reporting in one connected platform — for workshops, dealerships and dealer networks.",
       },
       { property: "og:type", content: "website" },
       { property: "og:url", content: "/" },

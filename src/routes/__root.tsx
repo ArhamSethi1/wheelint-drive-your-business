@@ -13,6 +13,7 @@ import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 import { SiteHeader } from "@/components/site/site-header";
 import { SiteFooter } from "@/components/site/site-footer";
+import { WhatsAppButton } from "@/components/site/whatsapp-button";
 import { Toaster } from "@/components/ui/sonner";
 
 function NotFoundComponent() {
@@ -164,6 +165,7 @@ function RootComponent() {
         </main>
         <SiteFooter />
       </div>
+      <WhatsAppButton />
       <Toaster />
     </QueryClientProvider>
   );

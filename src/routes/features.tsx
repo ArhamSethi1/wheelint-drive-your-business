@@ -31,7 +31,7 @@ export const Route = createFileRoute("/features")({
       {
         name: "description",
         content:
-          "Billing, job cards, spare parts inventory, customer and vehicle records, workshop operations and analytics — the capabilities inside Wheelint.",
+          "Wheelint is a software for Automobile Billing, job cards, spare parts, customers and reporting in one connected platform — for workshops, dealerships and dealer networks.",
       },
       {
         property: "og:title",
