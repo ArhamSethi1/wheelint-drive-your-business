@@ -126,65 +126,69 @@ function TermCard({ term }: { term: (typeof TERMS)[number] }) {
   const s = TERM_STYLES[term.tone];
   return (
     <div
-      className={`hover-glow relative flex h-full flex-col rounded-2xl border bg-card p-6 shadow-[var(--shadow-panel)] sm:p-7 ${s.card}`}
+      className={`hover-glow relative flex h-full flex-col rounded-2xl border bg-card p-5 shadow-[var(--shadow-panel)] ${s.card}`}
     >
-      {term.badge ? (
-        <span
-          className={`absolute -top-3 left-6 rounded-full px-3 py-1 text-[0.7rem] font-bold uppercase tracking-[0.12em] ${s.badge}`}
-        >
-          {term.badge}
-        </span>
-      ) : null}
+      <div className="flex min-h-6 items-start justify-between gap-2">
+        <h3 className="text-lg font-semibold">{term.name}</h3>
+        {term.badge ? (
+          <span
+            className={`shrink-0 rounded-full px-2.5 py-1 text-[0.6rem] font-bold uppercase tracking-[0.1em] ${s.badge}`}
+          >
+            {term.badge}
+          </span>
+        ) : null}
+      </div>
+      <p className="mt-1 text-xs text-muted-foreground">{term.note}</p>
 
-      <h3 className="mt-2 text-2xl font-semibold sm:text-3xl">{term.name}</h3>
-      <p className="mt-2 text-base text-muted-foreground">{term.note}</p>
-
-      <div className="mt-6 border-t border-hairline pt-6">
-        <p className="flex flex-wrap items-baseline gap-2">
+      <div className="mt-4 border-t border-hairline pt-4">
+        <p className="flex flex-wrap items-baseline gap-1.5">
           {term.was ? (
-            <span className="text-base text-muted-foreground line-through">
+            <span className="text-xs text-muted-foreground line-through">
               {term.was}
             </span>
           ) : null}
-          <span className={`font-display text-4xl font-bold sm:text-5xl ${s.price}`}>
+          <span className={`font-display text-2xl font-bold ${s.price}`}>
             {term.price}
           </span>
-          <span className="text-base text-muted-foreground">{term.unit}</span>
+          <span className="text-xs text-muted-foreground">{term.unit}</span>
         </p>
-        <p className="mt-2 text-sm text-muted-foreground">per business location</p>
+        <p className="mt-1 text-[0.7rem] text-muted-foreground">
+          per business location
+        </p>
         {term.save ? (
           <p
-            className={`mt-4 inline-flex items-center gap-2 rounded-full px-3.5 py-1.5 text-sm font-semibold ${s.save}`}
+            className={`mt-3 inline-flex items-center gap-1.5 rounded-full px-2.5 py-1 text-[0.7rem] font-semibold ${s.save}`}
           >
-            <ArrowDown aria-hidden="true" className="h-4 w-4" />
+            <ArrowDown aria-hidden="true" className="h-3 w-3" />
             {term.save}
           </p>
         ) : null}
       </div>
 
-      <ul className="mt-7 space-y-3 text-base text-muted-foreground">
+      <ul className="mt-4 space-y-1.5 text-xs text-muted-foreground">
         {STANDARD_INCLUDES.map((item) => (
-          <li key={item} className="flex gap-3">
+          <li key={item} className="flex gap-2">
             <CheckCircle2
               aria-hidden="true"
-              className={`mt-0.5 h-5 w-5 shrink-0 ${s.check}`}
+              className={`mt-0.5 h-3.5 w-3.5 shrink-0 ${s.check}`}
             />
             <span>{item}</span>
           </li>
         ))}
       </ul>
 
-      <div className="mt-auto flex flex-col gap-3 pt-8">
-        <Button asChild size="lg">
+      <div className="mt-auto flex flex-col gap-2 pt-5">
+        <Button asChild size="sm">
           <Link to="/contact">Start Free Trial</Link>
         </Button>
-        <Button asChild size="lg" variant="outline">
+        <Button asChild size="sm" variant="outline">
           <Link to="/contact">Request a Demo</Link>
         </Button>
       </div>
     </div>
   );
 }
+
 
 function PricingPage() {
   return (
@@ -210,16 +214,16 @@ function PricingPage() {
       </section>
 
       <Section>
-        <div className="grid gap-6 xl:grid-cols-[3fr_1fr]">
-          <Reveal className="rounded-3xl border border-hairline bg-surface p-5 sm:p-7">
-            <span className="tint-blue inline-block rounded-full px-3.5 py-1.5 text-[0.7rem] font-bold uppercase tracking-[0.12em] text-brand">
+        <div className="grid gap-5 xl:grid-cols-[3fr_1fr]">
+          <Reveal className="rounded-2xl border border-hairline bg-surface p-4 sm:p-5">
+            <span className="tint-blue inline-block rounded-full px-3 py-1 text-[0.65rem] font-bold uppercase tracking-[0.12em] text-brand">
               Single business setup
             </span>
-            <p className="mt-3 text-base text-muted-foreground">
+            <p className="mt-2 text-sm text-muted-foreground">
               Flexible terms for one workshop, service centre or dealership.
               Commit longer, save more.
             </p>
-            <div className="mt-7 grid gap-6 lg:grid-cols-3">
+            <div className="mt-5 grid gap-4 lg:grid-cols-3">
               {TERMS.map((term, index) => (
                 <Reveal key={term.name} delay={index * 140}>
                   <TermCard term={term} />
@@ -230,43 +234,43 @@ function PricingPage() {
 
           <Reveal
             delay={220}
-            className="rounded-3xl border border-orange/40 bg-[oklch(0.985_0.02_70)] p-5 sm:p-7"
+            className="rounded-2xl border border-orange/40 bg-[oklch(0.985_0.02_70)] p-4 sm:p-5"
           >
-            <span className="tint-orange inline-block rounded-full px-3.5 py-1.5 text-[0.7rem] font-bold uppercase tracking-[0.12em] text-[oklch(0.5_0.14_48)]">
+            <span className="tint-orange inline-block rounded-full px-3 py-1 text-[0.65rem] font-bold uppercase tracking-[0.12em] text-[oklch(0.5_0.14_48)]">
               Multi-location setup
             </span>
-            <p className="mt-3 text-base text-muted-foreground">
+            <p className="mt-2 text-sm text-muted-foreground">
               Tailored setup for dealer networks and OEM operations.
             </p>
 
-            <div className="hover-glow mt-7 flex h-[calc(100%-6.5rem)] flex-col rounded-2xl border border-orange/40 bg-card p-6 shadow-[var(--shadow-panel)] sm:p-7">
-              <h3 className="text-2xl font-semibold sm:text-3xl">Enterprise ERP</h3>
-              <p className="mt-2 text-base text-muted-foreground">
+            <div className="hover-glow mt-5 flex flex-col rounded-2xl border border-orange/40 bg-card p-5 shadow-[var(--shadow-panel)]">
+              <h3 className="text-lg font-semibold">Enterprise ERP</h3>
+              <p className="mt-1 text-xs text-muted-foreground">
                 For OEMs, dealer networks and multi-location enterprises
               </p>
-              <div className="mt-6 border-t border-hairline pt-6">
-                <p className="font-display text-3xl font-bold text-[oklch(0.62_0.18_45)] sm:text-4xl">
+              <div className="mt-4 border-t border-hairline pt-4">
+                <p className="font-display text-2xl font-bold text-[oklch(0.62_0.18_45)]">
                   Custom Pricing
                 </p>
-                <p className="mt-2 text-sm text-muted-foreground">
+                <p className="mt-1 text-[0.7rem] text-muted-foreground">
                   Scoped to your network size, locations and requirements.
                 </p>
               </div>
-              <ul className="mt-7 space-y-3 text-base text-muted-foreground">
+              <ul className="mt-4 space-y-1.5 text-xs text-muted-foreground">
                 {ENTERPRISE_INCLUDES.map((item) => (
-                  <li key={item} className="flex gap-3">
+                  <li key={item} className="flex gap-2">
                     <CheckCircle2
                       aria-hidden="true"
-                      className="mt-0.5 h-5 w-5 shrink-0 text-[oklch(0.62_0.18_45)]"
+                      className="mt-0.5 h-3.5 w-3.5 shrink-0 text-[oklch(0.62_0.18_45)]"
                     />
                     <span>{item}</span>
                   </li>
                 ))}
               </ul>
-              <div className="mt-auto pt-8">
+              <div className="mt-auto pt-5">
                 <Button
                   asChild
-                  size="lg"
+                  size="sm"
                   className="w-full bg-[oklch(0.66_0.18_45)] text-[oklch(0.99_0_0)] hover:bg-[oklch(0.6_0.18_45)]"
                 >
                   <Link to="/contact">Talk to Sales</Link>
@@ -276,6 +280,7 @@ function PricingPage() {
           </Reveal>
         </div>
       </Section>
+
 
 
       <Section className="bg-sand-wash border-y border-hairline">
