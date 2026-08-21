@@ -156,8 +156,9 @@ function HomePage() {
               className="rise-in mt-7 max-w-xl text-lg leading-relaxed text-muted-foreground sm:text-xl"
               style={{ animationDelay: "180ms" }}
             >
-              Billing, job cards, spare parts, customers and reporting in one
-              connected platform — for workshops, dealerships and dealer networks.
+              Wheelint is a software for Automobile Billing, job cards, spare
+              parts, customers and reporting in one connected platform — for
+              workshops, dealerships and dealer networks.
             </p>
             <div
               className="rise-in mt-10 flex flex-col gap-4 sm:flex-row"
