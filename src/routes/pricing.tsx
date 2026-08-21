@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { Building2, Check, Wrench } from "lucide-react";
+import { ArrowDown, Building2, CheckCircle2, Wrench } from "lucide-react";
 
 import {
   CtaBand,
