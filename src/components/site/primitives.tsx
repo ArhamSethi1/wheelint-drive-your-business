@@ -46,8 +46,10 @@ export function Reveal({
       ref={ref}
       style={{ transitionDelay: `${delay}ms` }}
       className={cn(
-        "transition-all duration-700 ease-out will-change-transform motion-reduce:transition-none",
-        shown ? "translate-y-0 opacity-100" : "translate-y-6 opacity-0",
+        "transition-all duration-[1100ms] ease-[cubic-bezier(0.16,1,0.3,1)] will-change-transform motion-reduce:transition-none",
+        shown
+          ? "translate-y-0 scale-100 opacity-100 blur-0"
+          : "translate-y-8 scale-[0.985] opacity-0 blur-[6px]",
         className,
       )}
     >
@@ -55,6 +57,7 @@ export function Reveal({
     </Tag>
   );
 }
+
 
 export function Section({
   children,
@@ -115,7 +118,7 @@ export function SectionHeading({
   );
 }
 
-export type CardTone = "blue" | "orange" | "navy" | "cyan";
+export type CardTone = "blue" | "orange" | "navy" | "cyan" | "green";
 
 export const TONES: CardTone[] = ["blue", "orange", "navy", "cyan"];
 
@@ -124,6 +127,7 @@ const TONE_SURFACE: Record<CardTone, string> = {
   orange: "tint-orange",
   navy: "tint-navy",
   cyan: "tint-cyan",
+  green: "tint-green",
 };
 
 const TONE_CHIP: Record<CardTone, string> = {
@@ -131,7 +135,9 @@ const TONE_CHIP: Record<CardTone, string> = {
   orange: "chip-orange",
   navy: "chip-navy",
   cyan: "chip-cyan",
+  green: "chip-green",
 };
+
 
 export function FeatureCard({
   icon,
