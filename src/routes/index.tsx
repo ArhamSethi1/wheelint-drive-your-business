@@ -150,7 +150,9 @@ function HomePage() {
             >
               Automobile Operations,
               <br />
-              <span className="text-ember">Built for Clarity</span>
+              <span className="text-bulge mt-2">
+                <span className="text-ember">Built for Clarity</span>
+              </span>
             </h1>
             <p
               className="rise-in mt-7 max-w-xl text-lg leading-relaxed text-muted-foreground sm:text-xl"
@@ -177,7 +179,15 @@ function HomePage() {
                 variant="outline"
                 className="h-16 w-full rounded-full px-10 text-lg sm:w-auto"
               >
-                <Link to="/features">Explore the platform</Link>
+                <Link to="/features">Explore Software Features</Link>
+              </Button>
+              <Button
+                asChild
+                size="lg"
+                variant="secondary"
+                className="h-16 w-full rounded-full px-10 text-lg sm:hidden"
+              >
+                <Link to="/pricing">View Wheelint Pricing</Link>
               </Button>
             </div>
             <div
@@ -186,17 +196,20 @@ function HomePage() {
             >
               {["Workshops", "Dealerships", "Dealer networks", "OEM outlets"].map(
                 (chip, i) => (
-                  <span
+                  <Link
                     key={chip}
-                    className={`rounded-full px-5 py-2.5 text-sm font-semibold ${
+                    to="/features"
+                    hash="solutions"
+                    className={`hover-lift rounded-full px-5 py-2.5 text-sm font-semibold transition-transform ${
                       ["tint-blue", "tint-orange", "tint-cyan", "tint-navy"][i]
                     }`}
                   >
                     {chip}
-                  </span>
+                  </Link>
                 ),
               )}
             </div>
+
           </div>
 
           <div className="rise-in" style={{ animationDelay: "300ms" }}>
