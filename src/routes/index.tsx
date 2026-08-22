@@ -271,17 +271,18 @@ function HomePage() {
             </Reveal>
           </div>
           <Reveal delay={80}>
-            <div className="surface-panel overflow-hidden rounded-3xl p-3">
+            <div className="surface-panel hover-lift overflow-hidden rounded-3xl p-3">
               <img
-                src={workshopImage}
-                alt="Automobile service workshop with vehicles on lifts during evening shift"
-                width={1600}
-                height={912}
+                src={workshopTeam.url}
+                alt="Service advisor showing a digital job card to customers in an automobile workshop"
+                width={612}
+                height={408}
                 loading="lazy"
                 className="h-auto w-full rounded-2xl object-cover"
               />
             </div>
           </Reveal>
+
         </div>
       </Section>
 
