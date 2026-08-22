@@ -7,6 +7,7 @@ import {
   Section,
   SectionHeading,
 } from "@/components/site/primitives";
+import { TalkToSales } from "@/components/site/talk-to-sales";
 import { Button } from "@/components/ui/button";
 
 export const Route = createFileRoute("/pricing")({
