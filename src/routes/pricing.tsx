@@ -7,6 +7,7 @@ import {
   Section,
   SectionHeading,
 } from "@/components/site/primitives";
+import { TalkToSales } from "@/components/site/talk-to-sales";
 import { Button } from "@/components/ui/button";
 
 export const Route = createFileRoute("/pricing")({
@@ -243,7 +244,7 @@ function PricingPage() {
               Tailored setup for dealer networks and OEM operations.
             </p>
 
-            <div className="hover-glow mt-5 flex flex-col rounded-2xl border border-orange/40 bg-card p-5 shadow-[var(--shadow-panel)]">
+            <div className="hover-glow plan-card mt-5 flex flex-col rounded-2xl border border-orange/40 bg-card p-5 shadow-[var(--shadow-panel)]">
               <h3 className="text-lg font-semibold">Enterprise ERP</h3>
               <p className="mt-1 text-xs text-muted-foreground">
                 For OEMs, dealer networks and multi-location enterprises
@@ -268,13 +269,12 @@ function PricingPage() {
                 ))}
               </ul>
               <div className="mt-auto pt-5">
-                <Button
-                  asChild
+                <TalkToSales
+                  label="Talk to Sales"
                   size="sm"
+                  variant="default"
                   className="w-full bg-[oklch(0.66_0.18_45)] text-[oklch(0.99_0_0)] hover:bg-[oklch(0.6_0.18_45)]"
-                >
-                  <Link to="/contact">Talk to Sales</Link>
-                </Button>
+                />
               </div>
             </div>
           </Reveal>

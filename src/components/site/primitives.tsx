@@ -3,6 +3,7 @@ import { useEffect, useRef, useState, type ReactNode } from "react";
 
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
+import { TalkToSales } from "@/components/site/talk-to-sales";
 
 export function Reveal({
   children,
@@ -221,9 +222,7 @@ export function CtaBand({
             >
               <Link to="/pricing">Start free trial</Link>
             </Button>
-            <Button asChild size="lg" variant="ghost" className="h-14 w-full px-8 text-base sm:w-auto">
-              <Link to="/contact">Talk to sales</Link>
-            </Button>
+            <TalkToSales className="h-14 w-full px-8 text-base sm:w-auto" />
           </div>
         </div>
       </Reveal>
