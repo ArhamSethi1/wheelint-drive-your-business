@@ -200,7 +200,10 @@ function FeaturesPage() {
               style={{ animationDelay: "90ms" }}
             >
               Every Operation,{" "}
-              <span className="text-ember">One Platform</span>
+              <span className="text-bulge">
+                <span className="text-ember">One Platform</span>
+              </span>
+
             </h1>
             <p
               className="rise-in mt-7 max-w-xl text-lg leading-relaxed text-muted-foreground sm:text-xl"
