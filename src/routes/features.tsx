@@ -19,9 +19,7 @@ import phoneApp from "@/assets/phone-app.jpg";
 import screenAnalytics from "@/assets/screen-analytics.jpg";
 import screenBilling from "@/assets/screen-billing.jpg";
 import screenInventory from "@/assets/screen-inventory.jpg";
-import jobCardPhoto from "@/assets/image-6.png.asset.json";
-import customerPhoto from "@/assets/image-7.png.asset.json";
-import workshopOpsPhoto from "@/assets/image-8.png.asset.json";
+import { customerPhoto, jobCardPhoto, workshopOpsPhoto } from "@/assets/photos";
 import { DeviceMockup } from "@/components/site/device-mockup";
 import {
   CtaBand,
@@ -89,7 +87,7 @@ const CATEGORIES: Category[] = [
     copy: "Take a vehicle from estimate to job card to delivery with clear ownership at each step.",
     visibility: "Live status of every open job, assigned technician and pending approval.",
     matters: "Nothing sits unnoticed and customers get honest answers on timelines.",
-    image: jobCardPhoto.url,
+    image: jobCardPhoto,
     alt: "Service advisor reviewing a digital job card with customers beside a lifted vehicle",
     photo: true,
   },
@@ -108,7 +106,7 @@ const CATEGORIES: Category[] = [
     copy: "Maintain owners, vehicles, service history and follow-ups against a single record.",
     visibility: "Complete visit history and due services for any vehicle in seconds.",
     matters: "Repeat business becomes easier because the relationship is documented.",
-    image: customerPhoto.url,
+    image: customerPhoto,
     alt: "Sales advisor speaking with a couple seated in a car at a dealership",
     photo: true,
   },
@@ -118,7 +116,7 @@ const CATEGORIES: Category[] = [
     copy: "Plan appointments, bay allocation and technician workload across the working day.",
     visibility: "Where capacity is free, where it is stretched and what is scheduled next.",
     matters: "The floor runs to a plan instead of reacting to whatever arrives.",
-    image: workshopOpsPhoto.url,
+    image: workshopOpsPhoto,
     alt: "Two technicians inspecting the underside of a vehicle on a workshop lift",
     photo: true,
   },

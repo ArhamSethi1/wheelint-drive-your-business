@@ -14,7 +14,7 @@ import {
 
 import dashboardHero from "@/assets/dashboard-hero.jpg";
 import phoneApp from "@/assets/phone-app.jpg";
-import workshopTeam from "@/assets/image-5.png.asset.json";
+import { workshopTeamPhoto } from "@/assets/photos";
 import screenAnalytics from "@/assets/screen-analytics.jpg";
 
 import { DeviceMockup } from "@/components/site/device-mockup";
@@ -277,7 +277,7 @@ function HomePage() {
           <Reveal delay={80}>
             <div className="surface-panel hover-lift overflow-hidden rounded-3xl p-3">
               <img
-                src={workshopTeam.url}
+                src={workshopTeamPhoto}
                 alt="Service advisor showing a digital job card to customers in an automobile workshop"
                 width={612}
                 height={408}
