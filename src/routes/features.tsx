@@ -246,6 +246,25 @@ function FeaturesPage() {
           copy="Each area answers the same three questions: what it does, what it makes visible and why that matters on the floor."
         />
 
+        <Reveal delay={80} className="mt-10">
+          <div className="flex flex-wrap gap-3">
+            {CAPABILITY_ICONS.map((item) => (
+              <span
+                key={item.label}
+                className="hover-lift surface-panel flex items-center gap-2.5 rounded-2xl px-4 py-3 text-sm font-semibold"
+              >
+                <span
+                  aria-hidden="true"
+                  className={`inline-flex h-9 w-9 items-center justify-center rounded-xl ${item.chip}`}
+                >
+                  {item.icon}
+                </span>
+                {item.label}
+              </span>
+            ))}
+          </div>
+        </Reveal>
+
         <div className="mt-14 space-y-16 lg:space-y-24">
           {CATEGORIES.map((item, index) => (
             <Reveal key={item.title}>
@@ -285,25 +304,26 @@ function FeaturesPage() {
                 </div>
                 <div className={index % 2 === 1 ? "lg:order-1" : undefined}>
                   {item.image ? (
-                    <ScreenFrame
-                      src={item.image}
-                      alt={item.alt ?? item.title}
-                      width={1408}
-                      height={1008}
-                    />
-                  ) : (
-                    <div className="surface-panel grid-lines rounded-xl p-8 sm:p-10">
-                      <p className="eyebrow">
-                        In practice
-                      </p>
-                      <p className="mt-4 text-lg leading-relaxed sm:text-xl">
-                        {item.visibility}
-                      </p>
-                      <p className="mt-4 text-base text-muted-foreground">
-                        {item.matters}
-                      </p>
-                    </div>
-                  )}
+                    item.photo ? (
+                      <div className="surface-panel hover-lift overflow-hidden rounded-3xl p-3">
+                        <img
+                          src={item.image}
+                          alt={item.alt ?? item.title}
+                          width={800}
+                          height={533}
+                          loading="lazy"
+                          className="h-auto w-full rounded-2xl object-cover"
+                        />
+                      </div>
+                    ) : (
+                      <ScreenFrame
+                        src={item.image}
+                        alt={item.alt ?? item.title}
+                        width={1408}
+                        height={1008}
+                      />
+                    )
+                  ) : null}
                 </div>
               </div>
             </Reveal>
@@ -311,13 +331,14 @@ function FeaturesPage() {
         </div>
       </Section>
 
-      <Section className="bg-sand-wash border-y border-hairline">
+      <Section id="solutions" className="bg-sand-wash border-y border-hairline">
         <SectionHeading
           eyebrow="Solutions"
           title="Shaped to the kind of business you run"
           copy="The same platform, configured for the scale and structure of your operation."
         />
         <div className="mt-12 grid gap-5 sm:grid-cols-2">
+
           {SOLUTIONS.map((item, index) => (
             <Reveal key={item.title} delay={index * 60}>
               <FeatureCard
