@@ -322,23 +322,42 @@ function HomePage() {
             />
             <Reveal delay={100} className="mt-8 space-y-4">
               {[
-                "Revenue, pending payments and service throughput at a glance",
-                "Parts movement and stock exposure across locations",
-                "Branch and outlet comparison for multi-location groups",
-                "Exportable reports for accounts and management review",
-              ].map((line) => (
+                {
+                  icon: <TrendingUp className="h-5 w-5" />,
+                  line: "Revenue, pending payments and service throughput at a glance",
+                },
+                {
+                  icon: <Boxes className="h-5 w-5" />,
+                  line: "Parts movement and stock exposure across locations",
+                },
+                {
+                  icon: <Building2 className="h-5 w-5" />,
+                  line: "Branch and outlet comparison for multi-location groups",
+                },
+                {
+                  icon: <FileSpreadsheet className="h-5 w-5" />,
+                  line: "Exportable reports for accounts and management review",
+                },
+              ].map((item, index) => (
                 <div
-                  key={line}
-                  className="tint-blue flex items-start gap-3 rounded-2xl px-5 py-4 text-base"
+                  key={item.line}
+                  className={`hover-lift flex items-center gap-4 rounded-2xl px-5 py-4 text-base font-medium shadow-[var(--shadow-panel)] ${
+                    ["tint-blue", "tint-orange", "tint-cyan", "tint-navy"][index]
+                  }`}
                 >
                   <span
                     aria-hidden="true"
-                    className="chip-blue mt-1 h-2.5 w-2.5 shrink-0 rounded-full"
-                  />
-                  <span>{line}</span>
+                    className={`inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-xl ${
+                      ["chip-blue", "chip-orange", "chip-cyan", "chip-navy"][index]
+                    }`}
+                  >
+                    {item.icon}
+                  </span>
+                  <span>{item.line}</span>
                 </div>
               ))}
             </Reveal>
+
           </div>
           <Reveal delay={80}>
             <ScreenFrame
