@@ -79,7 +79,7 @@ function AboutPage() {
         />
         <div className="relative mx-auto w-full max-w-3xl px-5 py-16 sm:px-8 sm:py-24">
           <Reveal>
-            <p className="eyebrow">About Wheelint</p>
+            <p className="eyebrow eyebrow-hero">About Wheelint</p>
             <h1 className="mt-4 text-5xl font-semibold leading-[1.03] sm:text-6xl lg:text-7xl">
               Making automobile business management simpler, clearer and more
               connected
