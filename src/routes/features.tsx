@@ -77,6 +77,9 @@ const CATEGORIES: Category[] = [
     copy: "Take a vehicle from estimate to job card to delivery with clear ownership at each step.",
     visibility: "Live status of every open job, assigned technician and pending approval.",
     matters: "Nothing sits unnoticed and customers get honest answers on timelines.",
+    image: jobCardPhoto.url,
+    alt: "Service advisor reviewing a digital job card with customers beside a lifted vehicle",
+    photo: true,
   },
   {
     icon: <Boxes className="h-7 w-7" />,
@@ -93,6 +96,9 @@ const CATEGORIES: Category[] = [
     copy: "Maintain owners, vehicles, service history and follow-ups against a single record.",
     visibility: "Complete visit history and due services for any vehicle in seconds.",
     matters: "Repeat business becomes easier because the relationship is documented.",
+    image: customerPhoto.url,
+    alt: "Sales advisor speaking with a couple seated in a car at a dealership",
+    photo: true,
   },
   {
     icon: <Wrench className="h-7 w-7" />,
@@ -100,6 +106,9 @@ const CATEGORIES: Category[] = [
     copy: "Plan appointments, bay allocation and technician workload across the working day.",
     visibility: "Where capacity is free, where it is stretched and what is scheduled next.",
     matters: "The floor runs to a plan instead of reacting to whatever arrives.",
+    image: workshopOpsPhoto.url,
+    alt: "Two technicians inspecting the underside of a vehicle on a workshop lift",
+    photo: true,
   },
   {
     icon: <BarChart3 className="h-7 w-7" />,
@@ -111,6 +120,22 @@ const CATEGORIES: Category[] = [
     alt: "Analytics dashboard comparing branch performance and service revenue for a dealer network",
   },
 ];
+
+const CAPABILITY_ICONS = [
+  { icon: <Receipt className="h-6 w-6" />, label: "Invoices", chip: "chip-blue" },
+  { icon: <ClipboardList className="h-6 w-6" />, label: "Job cards", chip: "chip-orange" },
+  { icon: <Boxes className="h-6 w-6" />, label: "Parts", chip: "chip-cyan" },
+  { icon: <Users className="h-6 w-6" />, label: "Customers", chip: "chip-navy" },
+  { icon: <Car className="h-6 w-6" />, label: "Vehicles", chip: "chip-green" },
+  { icon: <CalendarClock className="h-6 w-6" />, label: "Scheduling", chip: "chip-blue" },
+  { icon: <Truck className="h-6 w-6" />, label: "Purchases", chip: "chip-orange" },
+  { icon: <ShieldCheck className="h-6 w-6" />, label: "Warranty", chip: "chip-cyan" },
+  { icon: <Wallet className="h-6 w-6" />, label: "Payments", chip: "chip-navy" },
+  { icon: <Bell className="h-6 w-6" />, label: "Reminders", chip: "chip-green" },
+  { icon: <Wrench className="h-6 w-6" />, label: "Technicians", chip: "chip-blue" },
+  { icon: <BarChart3 className="h-6 w-6" />, label: "Reports", chip: "chip-orange" },
+];
+
 
 const SOLUTIONS = [
   {
