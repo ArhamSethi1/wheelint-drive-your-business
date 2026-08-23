@@ -1,10 +1,16 @@
 import { createFileRoute } from "@tanstack/react-router";
 import {
   BarChart3,
+  Bell,
   Boxes,
+  CalendarClock,
+  Car,
   ClipboardList,
   Receipt,
+  ShieldCheck,
+  Truck,
   Users,
+  Wallet,
   Wrench,
 } from "lucide-react";
 
@@ -13,6 +19,9 @@ import phoneApp from "@/assets/phone-app.jpg";
 import screenAnalytics from "@/assets/screen-analytics.jpg";
 import screenBilling from "@/assets/screen-billing.jpg";
 import screenInventory from "@/assets/screen-inventory.jpg";
+import jobCardPhoto from "@/assets/image-6.png.asset.json";
+import customerPhoto from "@/assets/image-7.png.asset.json";
+import workshopOpsPhoto from "@/assets/image-8.png.asset.json";
 import { DeviceMockup } from "@/components/site/device-mockup";
 import {
   CtaBand,
@@ -23,6 +32,7 @@ import {
   Section,
   SectionHeading,
 } from "@/components/site/primitives";
+
 
 export const Route = createFileRoute("/features")({
   head: () => ({
@@ -59,6 +69,8 @@ type Category = {
   matters: string;
   image?: string;
   alt?: string;
+  photo?: boolean;
+
 };
 
 const CATEGORIES: Category[] = [
@@ -77,6 +89,9 @@ const CATEGORIES: Category[] = [
     copy: "Take a vehicle from estimate to job card to delivery with clear ownership at each step.",
     visibility: "Live status of every open job, assigned technician and pending approval.",
     matters: "Nothing sits unnoticed and customers get honest answers on timelines.",
+    image: jobCardPhoto.url,
+    alt: "Service advisor reviewing a digital job card with customers beside a lifted vehicle",
+    photo: true,
   },
   {
     icon: <Boxes className="h-7 w-7" />,
@@ -93,6 +108,9 @@ const CATEGORIES: Category[] = [
     copy: "Maintain owners, vehicles, service history and follow-ups against a single record.",
     visibility: "Complete visit history and due services for any vehicle in seconds.",
     matters: "Repeat business becomes easier because the relationship is documented.",
+    image: customerPhoto.url,
+    alt: "Sales advisor speaking with a couple seated in a car at a dealership",
+    photo: true,
   },
   {
     icon: <Wrench className="h-7 w-7" />,
@@ -100,6 +118,9 @@ const CATEGORIES: Category[] = [
     copy: "Plan appointments, bay allocation and technician workload across the working day.",
     visibility: "Where capacity is free, where it is stretched and what is scheduled next.",
     matters: "The floor runs to a plan instead of reacting to whatever arrives.",
+    image: workshopOpsPhoto.url,
+    alt: "Two technicians inspecting the underside of a vehicle on a workshop lift",
+    photo: true,
   },
   {
     icon: <BarChart3 className="h-7 w-7" />,
@@ -111,6 +132,22 @@ const CATEGORIES: Category[] = [
     alt: "Analytics dashboard comparing branch performance and service revenue for a dealer network",
   },
 ];
+
+const CAPABILITY_ICONS = [
+  { icon: <Receipt className="h-6 w-6" />, label: "Invoices", chip: "chip-blue" },
+  { icon: <ClipboardList className="h-6 w-6" />, label: "Job cards", chip: "chip-orange" },
+  { icon: <Boxes className="h-6 w-6" />, label: "Parts", chip: "chip-cyan" },
+  { icon: <Users className="h-6 w-6" />, label: "Customers", chip: "chip-navy" },
+  { icon: <Car className="h-6 w-6" />, label: "Vehicles", chip: "chip-green" },
+  { icon: <CalendarClock className="h-6 w-6" />, label: "Scheduling", chip: "chip-blue" },
+  { icon: <Truck className="h-6 w-6" />, label: "Purchases", chip: "chip-orange" },
+  { icon: <ShieldCheck className="h-6 w-6" />, label: "Warranty", chip: "chip-cyan" },
+  { icon: <Wallet className="h-6 w-6" />, label: "Payments", chip: "chip-navy" },
+  { icon: <Bell className="h-6 w-6" />, label: "Reminders", chip: "chip-green" },
+  { icon: <Wrench className="h-6 w-6" />, label: "Technicians", chip: "chip-blue" },
+  { icon: <BarChart3 className="h-6 w-6" />, label: "Reports", chip: "chip-orange" },
+];
+
 
 const SOLUTIONS = [
   {
@@ -163,7 +200,10 @@ function FeaturesPage() {
               style={{ animationDelay: "90ms" }}
             >
               Every Operation,{" "}
-              <span className="text-ember">One Platform</span>
+              <span className="text-bulge">
+                <span className="text-ember">One Platform</span>
+              </span>
+
             </h1>
             <p
               className="rise-in mt-7 max-w-xl text-lg leading-relaxed text-muted-foreground sm:text-xl"
@@ -209,6 +249,25 @@ function FeaturesPage() {
           copy="Each area answers the same three questions: what it does, what it makes visible and why that matters on the floor."
         />
 
+        <Reveal delay={80} className="mt-10">
+          <div className="flex flex-wrap gap-3">
+            {CAPABILITY_ICONS.map((item) => (
+              <span
+                key={item.label}
+                className="hover-lift surface-panel flex items-center gap-2.5 rounded-2xl px-4 py-3 text-sm font-semibold"
+              >
+                <span
+                  aria-hidden="true"
+                  className={`inline-flex h-9 w-9 items-center justify-center rounded-xl ${item.chip}`}
+                >
+                  {item.icon}
+                </span>
+                {item.label}
+              </span>
+            ))}
+          </div>
+        </Reveal>
+
         <div className="mt-14 space-y-16 lg:space-y-24">
           {CATEGORIES.map((item, index) => (
             <Reveal key={item.title}>
@@ -248,25 +307,26 @@ function FeaturesPage() {
                 </div>
                 <div className={index % 2 === 1 ? "lg:order-1" : undefined}>
                   {item.image ? (
-                    <ScreenFrame
-                      src={item.image}
-                      alt={item.alt ?? item.title}
-                      width={1408}
-                      height={1008}
-                    />
-                  ) : (
-                    <div className="surface-panel grid-lines rounded-xl p-8 sm:p-10">
-                      <p className="eyebrow">
-                        In practice
-                      </p>
-                      <p className="mt-4 text-lg leading-relaxed sm:text-xl">
-                        {item.visibility}
-                      </p>
-                      <p className="mt-4 text-base text-muted-foreground">
-                        {item.matters}
-                      </p>
-                    </div>
-                  )}
+                    item.photo ? (
+                      <div className="surface-panel hover-lift overflow-hidden rounded-3xl p-3">
+                        <img
+                          src={item.image}
+                          alt={item.alt ?? item.title}
+                          width={800}
+                          height={533}
+                          loading="lazy"
+                          className="h-auto w-full rounded-2xl object-cover"
+                        />
+                      </div>
+                    ) : (
+                      <ScreenFrame
+                        src={item.image}
+                        alt={item.alt ?? item.title}
+                        width={1408}
+                        height={1008}
+                      />
+                    )
+                  ) : null}
                 </div>
               </div>
             </Reveal>
@@ -274,13 +334,14 @@ function FeaturesPage() {
         </div>
       </Section>
 
-      <Section className="bg-sand-wash border-y border-hairline">
+      <Section id="solutions" className="bg-sand-wash border-y border-hairline">
         <SectionHeading
           eyebrow="Solutions"
           title="Shaped to the kind of business you run"
           copy="The same platform, configured for the scale and structure of your operation."
         />
         <div className="mt-12 grid gap-5 sm:grid-cols-2">
+
           {SOLUTIONS.map((item, index) => (
             <Reveal key={item.title} delay={index * 60}>
               <FeatureCard
