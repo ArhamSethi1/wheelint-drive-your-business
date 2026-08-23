@@ -1,10 +1,16 @@
 import { createFileRoute } from "@tanstack/react-router";
 import {
   BarChart3,
+  Bell,
   Boxes,
+  CalendarClock,
+  Car,
   ClipboardList,
   Receipt,
+  ShieldCheck,
+  Truck,
   Users,
+  Wallet,
   Wrench,
 } from "lucide-react";
 
@@ -13,6 +19,9 @@ import phoneApp from "@/assets/phone-app.jpg";
 import screenAnalytics from "@/assets/screen-analytics.jpg";
 import screenBilling from "@/assets/screen-billing.jpg";
 import screenInventory from "@/assets/screen-inventory.jpg";
+import jobCardPhoto from "@/assets/image-6.png.asset.json";
+import customerPhoto from "@/assets/image-7.png.asset.json";
+import workshopOpsPhoto from "@/assets/image-8.png.asset.json";
 import { DeviceMockup } from "@/components/site/device-mockup";
 import {
   CtaBand,
@@ -23,6 +32,7 @@ import {
   Section,
   SectionHeading,
 } from "@/components/site/primitives";
+
 
 export const Route = createFileRoute("/features")({
   head: () => ({
