@@ -69,6 +69,8 @@ type Category = {
   matters: string;
   image?: string;
   alt?: string;
+  photo?: boolean;
+
 };
 
 const CATEGORIES: Category[] = [
