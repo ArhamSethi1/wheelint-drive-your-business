@@ -4,10 +4,13 @@ import {
   Boxes,
   Building2,
   ClipboardList,
+  FileSpreadsheet,
   Receipt,
+  TrendingUp,
   Users,
   Wrench,
 } from "lucide-react";
+
 
 import dashboardHero from "@/assets/dashboard-hero.jpg";
 import phoneApp from "@/assets/phone-app.jpg";
