@@ -310,9 +310,12 @@ function PricingPage() {
                   {item.icon}
                 </div>
                 <p className="mt-5 text-base font-medium">{item.label}</p>
-                <p className="mt-4 font-display text-2xl text-ember">
-                  → {item.arrow}
+                <p className="mt-4 font-display text-2xl">
+                  <span className="text-bulge">
+                    <span className="text-ember">→ {item.arrow}</span>
+                  </span>
                 </p>
+
                 <p className="mt-3 text-base text-muted-foreground">{item.copy}</p>
               </div>
             </Reveal>
