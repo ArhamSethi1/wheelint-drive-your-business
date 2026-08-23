@@ -201,7 +201,7 @@ function PricingPage() {
         />
         <div className="relative mx-auto w-full max-w-3xl px-5 py-16 text-center sm:px-8 sm:py-24">
           <Reveal>
-            <p className="eyebrow">Pricing</p>
+            <p className="eyebrow eyebrow-hero">Pricing</p>
             <h1 className="mt-4 text-5xl font-semibold leading-[1.03] sm:text-6xl lg:text-7xl">
               Two ways to run Wheelint
             </h1>

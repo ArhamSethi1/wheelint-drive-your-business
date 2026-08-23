@@ -115,7 +115,7 @@ function ContactPage() {
         />
         <div className="relative mx-auto w-full max-w-3xl px-5 py-16 text-center sm:px-8 sm:py-20">
           <Reveal>
-            <p className="eyebrow">Contact</p>
+            <p className="eyebrow eyebrow-hero">Contact</p>
             <h1 className="mt-4 text-5xl font-semibold leading-[1.03] sm:text-6xl lg:text-7xl">
               Let's talk about your automobile business
             </h1>
