@@ -11,8 +11,9 @@ import {
 
 import dashboardHero from "@/assets/dashboard-hero.jpg";
 import phoneApp from "@/assets/phone-app.jpg";
-import workshopImage from "@/assets/workshop.jpg";
+import workshopTeam from "@/assets/image-5.png.asset.json";
 import screenAnalytics from "@/assets/screen-analytics.jpg";
+
 import { DeviceMockup } from "@/components/site/device-mockup";
 import {
   CtaBand,
