@@ -312,6 +312,19 @@
   letter-spacing: 0.14em;
 }
 
+/* Mobile: plain, smaller eyebrow labels without pill background */
+@media (max-width: 639px) {
+  .eyebrow,
+  .eyebrow-hero {
+    font-size: 0.75rem;
+    letter-spacing: 0.16em;
+    padding: 0;
+    border-radius: 0;
+    background-color: transparent;
+    box-shadow: none;
+  }
+
+
 @utility text-bulge {
   display: inline-block;
   padding: 0.06em 0.5em 0.12em;
