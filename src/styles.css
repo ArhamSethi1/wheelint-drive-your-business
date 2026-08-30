@@ -241,13 +241,15 @@
 }
 
 @utility tint-blue {
-  background-color: oklch(0.96 0.035 250);
+  background-color: oklch(0.96 0.035 250 / 72%);
+  backdrop-filter: blur(14px) saturate(150%);
   border: 1px solid oklch(0.55 0.2 258 / 18%);
   color: var(--foreground);
 }
 
 @utility tint-orange {
-  background-color: oklch(0.96 0.045 65);
+  background-color: oklch(0.96 0.045 65 / 72%);
+  backdrop-filter: blur(14px) saturate(150%);
   border: 1px solid oklch(0.72 0.18 48 / 26%);
   color: var(--foreground);
 }
@@ -259,13 +261,15 @@
 }
 
 @utility tint-cyan {
-  background-color: oklch(0.95 0.05 210);
+  background-color: oklch(0.95 0.05 210 / 72%);
+  backdrop-filter: blur(14px) saturate(150%);
   border: 1px solid oklch(0.6 0.13 215 / 24%);
   color: var(--foreground);
 }
 
 @utility tint-green {
-  background-color: oklch(0.96 0.05 165);
+  background-color: oklch(0.96 0.05 165 / 72%);
+  backdrop-filter: blur(14px) saturate(150%);
   border: 1px solid oklch(0.55 0.13 165 / 26%);
   color: var(--foreground);
 }
