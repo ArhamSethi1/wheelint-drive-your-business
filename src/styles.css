@@ -128,16 +128,16 @@
 
   --gradient-sky: linear-gradient(
     180deg,
-    oklch(0.93 0.06 250) 0%,
-    oklch(0.96 0.035 245) 45%,
-    oklch(0.99 0.012 245) 78%,
-    oklch(1 0 0) 100%
+    oklch(0.93 0.06 250 / 88%) 0%,
+    oklch(0.96 0.035 245 / 88%) 45%,
+    oklch(0.99 0.012 245 / 88%) 78%,
+    oklch(1 0 0 / 88%) 100%
   );
   --gradient-sand: linear-gradient(
     180deg,
-    oklch(1 0 0) 0%,
-    oklch(0.96 0.03 245) 55%,
-    oklch(0.93 0.05 245) 100%
+    oklch(1 0 0 / 88%) 0%,
+    oklch(0.96 0.03 245 / 88%) 55%,
+    oklch(0.93 0.05 245 / 88%) 100%
   );
   --shadow-panel: 0 1px 2px oklch(0.16 0.008 265 / 6%),
     0 24px 60px -28px oklch(0.16 0.008 265 / 22%);
@@ -185,6 +185,14 @@
     font-family: var(--font-sans);
     -webkit-font-smoothing: antialiased;
     overflow-x: hidden;
+    /* Subtle wheel watermark + grid pattern behind everything */
+    background-image:
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='520' height='520' viewBox='0 0 520 520'%3E%3Cg fill='none' stroke='%233d5af1' stroke-opacity='0.06'%3E%3Ccircle cx='260' cy='260' r='190' stroke-width='26'/%3E%3Ccircle cx='260' cy='260' r='120' stroke-width='4'/%3E%3Ccircle cx='260' cy='260' r='34' stroke-width='10'/%3E%3Cpath d='M260 92v146M260 282v146M92 260h146M282 260h146M141 141l103 103M276 276l103 103M379 141L276 244M244 276L141 379' stroke-width='7'/%3E%3C/g%3E%3C/svg%3E"),
+      linear-gradient(to right, oklch(0.16 0.008 265 / 4%) 1px, transparent 1px),
+      linear-gradient(to bottom, oklch(0.16 0.008 265 / 4%) 1px, transparent 1px);
+    background-size: 520px 520px, 96px 96px, 96px 96px;
+    background-position: center top, center, center;
+    background-attachment: fixed;
   }
 
   h1,
@@ -199,7 +207,8 @@
 }
 
 @utility surface-panel {
-  background-color: var(--card);
+  background-color: oklch(1 0 0 / 72%);
+  backdrop-filter: blur(14px) saturate(150%);
   border: 1px solid var(--hairline);
   box-shadow: var(--shadow-panel);
 }
@@ -225,13 +234,15 @@
 }
 
 @utility tint-blue {
-  background-color: oklch(0.96 0.035 250);
+  background-color: oklch(0.96 0.035 250 / 72%);
+  backdrop-filter: blur(14px) saturate(150%);
   border: 1px solid oklch(0.55 0.2 258 / 18%);
   color: var(--foreground);
 }
 
 @utility tint-orange {
-  background-color: oklch(0.96 0.045 65);
+  background-color: oklch(0.96 0.045 65 / 72%);
+  backdrop-filter: blur(14px) saturate(150%);
   border: 1px solid oklch(0.72 0.18 48 / 26%);
   color: var(--foreground);
 }
@@ -243,13 +254,15 @@
 }
 
 @utility tint-cyan {
-  background-color: oklch(0.95 0.05 210);
+  background-color: oklch(0.95 0.05 210 / 72%);
+  backdrop-filter: blur(14px) saturate(150%);
   border: 1px solid oklch(0.6 0.13 215 / 24%);
   color: var(--foreground);
 }
 
 @utility tint-green {
-  background-color: oklch(0.96 0.05 165);
+  background-color: oklch(0.96 0.05 165 / 72%);
+  backdrop-filter: blur(14px) saturate(150%);
   border: 1px solid oklch(0.55 0.13 165 / 26%);
   color: var(--foreground);
 }
