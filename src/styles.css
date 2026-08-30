@@ -128,16 +128,16 @@
 
   --gradient-sky: linear-gradient(
     180deg,
-    oklch(0.93 0.06 250) 0%,
-    oklch(0.96 0.035 245) 45%,
-    oklch(0.99 0.012 245) 78%,
-    oklch(1 0 0) 100%
+    oklch(0.93 0.06 250 / 88%) 0%,
+    oklch(0.96 0.035 245 / 88%) 45%,
+    oklch(0.99 0.012 245 / 88%) 78%,
+    oklch(1 0 0 / 88%) 100%
   );
   --gradient-sand: linear-gradient(
     180deg,
-    oklch(1 0 0) 0%,
-    oklch(0.96 0.03 245) 55%,
-    oklch(0.93 0.05 245) 100%
+    oklch(1 0 0 / 88%) 0%,
+    oklch(0.96 0.03 245 / 88%) 55%,
+    oklch(0.93 0.05 245 / 88%) 100%
   );
   --shadow-panel: 0 1px 2px oklch(0.16 0.008 265 / 6%),
     0 24px 60px -28px oklch(0.16 0.008 265 / 22%);
