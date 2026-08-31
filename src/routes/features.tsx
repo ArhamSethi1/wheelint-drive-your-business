@@ -185,11 +185,7 @@ const SOLUTIONS = [
 function FeaturesPage() {
   return (
     <>
-      <section className="bg-sky-wash relative overflow-hidden">
-        <div
-          aria-hidden="true"
-          className="grid-lines pointer-events-none absolute inset-0 opacity-30"
-        />
+      <section className="bg-sky-wash wheel-section relative overflow-hidden">
         <div className="relative mx-auto grid w-full max-w-[88rem] items-center gap-14 px-5 py-20 sm:px-8 sm:py-24 lg:grid-cols-[0.95fr_1.05fr] lg:gap-16">
           <div>
             <p className="eyebrow eyebrow-hero rise-in">Features &amp; solutions</p>

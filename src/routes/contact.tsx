@@ -108,11 +108,7 @@ function ContactPage() {
 
   return (
     <>
-      <section className="bg-sky-wash relative overflow-hidden">
-        <div
-          aria-hidden="true"
-          className="grid-lines pointer-events-none absolute inset-0 opacity-30"
-        />
+      <section className="bg-sky-wash wheel-section relative overflow-hidden">
         <div className="relative mx-auto w-full max-w-3xl px-5 py-16 text-center sm:px-8 sm:py-20">
           <Reveal>
             <p className="eyebrow eyebrow-hero">Contact</p>
@@ -257,7 +253,7 @@ function ContactPage() {
               </address>
             </div>
 
-            <div className="surface-panel grid-lines rounded-2xl p-6 sm:p-8">
+            <div className="surface-panel rounded-2xl p-6 sm:p-8">
               <h2 className="font-display text-lg font-semibold">
                 Prefer to speak directly?
               </h2>

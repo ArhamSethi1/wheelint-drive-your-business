@@ -72,11 +72,7 @@ const PHILOSOPHY = [
 function AboutPage() {
   return (
     <>
-      <section className="bg-sky-wash relative overflow-hidden">
-        <div
-          aria-hidden="true"
-          className="grid-lines pointer-events-none absolute inset-0 opacity-30"
-        />
+      <section className="bg-sky-wash wheel-section relative overflow-hidden">
         <div className="relative mx-auto w-full max-w-3xl px-5 py-16 sm:px-8 sm:py-24">
           <Reveal>
             <p className="eyebrow eyebrow-hero">About Wheelint</p>
