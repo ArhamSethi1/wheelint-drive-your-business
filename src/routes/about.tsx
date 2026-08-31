@@ -73,7 +73,7 @@ function AboutPage() {
   return (
     <>
       <section className="bg-sky-wash wheel-section relative overflow-hidden">
-        <div className="relative mx-auto w-full max-w-3xl px-5 py-16 sm:px-8 sm:py-24">
+        <div className="relative z-10 mx-auto w-full max-w-3xl px-5 py-16 sm:px-8 sm:py-24">
           <Reveal>
             <p className="eyebrow eyebrow-hero">About Wheelint</p>
             <h1 className="mt-4 text-5xl font-semibold leading-[1.03] sm:text-6xl lg:text-7xl">
