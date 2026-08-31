@@ -194,12 +194,8 @@ function TermCard({ term }: { term: (typeof TERMS)[number] }) {
 function PricingPage() {
   return (
     <>
-      <section className="bg-sky-wash relative overflow-hidden">
-        <div
-          aria-hidden="true"
-          className="grid-lines pointer-events-none absolute inset-0 opacity-30"
-        />
-        <div className="relative mx-auto w-full max-w-3xl px-5 py-16 text-center sm:px-8 sm:py-24">
+      <section className="bg-sky-wash wheel-section relative overflow-hidden">
+        <div className="relative z-10 mx-auto w-full max-w-3xl px-5 py-16 text-center sm:px-8 sm:py-24">
           <Reveal>
             <p className="eyebrow eyebrow-hero">Pricing</p>
             <h1 className="mt-4 text-5xl font-semibold leading-[1.03] sm:text-6xl lg:text-7xl">
