@@ -75,12 +75,12 @@ export function Section({
     <section
       id={id}
       className={cn(
-        "relative px-5 sm:px-8",
+        "wheel-section relative px-5 sm:px-8",
         tight ? "py-14 sm:py-18" : "py-18 sm:py-24 lg:py-28",
         className,
       )}
     >
-      <div className="mx-auto w-full max-w-[88rem]">{children}</div>
+      <div className="relative z-10 mx-auto w-full max-w-[88rem]">{children}</div>
     </section>
   );
 }
