@@ -198,11 +198,12 @@
   }
 }
 
+/* Glass surfaces: single cheap blur pass, mostly-opaque so text stays crisp. */
 @utility surface-panel {
-  background-color: oklch(1 0 0 / 72%);
-  backdrop-filter: blur(14px) saturate(150%);
+  background-color: oklch(1 0 0 / 86%);
+  backdrop-filter: blur(8px);
   border: 1px solid var(--hairline);
-  box-shadow: var(--shadow-panel);
+  box-shadow: var(--shadow-panel), inset 0 1px 0 oklch(1 0 0 / 60%);
 }
 
 @utility bg-sky-wash {
