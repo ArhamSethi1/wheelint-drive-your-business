@@ -227,7 +227,6 @@
 }
 
 @utility tint-blue {
-@utility tint-blue {
   background-color: oklch(0.96 0.035 250 / 88%);
   backdrop-filter: blur(8px);
   border: 1px solid oklch(0.55 0.2 258 / 22%);
@@ -238,7 +237,7 @@
 @utility tint-orange {
   background-color: oklch(0.96 0.045 65 / 88%);
   backdrop-filter: blur(8px);
-  border: 1px solid oklch(0.72 0.18 48 / 3 0%);
+  border: 1px solid oklch(0.72 0.18 48 / 30%);
   box-shadow: inset 0 1px 0 oklch(1 0 0 / 55%);
   color: var(--foreground);
 }
