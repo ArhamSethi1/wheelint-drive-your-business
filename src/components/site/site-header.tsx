@@ -93,9 +93,10 @@ export function SiteHeader() {
               ))}
             </nav>
             <div className="mt-6 px-4">
-              <SheetClose asChild>
-                <RequestDemoDialog className="w-full" size="default" />
-              </SheetClose>
+              <RequestDemoDialog
+                className="w-full"
+                size="default"
+              />
             </div>
           </SheetContent>
         </Sheet>
