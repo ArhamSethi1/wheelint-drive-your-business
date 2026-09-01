@@ -212,7 +212,7 @@ export function CtaBand({
           </p>
           <div className="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row">
             <Button asChild size="lg" className="h-14 w-full px-8 text-base sm:w-auto">
-              <Link to="/contact">Request a demo</Link>
+PLACEHOLDER
             </Button>
             <Button
               asChild

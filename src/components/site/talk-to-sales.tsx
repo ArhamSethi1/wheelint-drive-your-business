@@ -1,4 +1,6 @@
-import { Mail, Phone } from "lucide-react";
+import { Check, Copy, Mail, Phone } from "lucide-react";
+import { useState } from "react";
+import { toast } from "sonner";
 
 import { Button } from "@/components/ui/button";
 import {
@@ -26,6 +28,19 @@ export function TalkToSales({
   size?: "sm" | "default" | "lg";
   variant?: "default" | "outline" | "ghost";
 }) {
+  const [copied, setCopied] = useState(false);
+
+  const copyEmail = async () => {
+    try {
+      await navigator.clipboard.writeText(SALES_EMAIL);
+      setCopied(true);
+      toast.success("Email copied", { description: SALES_EMAIL });
+      window.setTimeout(() => setCopied(false), 2000);
+    } catch {
+      toast.error("Couldn't copy the email address.");
+    }
+  };
+
   return (
     <Dialog>
       <DialogTrigger asChild>
@@ -61,10 +76,7 @@ export function TalkToSales({
               Call now
             </Button>
           </a>
-          <a
-            href={`mailto:${SALES_EMAIL}?subject=Talking%20to%20Wheelint%20Sales`}
-            className="group plan-card flex items-center gap-4 rounded-2xl border border-hairline bg-background p-4 transition-colors hover:border-orange/30 hover:bg-orange/5"
-          >
+          <div className="group plan-card flex items-center gap-4 rounded-2xl border border-hairline bg-background p-4 transition-colors hover:border-orange/30 hover:bg-orange/5">
             <span className="chip-orange inline-flex h-12 w-12 shrink-0 items-center justify-center rounded-xl transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:rotate-3">
               <Mail aria-hidden="true" className="h-5 w-5" />
             </span>
@@ -77,11 +89,17 @@ export function TalkToSales({
             <Button
               size="sm"
               variant="outline"
-              className="cta-anim ml-auto h-9 px-4 text-sm"
+              onClick={copyEmail}
+              className="cta-anim ml-auto h-9 gap-1.5 px-4 text-sm"
             >
-              Send email
+              {copied ? (
+                <Check aria-hidden="true" className="h-4 w-4" />
+              ) : (
+                <Copy aria-hidden="true" className="h-4 w-4" />
+              )}
+              {copied ? "Copied" : "Copy email"}
             </Button>
-          </a>
+          </div>
         </div>
       </DialogContent>
     </Dialog>
