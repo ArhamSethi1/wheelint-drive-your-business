@@ -4,6 +4,8 @@ import { useState } from "react";
 import { toast } from "sonner";
 
 import { Reveal, Section } from "@/components/site/primitives";
+import { RequestDemoDialog } from "@/components/site/request-demo";
+import { TalkToSales } from "@/components/site/talk-to-sales";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -262,14 +264,17 @@ function ContactPage() {
                 enterprise rollout across your network.
               </p>
               <div className="mt-6 flex flex-col gap-3 sm:flex-row">
-                <Button asChild className="w-full sm:w-auto">
-                  <a href="mailto:teams@wheelint.com?subject=Request%20a%20Demo">
-                    Request a Demo
-                  </a>
-                </Button>
-                <Button asChild variant="outline" className="w-full sm:w-auto">
-                  <a href="tel:+919358002457">Talk to Sales</a>
-                </Button>
+                <RequestDemoDialog
+                  label="Request a Demo"
+                  size="default"
+                  className="w-full sm:w-auto"
+                />
+                <TalkToSales
+                  label="Talk to Sales"
+                  size="default"
+                  variant="outline"
+                  className="w-full sm:w-auto"
+                />
               </div>
             </div>
           </Reveal>

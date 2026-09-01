@@ -4,6 +4,7 @@ import { useEffect, useRef, useState, type ReactNode } from "react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { TalkToSales } from "@/components/site/talk-to-sales";
+import { RequestDemoDialog } from "@/components/site/request-demo";
 
 export function Reveal({
   children,
@@ -211,9 +212,10 @@ export function CtaBand({
             {copy}
           </p>
           <div className="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row">
-            <Button asChild size="lg" className="h-14 w-full px-8 text-base sm:w-auto">
-              <Link to="/contact">Request a demo</Link>
-            </Button>
+            <RequestDemoDialog
+              label="Request a demo"
+              className="h-14 w-full px-8 text-base sm:w-auto"
+            />
             <Button
               asChild
               size="lg"

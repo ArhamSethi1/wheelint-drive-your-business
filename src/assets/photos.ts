@@ -7,3 +7,7 @@ export const customerPhoto =
   "/__l5e/assets-v1/015ec11e-7087-4555-8a51-a36bc715f336/image-7.png";
 export const workshopOpsPhoto =
   "/__l5e/assets-v1/e7aa1b3f-fb5a-4b4f-aa49-ae7c51dd09ba/image-8.png";
+export const wheelintLogo =
+  "/__l5e/assets-v1/4a79ac95-21c1-4990-9b50-534003690c52/wheelint-logo.png";
+export const wheelintWordmark =
+  "/__l5e/assets-v1/2c040aff-4369-4749-ab16-e7dbcdb5caea/wheelint-wordmark.png";

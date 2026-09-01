@@ -1,3 +1,4 @@
+import { RequestDemoDialog } from "@/components/site/request-demo";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import {
   BarChart3,
@@ -164,13 +165,10 @@ function HomePage() {
               className="rise-in mt-10 flex flex-col gap-4 sm:flex-row"
               style={{ animationDelay: "260ms" }}
             >
-              <Button
-                asChild
-                size="lg"
+              <RequestDemoDialog
+                label="Request a demo"
                 className="h-16 w-full rounded-full px-10 text-lg sm:w-auto"
-              >
-                <Link to="/contact">Request a demo</Link>
-              </Button>
+              />
               <Button
                 asChild
                 size="lg"
