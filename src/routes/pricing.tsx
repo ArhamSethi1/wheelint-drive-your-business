@@ -8,6 +8,7 @@ import {
   SectionHeading,
 } from "@/components/site/primitives";
 import { TalkToSales } from "@/components/site/talk-to-sales";
+import { RequestDemoDialog } from "@/components/site/request-demo";
 import { Button } from "@/components/ui/button";
 
 export const Route = createFileRoute("/pricing")({
@@ -182,9 +183,7 @@ function TermCard({ term }: { term: (typeof TERMS)[number] }) {
         <Button asChild size="sm" className="cta-anim">
           <Link to="/contact">Start Free Trial</Link>
         </Button>
-        <Button asChild size="sm" variant="outline" className="cta-anim">
-          <Link to="/contact">Request a Demo</Link>
-        </Button>
+        <RequestDemoDialog label="Request a Demo" size="sm" variant="outline" />
       </div>
     </div>
   );
