@@ -1,23 +1,28 @@
 import { Link } from "@tanstack/react-router";
 import { Mail, MapPin, Phone } from "lucide-react";
 
-import logoMark from "@/assets/logo-mark.png";
+import { wheelintLogo, wheelintWordmark } from "@/assets/photos";
 
 export function SiteFooter() {
   return (
     <footer className="border-t border-hairline bg-sand-wash">
+      <div className="overflow-hidden bg-white">
+        <img
+          src={wheelintWordmark}
+          alt="Wheelint"
+          loading="lazy"
+          className="mx-auto block w-full max-w-[88rem] px-4 py-8"
+        />
+      </div>
       <div className="mx-auto grid w-full max-w-[88rem] gap-12 px-5 py-14 sm:px-8 lg:grid-cols-[1.4fr_1fr_1.2fr] lg:py-20">
         <div>
-          <div className="flex items-center gap-2.5">
+          <div className="flex items-center">
             <img
-              src={logoMark}
-              alt="Wheelint logo"
-              width={44}
-              height={44}
+              src={wheelintLogo}
+              alt="Wheelint"
               loading="lazy"
-              className="h-11 w-11"
+              className="h-12 w-auto"
             />
-            <span className="font-display text-2xl font-bold">Wheelint</span>
           </div>
           <p className="mt-5 max-w-sm text-base leading-relaxed text-muted-foreground">
             Automobile business management software for workshops, dealerships,
@@ -85,15 +90,6 @@ export function SiteFooter() {
           <p>© {new Date().getFullYear()} Wheelint. All rights reserved.</p>
           <p>Automobile billing, workshop, dealership and ERP management.</p>
         </div>
-      </div>
-
-      <div className="tint-navy overflow-hidden border-0">
-        <p
-          aria-hidden="true"
-          className="font-display select-none whitespace-nowrap px-4 text-center text-[18vw] leading-[0.86] tracking-tight"
-        >
-          Wheelint
-        </p>
       </div>
     </footer>
   );
