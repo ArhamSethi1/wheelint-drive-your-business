@@ -2,8 +2,9 @@ import { Link } from "@tanstack/react-router";
 import { Menu } from "lucide-react";
 import { useState } from "react";
 
-import logoMark from "@/assets/logo-mark.png";
+import { wheelintLogo } from "@/assets/photos";
 import { Button } from "@/components/ui/button";
+import { RequestDemoDialog } from "@/components/site/request-demo";
 import {
   Sheet,
   SheetClose,
@@ -28,13 +29,10 @@ function Wordmark() {
       className="flex items-center gap-2.5 rounded-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
     >
       <img
-        src={logoMark}
-        alt="Wheelint logo"
-        width={44}
-        height={44}
-        className="h-11 w-11"
+        src={wheelintLogo}
+        alt="Wheelint"
+        className="h-11 w-auto lg:h-14"
       />
-      <span className="font-display text-2xl font-bold tracking-tight lg:text-3xl">Wheelint</span>
     </Link>
   );
 }
@@ -96,9 +94,7 @@ export function SiteHeader() {
             </nav>
             <div className="mt-6 px-4">
               <SheetClose asChild>
-                <Button asChild className="w-full">
-                  <Link to="/contact">Request a Demo</Link>
-                </Button>
+                <RequestDemoDialog className="w-full" size="default" />
               </SheetClose>
             </div>
           </SheetContent>
