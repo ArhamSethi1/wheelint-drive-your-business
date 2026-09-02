@@ -1,4 +1,5 @@
 import { RequestDemoDialog } from "@/components/site/request-demo";
+import { SALES_PHONE } from "@/components/site/talk-to-sales";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import {
   BarChart3,
@@ -6,6 +7,7 @@ import {
   Building2,
   ClipboardList,
   FileSpreadsheet,
+  Phone,
   Receipt,
   TrendingUp,
   Users,
@@ -162,21 +164,59 @@ function HomePage() {
               workshops, dealerships and dealer networks.
             </p>
             <div
-              className="rise-in mt-10 flex flex-col gap-4 sm:flex-row"
+              className="rise-in mt-10 flex flex-col gap-4"
               style={{ animationDelay: "260ms" }}
             >
-              <RequestDemoDialog
-                label="Request a demo"
-                className="h-16 w-full rounded-full px-10 text-lg sm:w-auto"
-              />
-              <Button
-                asChild
-                size="lg"
-                variant="outline"
-                className="h-16 w-full rounded-full px-10 text-lg sm:w-auto"
-              >
-                <Link to="/features">Explore Software Features</Link>
-              </Button>
+              <div className="flex flex-col gap-4 sm:flex-row">
+                <RequestDemoDialog
+                  label="Request Free Demo"
+                  className="h-16 w-full rounded-full px-10 text-lg sm:w-auto"
+                />
+                {/* Mobile: Explore + Call Now share the row 50/50 */}
+                <div className="grid grid-cols-2 gap-3 sm:hidden">
+                  <Button
+                    asChild
+                    size="lg"
+                    variant="outline"
+                    className="h-16 w-full rounded-full px-3 text-base"
+                  >
+                    <Link to="/features">Explore Features</Link>
+                  </Button>
+                  <Button
+                    asChild
+                    size="lg"
+                    className="cta-anim h-16 w-full rounded-full bg-blue px-3 text-base text-white hover:bg-blue/90"
+                  >
+                    <a href={`tel:${SALES_PHONE}`}>
+                      <Phone aria-hidden="true" className="h-5 w-5" />
+                      Call Now
+                    </a>
+                  </Button>
+                </div>
+                <Button
+                  asChild
+                  size="lg"
+                  variant="outline"
+                  className="hidden h-16 rounded-full px-10 text-lg sm:inline-flex sm:w-auto"
+                >
+                  <Link to="/features">Explore Software Features</Link>
+                </Button>
+              </div>
+
+              {/* Desktop: Call Now sits below, between the two buttons */}
+              <div className="hidden sm:flex sm:justify-center lg:max-w-[34rem]">
+                <Button
+                  asChild
+                  size="lg"
+                  className="cta-anim h-16 rounded-full bg-blue px-12 text-lg text-white hover:bg-blue/90"
+                >
+                  <a href={`tel:${SALES_PHONE}`}>
+                    <Phone aria-hidden="true" className="h-5 w-5" />
+                    Call Now
+                  </a>
+                </Button>
+              </div>
+
               <Button
                 asChild
                 size="lg"
