@@ -102,7 +102,7 @@ export function LeadForm({
 }) {
   const [form, setForm] = useState<FormState>(EMPTY);
   const [country, setCountry] = useState<CountryCode>(DEFAULT_COUNTRY);
-  const [errors, setErrors] = useState<Partial<Record<keyof FormState, string>>>({});
+  const [errors, setErrors] = useState<Partial<Record<keyof FormState, string | undefined>>>({});
   const [submitting, setSubmitting] = useState(false);
 
   const set = (key: keyof FormState, value: string) => {
@@ -112,7 +112,7 @@ export function LeadForm({
 
   const onSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    const next: Partial<Record<keyof FormState, string>> = {};
+    const next: Partial<Record<keyof FormState, string | undefined>> = {};
     if (!form.name.trim()) next.name = "Please enter your name.";
     if (!form.company.trim()) next.company = "Please enter your company name.";
 
