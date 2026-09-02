@@ -1,4 +1,5 @@
 import { RequestDemoDialog } from "@/components/site/request-demo";
+import { SALES_PHONE } from "@/components/site/talk-to-sales";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import {
   BarChart3,
@@ -6,6 +7,7 @@ import {
   Building2,
   ClipboardList,
   FileSpreadsheet,
+  Phone,
   Receipt,
   TrendingUp,
   Users,
