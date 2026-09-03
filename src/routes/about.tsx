@@ -148,7 +148,7 @@ function AboutPage() {
 
       <CtaBand
         title="See Wheelint in action"
-        copy="Request a demo and see how Wheelint would handle your service, billing and inventory workflows."
+        copy="Request a free demo and see how Wheelint would handle your service, billing and inventory workflows."
       />
     </>
   );

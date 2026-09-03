@@ -442,7 +442,7 @@ function HomePage() {
 
       <CtaBand
         title="Ready to see Wheelint on your business?"
-        copy="Request a demo and we will walk through Wheelint with your workflows in mind, or start a free trial and explore it yourself."
+        copy="Request a free demo and we will walk through Wheelint with your workflows in mind, or start a free trial and explore it yourself."
       />
     </>
   );
