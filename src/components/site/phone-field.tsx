@@ -118,7 +118,7 @@ export function PhoneField({
           onChange={(event) =>
             onValueChange(formatAsYouType(event.target.value, country))
           }
-          placeholder={`${flagEmoji(country)} ${countryName(country)} number`}
+          placeholder={`${countryName(country)} phone number`}
           aria-invalid={Boolean(error)}
           aria-describedby={error ? `${id}-error` : undefined}
         />
