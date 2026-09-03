@@ -227,7 +227,7 @@ export function CtaBand({
             <TalkToSales
               label="Talk to sales"
               variant="outline"
-              className="h-14 w-full border-2 border-blue px-8 text-base font-semibold text-blue hover:bg-blue/10 sm:w-auto"
+              className="h-14 w-full border-2 border-primary px-8 text-base font-semibold text-primary hover:bg-primary/10 sm:w-auto"
             />
           </div>
         </div>

@@ -58,7 +58,7 @@ export function TalkToSales({
         <div className="mt-2 grid gap-4">
           <a
             href={`tel:${SALES_PHONE}`}
-            className="group plan-card flex flex-wrap items-center gap-3 rounded-2xl border border-hairline bg-background p-4 transition-colors hover:border-blue/30 hover:bg-blue/5 sm:gap-4"
+            className="group plan-card flex flex-wrap items-center gap-3 rounded-2xl border border-hairline bg-background p-4 transition-colors hover:border-primary/30 hover:bg-primary/5 sm:gap-4"
           >
             <span className="chip-blue inline-flex h-12 w-12 shrink-0 items-center justify-center rounded-xl transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:rotate-3">
               <Phone aria-hidden="true" className="h-5 w-5" />
@@ -76,7 +76,7 @@ export function TalkToSales({
               Call now
             </Button>
           </a>
-          <div className="group plan-card flex flex-wrap items-center gap-3 rounded-2xl border border-hairline bg-background p-4 transition-colors hover:border-orange/30 hover:bg-orange/5 sm:gap-4">
+          <div className="group plan-card flex flex-wrap items-center gap-3 rounded-2xl border border-hairline bg-background p-4 transition-colors hover:border-primary/30 hover:bg-primary/5 sm:gap-4">
             <span className="chip-orange inline-flex h-12 w-12 shrink-0 items-center justify-center rounded-xl transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:rotate-3">
               <Mail aria-hidden="true" className="h-5 w-5" />
             </span>

@@ -185,7 +185,7 @@ function HomePage() {
                   <Button
                     asChild
                     size="lg"
-                    className="cta-anim h-16 w-full rounded-full bg-blue px-3 text-base text-white hover:bg-blue/90"
+                    className="cta-anim h-16 w-full rounded-full px-3 text-base"
                   >
                     <a href={`tel:${SALES_PHONE}`}>
                       <Phone aria-hidden="true" className="h-5 w-5" />
@@ -208,7 +208,7 @@ function HomePage() {
                 <Button
                   asChild
                   size="lg"
-                  className="cta-anim h-16 rounded-full bg-blue px-12 text-lg text-white hover:bg-blue/90"
+                  className="cta-anim h-16 rounded-full px-12 text-lg"
                 >
                   <a href={`tel:${SALES_PHONE}`}>
                     <Phone aria-hidden="true" className="h-5 w-5" />
