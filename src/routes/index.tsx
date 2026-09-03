@@ -335,15 +335,19 @@ function HomePage() {
             </Reveal>
           ))}
         </div>
-        <Reveal delay={120} className="mt-12">
+        <Reveal delay={120} className="mt-12 flex flex-col gap-4 sm:flex-row sm:items-center">
           <Button
             asChild
             variant="outline"
             size="lg"
-            className="h-14 rounded-full px-9 text-base"
+            className="h-14 w-full rounded-full px-9 text-base sm:w-auto"
           >
             <Link to="/features">See all features in detail</Link>
           </Button>
+          <RequestDemoDialog
+            label="Request Free Demo"
+            className="h-14 w-full rounded-full px-9 text-base sm:w-auto"
+          />
         </Reveal>
       </Section>
 
