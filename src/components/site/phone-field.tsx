@@ -48,12 +48,9 @@ export function flagEmoji(code: string) {
 }
 
 const ALL = getCountries();
-export const COUNTRY_OPTIONS: CountryCode[] = [
-  ...PRIORITY.filter((c) => ALL.includes(c)),
-  ...ALL.filter((c) => !PRIORITY.includes(c)).sort((a, b) =>
-    countryName(a).localeCompare(countryName(b)),
-  ),
-];
+export const COUNTRY_OPTIONS: CountryCode[] = PRIORITY.filter((c) =>
+  ALL.includes(c),
+);
 
 export const DEFAULT_COUNTRY: CountryCode = "IN";
 
@@ -64,7 +61,14 @@ export function validatePhone(
 ): { ok: true; e164: string } | { ok: false; error: string } {
   const digits = national.replace(/[^\d]/g, "").replace(/^0+/, "");
   if (!digits) return { ok: false, error: "Please enter your phone number." };
+  if (digits.length < 9 || digits.length > 11) {
+    return {
+      ok: false,
+      error: "Phone number must be 9, 10 or 11 digits.",
+    };
+  }
   const parsed = parsePhoneNumberFromString(digits, country);
+
   if (!parsed || !parsed.isValid()) {
     return {
       ok: false,
