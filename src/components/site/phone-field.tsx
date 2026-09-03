@@ -16,7 +16,19 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 
-const PRIORITY: CountryCode[] = ["IN", "US", "GB", "AE", "AU", "CA", "SG"];
+const PRIORITY: CountryCode[] = [
+  "IN",
+  "US",
+  "GB",
+  "AE",
+  "AU",
+  "SG",
+  "DE",
+  "FR",
+  "JP",
+  "ZA",
+];
+
 
 const REGION_NAMES =
   typeof Intl !== "undefined" && "DisplayNames" in Intl
@@ -36,12 +48,9 @@ export function flagEmoji(code: string) {
 }
 
 const ALL = getCountries();
-export const COUNTRY_OPTIONS: CountryCode[] = [
-  ...PRIORITY.filter((c) => ALL.includes(c)),
-  ...ALL.filter((c) => !PRIORITY.includes(c)).sort((a, b) =>
-    countryName(a).localeCompare(countryName(b)),
-  ),
-];
+export const COUNTRY_OPTIONS: CountryCode[] = PRIORITY.filter((c) =>
+  ALL.includes(c),
+);
 
 export const DEFAULT_COUNTRY: CountryCode = "IN";
 
@@ -52,7 +61,14 @@ export function validatePhone(
 ): { ok: true; e164: string } | { ok: false; error: string } {
   const digits = national.replace(/[^\d]/g, "").replace(/^0+/, "");
   if (!digits) return { ok: false, error: "Please enter your phone number." };
+  if (digits.length < 9 || digits.length > 11) {
+    return {
+      ok: false,
+      error: "Phone number must be 9, 10 or 11 digits.",
+    };
+  }
   const parsed = parsePhoneNumberFromString(digits, country);
+
   if (!parsed || !parsed.isValid()) {
     return {
       ok: false,
@@ -124,7 +140,7 @@ export function PhoneField({
         />
       </div>
       {error ? (
-        <p id={`${id}-error`} className="mt-2 text-sm font-medium text-destructive">
+        <p id={`${id}-error`} className="mt-2 rounded-md border border-destructive/40 bg-destructive/10 px-3 py-2 text-sm font-medium text-destructive">
           {error}
         </p>
       ) : null}

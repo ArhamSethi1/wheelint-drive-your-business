@@ -185,7 +185,7 @@ function HomePage() {
                   <Button
                     asChild
                     size="lg"
-                    className="cta-anim h-16 w-full rounded-full px-3 text-base"
+                    className="cta-anim h-16 w-full rounded-full bg-orange px-3 text-base text-orange-foreground hover:bg-orange/90"
                   >
                     <a href={`tel:${SALES_PHONE}`}>
                       <Phone aria-hidden="true" className="h-5 w-5" />
@@ -208,7 +208,7 @@ function HomePage() {
                 <Button
                   asChild
                   size="lg"
-                  className="cta-anim h-16 rounded-full px-12 text-lg"
+                  className="cta-anim h-16 rounded-full bg-orange px-12 text-lg text-orange-foreground hover:bg-orange/90"
                 >
                   <a href={`tel:${SALES_PHONE}`}>
                     <Phone aria-hidden="true" className="h-5 w-5" />
