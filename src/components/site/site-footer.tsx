@@ -1,6 +1,6 @@
 import { Link } from "@tanstack/react-router";
-import { Mail, MapPin, Phone } from "lucide-react";
 
+import { ContactDetails } from "@/components/site/contact-details";
 import { wheelintLogo, wheelintWordmark } from "@/assets/photos";
 
 export function SiteFooter() {
@@ -58,30 +58,10 @@ export function SiteFooter() {
           <h2 className="eyebrow">
             Contact
           </h2>
-          <address className="mt-5 space-y-3.5 text-base not-italic text-muted-foreground">
-            <p className="font-medium text-foreground">
-              Tylect Technologies Pvt. Ltd.
-            </p>
-            <p className="flex gap-2.5">
-              <MapPin aria-hidden="true" className="mt-0.5 h-5 w-5 shrink-0 text-primary" />
-              <span>
-                1st Floor, F-27, Gautam Marg, Sector 6, Vaishali Nagar, Jaipur,
-                Rajasthan, 302021
-              </span>
-            </p>
-            <p className="flex items-center gap-2.5">
-              <Phone aria-hidden="true" className="h-5 w-5 shrink-0 text-primary" />
-              <a href="tel:+919358002457" className="hover:text-foreground">
-                +91 93580 02457
-              </a>
-            </p>
-            <p className="flex items-center gap-2.5">
-              <Mail aria-hidden="true" className="h-5 w-5 shrink-0 text-primary" />
-              <a href="mailto:teams@wheelint.com" className="hover:text-foreground">
-                teams@wheelint.com
-              </a>
-            </p>
-          </address>
+          <p className="mt-5 font-display text-base font-semibold text-foreground">
+            Tylect Technologies Pvt. Ltd.
+          </p>
+          <ContactDetails className="mt-4" />
         </div>
       </div>
 

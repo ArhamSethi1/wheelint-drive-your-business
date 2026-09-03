@@ -48,7 +48,7 @@ export function TalkToSales({
           {label}
         </Button>
       </DialogTrigger>
-      <DialogContent className="sm:max-w-md">
+      <DialogContent className="w-[calc(100vw-1.5rem)] max-w-md rounded-2xl p-5 sm:p-6">
         <DialogHeader>
           <DialogTitle className="text-2xl font-semibold">Talk to our sales team</DialogTitle>
           <DialogDescription>
@@ -58,7 +58,7 @@ export function TalkToSales({
         <div className="mt-2 grid gap-4">
           <a
             href={`tel:${SALES_PHONE}`}
-            className="group plan-card flex items-center gap-4 rounded-2xl border border-hairline bg-background p-4 transition-colors hover:border-blue/30 hover:bg-blue/5"
+            className="group plan-card flex flex-wrap items-center gap-3 rounded-2xl border border-hairline bg-background p-4 transition-colors hover:border-blue/30 hover:bg-blue/5 sm:gap-4"
           >
             <span className="chip-blue inline-flex h-12 w-12 shrink-0 items-center justify-center rounded-xl transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:rotate-3">
               <Phone aria-hidden="true" className="h-5 w-5" />
@@ -71,12 +71,12 @@ export function TalkToSales({
             </div>
             <Button
               size="sm"
-              className="cta-anim ml-auto h-9 px-4 text-sm"
+              className="cta-anim ml-auto h-10 shrink-0 px-4 text-sm"
             >
               Call now
             </Button>
           </a>
-          <div className="group plan-card flex items-center gap-4 rounded-2xl border border-hairline bg-background p-4 transition-colors hover:border-orange/30 hover:bg-orange/5">
+          <div className="group plan-card flex flex-wrap items-center gap-3 rounded-2xl border border-hairline bg-background p-4 transition-colors hover:border-orange/30 hover:bg-orange/5 sm:gap-4">
             <span className="chip-orange inline-flex h-12 w-12 shrink-0 items-center justify-center rounded-xl transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:rotate-3">
               <Mail aria-hidden="true" className="h-5 w-5" />
             </span>
@@ -90,7 +90,7 @@ export function TalkToSales({
               size="sm"
               variant="outline"
               onClick={copyEmail}
-              className="cta-anim ml-auto h-9 gap-1.5 px-4 text-sm"
+              className="cta-anim ml-auto h-10 shrink-0 gap-1.5 px-4 text-sm"
             >
               {copied ? (
                 <Check aria-hidden="true" className="h-4 w-4" />
