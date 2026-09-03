@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Mail, MapPin, Phone } from "lucide-react";
 import { useState } from "react";
 
+import { ContactDetails } from "@/components/site/contact-details";
 import { LeadForm } from "@/components/site/lead-form";
 import { Reveal, Section } from "@/components/site/primitives";
 import { RequestDemoDialog } from "@/components/site/request-demo";
@@ -31,8 +31,6 @@ export const Route = createFileRoute("/contact")({
   }),
   component: ContactPage,
 });
-
-}
 
 function ContactPage() {
   const [thanks, setThanks] = useState(false);
