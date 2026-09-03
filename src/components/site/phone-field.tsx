@@ -16,7 +16,19 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 
-const PRIORITY: CountryCode[] = ["IN", "US", "GB", "AE", "AU", "CA", "SG"];
+const PRIORITY: CountryCode[] = [
+  "IN",
+  "US",
+  "GB",
+  "AE",
+  "AU",
+  "SG",
+  "DE",
+  "FR",
+  "JP",
+  "ZA",
+];
+
 
 const REGION_NAMES =
   typeof Intl !== "undefined" && "DisplayNames" in Intl
