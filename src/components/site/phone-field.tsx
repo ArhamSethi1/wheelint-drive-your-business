@@ -140,7 +140,7 @@ export function PhoneField({
         />
       </div>
       {error ? (
-        <p id={`${id}-error`} className="mt-2 text-sm font-medium text-destructive">
+        <p id={`${id}-error`} className="mt-2 rounded-md border border-destructive/40 bg-destructive/10 px-3 py-2 text-sm font-medium text-destructive">
           {error}
         </p>
       ) : null}
