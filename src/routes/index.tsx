@@ -185,7 +185,7 @@ function HomePage() {
                   <Button
                     asChild
                     size="lg"
-                    className="cta-anim h-16 w-full rounded-full bg-blue px-3 text-base text-white hover:bg-blue/90"
+                    className="cta-anim h-16 w-full rounded-full px-3 text-base"
                   >
                     <a href={`tel:${SALES_PHONE}`}>
                       <Phone aria-hidden="true" className="h-5 w-5" />
@@ -208,7 +208,7 @@ function HomePage() {
                 <Button
                   asChild
                   size="lg"
-                  className="cta-anim h-16 rounded-full bg-blue px-12 text-lg text-white hover:bg-blue/90"
+                  className="cta-anim h-16 rounded-full px-12 text-lg"
                 >
                   <a href={`tel:${SALES_PHONE}`}>
                     <Phone aria-hidden="true" className="h-5 w-5" />
@@ -335,15 +335,19 @@ function HomePage() {
             </Reveal>
           ))}
         </div>
-        <Reveal delay={120} className="mt-12">
+        <Reveal delay={120} className="mt-12 flex flex-col gap-4 sm:flex-row sm:items-center">
           <Button
             asChild
             variant="outline"
             size="lg"
-            className="h-14 rounded-full px-9 text-base"
+            className="h-14 w-full rounded-full px-9 text-base sm:w-auto"
           >
             <Link to="/features">See all features in detail</Link>
           </Button>
+          <RequestDemoDialog
+            label="Request Free Demo"
+            className="h-14 w-full rounded-full px-9 text-base sm:w-auto"
+          />
         </Reveal>
       </Section>
 
@@ -438,7 +442,7 @@ function HomePage() {
 
       <CtaBand
         title="Ready to see Wheelint on your business?"
-        copy="Request a demo and we will walk through Wheelint with your workflows in mind, or start a free trial and explore it yourself."
+        copy="Request a free demo and we will walk through Wheelint with your workflows in mind, or start a free trial and explore it yourself."
       />
     </>
   );

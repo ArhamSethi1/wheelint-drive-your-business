@@ -183,7 +183,7 @@ function TermCard({ term }: { term: (typeof TERMS)[number] }) {
         <Button asChild size="sm" className="cta-anim">
           <Link to="/contact">Start Free Trial</Link>
         </Button>
-        <RequestDemoDialog label="Request a Demo" size="sm" variant="outline" />
+        <RequestDemoDialog label="Request Free Demo" size="sm" variant="outline" />
       </div>
     </div>
   );

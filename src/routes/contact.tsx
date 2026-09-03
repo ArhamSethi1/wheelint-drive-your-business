@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Mail, MapPin, Phone } from "lucide-react";
 import { useState } from "react";
 
+import { ContactDetails } from "@/components/site/contact-details";
 import { LeadForm } from "@/components/site/lead-form";
 import { Reveal, Section } from "@/components/site/primitives";
 import { RequestDemoDialog } from "@/components/site/request-demo";
@@ -31,69 +31,6 @@ export const Route = createFileRoute("/contact")({
   }),
   component: ContactPage,
 });
-
-export function ContactDetails({ compact = false }: { compact?: boolean }) {
-  const items = [
-    {
-      icon: MapPin,
-      label: "Address",
-      tone: "tint-blue",
-      chip: "chip-blue",
-      body: (
-        <span>
-          1st Floor, F-27, Gautam Marg, Sector 6, Vaishali Nagar, Jaipur,
-          Rajasthan, 302021
-        </span>
-      ),
-    },
-    {
-      icon: Phone,
-      label: "Phone",
-      tone: "tint-orange",
-      chip: "chip-orange",
-      body: (
-        <a href="tel:+919358002457" className="font-semibold hover:underline">
-          +91 93580 02457
-        </a>
-      ),
-    },
-    {
-      icon: Mail,
-      label: "Email",
-      tone: "tint-cyan",
-      chip: "chip-cyan",
-      body: (
-        <a
-          href="mailto:teams@wheelint.com"
-          className="font-semibold break-all hover:underline"
-        >
-          teams@wheelint.com
-        </a>
-      ),
-    },
-  ];
-
-  return (
-    <div className={compact ? "grid gap-3" : "grid gap-4"}>
-      {items.map((item) => (
-        <div
-          key={item.label}
-          className={`hover-lift flex items-start gap-3.5 rounded-2xl p-4 shadow-[var(--shadow-panel)] ${item.tone}`}
-        >
-          <span
-            className={`inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-xl ${item.chip}`}
-          >
-            <item.icon aria-hidden="true" className="h-5 w-5" />
-          </span>
-          <div className="min-w-0">
-            <span className="eyebrow block">{item.label}</span>
-            <p className="mt-1 text-base leading-relaxed">{item.body}</p>
-          </div>
-        </div>
-      ))}
-    </div>
-  );
-}
 
 function ContactPage() {
   const [thanks, setThanks] = useState(false);

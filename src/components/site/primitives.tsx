@@ -213,7 +213,7 @@ export function CtaBand({
           </p>
           <div className="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row">
             <RequestDemoDialog
-              label="Request a demo"
+              label="Request Free Demo"
               className="h-14 w-full px-8 text-base sm:w-auto"
             />
             <Button
@@ -222,9 +222,13 @@ export function CtaBand({
               variant="outline"
               className="h-14 w-full px-8 text-base sm:w-auto"
             >
-              <Link to="/pricing">Start free trial</Link>
+              <Link to="/contact" hash="enquiry">Start free trial</Link>
             </Button>
-            <TalkToSales className="h-14 w-full px-8 text-base sm:w-auto" />
+            <TalkToSales
+              label="Talk to sales"
+              variant="outline"
+              className="h-14 w-full border-2 border-primary px-8 text-base font-semibold text-primary hover:bg-primary/10 sm:w-auto"
+            />
           </div>
         </div>
       </Reveal>
