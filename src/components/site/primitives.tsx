@@ -1,10 +1,19 @@
 import { Link } from "@tanstack/react-router";
-import { useEffect, useRef, useState, type ReactNode } from "react";
+import {
+  useEffect,
+  useLayoutEffect,
+  useRef,
+  useState,
+  type ReactNode,
+} from "react";
 
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { TalkToSales } from "@/components/site/talk-to-sales";
 import { RequestDemoDialog } from "@/components/site/request-demo";
+
+const useIsoLayoutEffect =
+  typeof window === "undefined" ? useEffect : useLayoutEffect;
 
 export function Reveal({
   children,
@@ -18,15 +27,27 @@ export function Reveal({
   as?: "div" | "section" | "li" | "article";
 }) {
   const ref = useRef<HTMLDivElement | null>(null);
-  const [shown, setShown] = useState(false);
+  // Start visible so server-rendered / first-paint content is never blank.
+  // Only sections that are actually below the fold get armed for the reveal
+  // animation, and that happens before the browser paints.
+  const [shown, setShown] = useState(true);
+  const [armed, setArmed] = useState(false);
 
-  useEffect(() => {
+  useIsoLayoutEffect(() => {
     const node = ref.current;
     if (!node) return;
-    if (typeof IntersectionObserver === "undefined") {
-      setShown(true);
-      return;
-    }
+    if (typeof IntersectionObserver === "undefined") return;
+    const rect = node.getBoundingClientRect();
+    const belowFold = rect.top > window.innerHeight * 0.9;
+    if (!belowFold) return;
+    setShown(false);
+    setArmed(true);
+  }, []);
+
+  useEffect(() => {
+    if (!armed) return;
+    const node = ref.current;
+    if (!node) return;
     const observer = new IntersectionObserver(
       (entries) => {
         for (const entry of entries) {
@@ -36,11 +57,11 @@ export function Reveal({
           }
         }
       },
-      { rootMargin: "0px 0px -10% 0px", threshold: 0.05 },
+      { rootMargin: "200px 0px -5% 0px", threshold: 0.01 },
     );
     observer.observe(node);
     return () => observer.disconnect();
-  }, []);
+  }, [armed]);
 
   return (
     <Tag
