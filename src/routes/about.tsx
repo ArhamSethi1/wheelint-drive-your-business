@@ -121,7 +121,6 @@ function AboutPage() {
             <div className="surface-panel overflow-hidden rounded-2xl p-2">
               <img
                 src={workshopImage}
-                loading="lazy"
                 decoding="async"
                 alt="Service bays of an automobile workshop with vehicles under maintenance"
                 width={1600}

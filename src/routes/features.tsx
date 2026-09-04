@@ -307,7 +307,6 @@ function FeaturesPage() {
                       <div className="surface-panel hover-lift overflow-hidden rounded-3xl p-3">
                         <img
                           src={item.image}
-                          loading="lazy"
                           decoding="async"
                           alt={item.alt ?? item.title}
                           width={800}

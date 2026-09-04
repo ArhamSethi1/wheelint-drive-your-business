@@ -281,7 +281,6 @@ export function ScreenFrame({
     >
       <img
         src={src}
-        loading="lazy"
         decoding="async"
         alt={alt}
         width={width}
