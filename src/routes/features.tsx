@@ -68,13 +68,14 @@ type Category = {
   image?: string;
   alt?: string;
   photo?: boolean;
-
+  anchor?: string;
 };
 
 const CATEGORIES: Category[] = [
   {
     icon: <Receipt className="h-7 w-7" />,
     title: "Billing & Invoicing",
+    anchor: "cap-billing",
     copy: "Create service, parts and combined invoices with tax and discount handling built in.",
     visibility: "Every invoice stays linked to the vehicle, job and payment status behind it.",
     matters: "Billing stops being a separate exercise from the work that was done.",
@@ -84,6 +85,7 @@ const CATEGORIES: Category[] = [
   {
     icon: <ClipboardList className="h-7 w-7" />,
     title: "Job Cards & Service Management",
+    anchor: "cap-job-cards",
     copy: "Take a vehicle from estimate to job card to delivery with clear ownership at each step.",
     visibility: "Live status of every open job, assigned technician and pending approval.",
     matters: "Nothing sits unnoticed and customers get honest answers on timelines.",
@@ -94,6 +96,7 @@ const CATEGORIES: Category[] = [
   {
     icon: <Boxes className="h-7 w-7" />,
     title: "Spare Parts & Inventory",
+    anchor: "cap-inventory",
     copy: "Manage parts, stock locations, purchases and consumption in one register.",
     visibility: "Stock levels, reorder alerts and the value tied up in inventory.",
     matters: "Fewer stock-outs, less dead inventory and accurate parts costing on each job.",
@@ -123,6 +126,7 @@ const CATEGORIES: Category[] = [
   {
     icon: <BarChart3 className="h-7 w-7" />,
     title: "Reports & Analytics",
+    anchor: "cap-analytics",
     copy: "Turn daily activity into revenue, service, parts and performance reporting.",
     visibility: "Trends over time and comparison across branches or outlets.",
     matters: "Decisions rest on records from the business, not on estimates.",
@@ -263,7 +267,8 @@ function FeaturesPage() {
           {CATEGORIES.map((item, index) => (
             <Reveal key={item.title}>
               <div
-                className={`grid gap-8 lg:items-center lg:gap-14 ${
+                id={item.anchor}
+                className={`scroll-mt-28 grid gap-8 lg:items-center lg:gap-14 ${
                   item.image ? "lg:grid-cols-[1fr_1.1fr]" : "lg:grid-cols-2"
                 }`}
               >
