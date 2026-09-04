@@ -32,6 +32,12 @@ import {
 } from "@/components/site/primitives";
 
 
+const slugify = (text: string) =>
+  text
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-|-$/g, "");
+
 export const Route = createFileRoute("/features")({
   head: () => ({
     meta: [
@@ -263,6 +269,7 @@ function FeaturesPage() {
           {CATEGORIES.map((item, index) => (
             <Reveal key={item.title}>
               <div
+                id={slugify(item.title)}
                 className={`grid gap-8 lg:items-center lg:gap-14 ${
                   item.image ? "lg:grid-cols-[1fr_1.1fr]" : "lg:grid-cols-2"
                 }`}
