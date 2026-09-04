@@ -119,24 +119,28 @@ const PILLARS = [
     icon: <Wrench className="h-7 w-7" />,
     title: "Service",
     copy: "Job cards to delivery, with live status on every vehicle in the workshop.",
+    hash: "job-cards-service-management",
   },
   {
     tone: "orange" as const,
     icon: <Receipt className="h-7 w-7" />,
     title: "Sales",
     copy: "Enquiries to invoices, with tax, discounts and payments all handled.",
+    hash: "billing-invoicing",
   },
   {
     tone: "navy" as const,
     icon: <Boxes className="h-7 w-7" />,
     title: "Spares",
     copy: "Stock to consumption, tied to the exact job that used each part.",
+    hash: "spare-parts-inventory",
   },
   {
     tone: "cyan" as const,
     icon: <BarChart3 className="h-7 w-7" />,
     title: "Accounts",
     copy: "Billing to reporting, with numbers that match the floor every day.",
+    hash: "reports-analytics",
   },
 ];
 
@@ -185,7 +189,7 @@ function HomePage() {
                   <Button
                     asChild
                     size="lg"
-                    className="cta-anim h-16 w-full rounded-full bg-orange px-3 text-base text-orange-foreground hover:bg-orange/90"
+                    className="cta-anim h-16 w-full rounded-full bg-call px-3 text-base text-call-foreground hover:bg-call/90"
                   >
                     <a href={`tel:${SALES_PHONE}`}>
                       <Phone aria-hidden="true" className="h-5 w-5" />
@@ -208,7 +212,7 @@ function HomePage() {
                 <Button
                   asChild
                   size="lg"
-                  className="cta-anim h-16 rounded-full bg-orange px-12 text-lg text-orange-foreground hover:bg-orange/90"
+                  className="cta-anim h-16 rounded-full bg-call px-12 text-lg text-call-foreground hover:bg-call/90"
                 >
                   <a href={`tel:${SALES_PHONE}`}>
                     <Phone aria-hidden="true" className="h-5 w-5" />
@@ -265,7 +269,9 @@ function HomePage() {
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {PILLARS.map((item, index) => (
             <Reveal key={item.title} delay={index * 80}>
-              <FeatureCard {...item} tone={TONES[index % TONES.length]!} />
+              <Link to="/features" hash={item.hash} className="block h-full">
+                <FeatureCard {...item} tone={TONES[index % TONES.length]!} />
+              </Link>
             </Reveal>
           ))}
         </div>
