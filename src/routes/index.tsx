@@ -321,6 +321,8 @@ function HomePage() {
             <div className="surface-panel hover-lift overflow-hidden rounded-3xl p-3">
               <img
                 src={workshopTeamPhoto}
+                loading="lazy"
+                decoding="async"
                 alt="Service advisor showing a digital job card to customers in an automobile workshop"
                 width={612}
                 height={408}

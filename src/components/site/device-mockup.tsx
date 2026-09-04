@@ -31,6 +31,8 @@ export function DeviceMockup({
             />
             <img
               src={laptopSrc}
+              fetchPriority="high"
+              decoding="async"
               alt={alt}
               width={1600}
               height={1008}
@@ -55,6 +57,7 @@ export function DeviceMockup({
               />
               <img
                 src={phoneSrc}
+                decoding="async"
                 alt=""
                 aria-hidden="true"
                 width={420}
