@@ -169,6 +169,7 @@ function RootComponent() {
       </div>
       <WheelScroll />
       <WhatsAppButton />
+      <FloatingCallButton />
       <Toaster />
     </QueryClientProvider>
   );
