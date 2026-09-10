@@ -14,6 +14,7 @@ import { reportLovableError } from "../lib/lovable-error-reporting";
 import { SiteHeader } from "@/components/site/site-header";
 import { SiteFooter } from "@/components/site/site-footer";
 import { WhatsAppButton } from "@/components/site/whatsapp-button";
+import { FloatingCallButton } from "@/components/site/floating-call-button";
 import { WheelScroll } from "@/components/site/wheel-scroll";
 import { Toaster } from "@/components/ui/sonner";
 
@@ -168,6 +169,7 @@ function RootComponent() {
       </div>
       <WheelScroll />
       <WhatsAppButton />
+      <FloatingCallButton />
       <Toaster />
     </QueryClientProvider>
   );
