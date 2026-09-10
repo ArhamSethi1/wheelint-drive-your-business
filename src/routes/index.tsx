@@ -6,9 +6,13 @@ import {
   Boxes,
   Building2,
   ClipboardList,
+  Cloud,
   FileSpreadsheet,
+  Globe,
   Phone,
   Receipt,
+  Server,
+  ShieldCheck,
   TrendingUp,
   Users,
   Wrench,
@@ -115,32 +119,24 @@ const AUDIENCES = [
 
 const PILLARS = [
   {
-    tone: "blue" as const,
-    icon: <Wrench className="h-7 w-7" />,
-    title: "Service",
-    href: "/features#cap-job-cards",
-    copy: "Job cards to delivery, with live status on every vehicle in the workshop.",
+    icon: <Cloud className="h-7 w-7" />,
+    title: "Cloud Based",
+    copy: "Complete accounting & inventory management software, fully in the cloud.",
   },
   {
-    tone: "orange" as const,
-    icon: <Receipt className="h-7 w-7" />,
-    title: "Sales",
-    href: "/features#cap-billing",
-    copy: "Enquiries to invoices, with tax, discounts and payments all handled.",
+    icon: <Server className="h-7 w-7" />,
+    title: "Dedicated Server",
+    copy: "Your data stays on a fully secured, dedicated server.",
   },
   {
-    tone: "navy" as const,
-    icon: <Boxes className="h-7 w-7" />,
-    title: "Spares",
-    href: "/features#cap-inventory",
-    copy: "Stock to consumption, tied to the exact job that used each part.",
+    icon: <Globe className="h-7 w-7" />,
+    title: "Anytime, Anywhere",
+    copy: "Access your data and reports anytime, anywhere, on any device.",
   },
   {
-    tone: "cyan" as const,
-    icon: <BarChart3 className="h-7 w-7" />,
-    title: "Accounts",
-    href: "/features#cap-analytics",
-    copy: "Billing to reporting, with numbers that match the floor every day.",
+    icon: <ShieldCheck className="h-7 w-7" />,
+    title: "Data Security",
+    copy: "Protected from virus attacks, power failures and hard disk failure.",
   },
 ];
 
@@ -269,14 +265,12 @@ function HomePage() {
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {PILLARS.map((item, index) => (
             <Reveal key={item.title} delay={index * 80}>
-              <a href={item.href} className="block h-full rounded-3xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring">
-                <FeatureCard
-                  tone={TONES[index % TONES.length]!}
-                  icon={item.icon}
-                  title={item.title}
-                  copy={item.copy}
-                />
-              </a>
+              <FeatureCard
+                tone={TONES[index % TONES.length]!}
+                icon={item.icon}
+                title={item.title}
+                copy={item.copy}
+              />
             </Reveal>
           ))}
         </div>
