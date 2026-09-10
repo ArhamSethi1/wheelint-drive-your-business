@@ -30,12 +30,25 @@ export const BUSINESS_TYPES = [
   "Other",
 ];
 
+export const INDIAN_CITIES = [
+  "Agra", "Ahmedabad", "Ajmer", "Aligarh", "Allahabad", "Amritsar",
+  "Aurangabad", "Bangalore", "Bhopal", "Bhubaneswar", "Chandigarh",
+  "Chennai", "Coimbatore", "Dehradun", "Delhi", "Faridabad", "Ghaziabad",
+  "Goa", "Gurgaon", "Guwahati", "Hyderabad", "Indore", "Jaipur",
+  "Jalandhar", "Jamshedpur", "Jodhpur", "Kanpur", "Kochi", "Kolkata",
+  "Lucknow", "Ludhiana", "Madurai", "Mangalore", "Mumbai", "Mysore",
+  "Nagpur", "Nashik", "Noida", "Patna", "Pune", "Raipur", "Rajkot",
+  "Ranchi", "Surat", "Thiruvananthapuram", "Udaipur", "Vadodara",
+  "Varanasi", "Vijayawada", "Visakhapatnam", "Other",
+];
+
 type FormState = {
   name: string;
   company: string;
   phone: string;
   email: string;
   businessType: string;
+  city: string;
   details: string;
 };
 
@@ -45,6 +58,7 @@ const EMPTY: FormState = {
   phone: "",
   email: "",
   businessType: "",
+  city: "",
   details: "",
 };
 
@@ -170,7 +184,7 @@ export function LeadForm({
         />
         <TextField
           id={`${idPrefix}-email`}
-          label="Email"
+          label="Email (optional)"
           type="email"
           value={form.email}
           error={errors.email}
@@ -178,7 +192,7 @@ export function LeadForm({
         />
 
         <div className="sm:col-span-2">
-          <Label htmlFor={`${idPrefix}-businessType`}>Business Type</Label>
+          <Label htmlFor={`${idPrefix}-businessType`}>Business Type (optional)</Label>
           <Select
             value={form.businessType}
             onValueChange={(value) => set("businessType", value)}
@@ -190,6 +204,25 @@ export function LeadForm({
               {BUSINESS_TYPES.map((type) => (
                 <SelectItem key={type} value={type}>
                   {type}
+                </SelectItem>
+              ))}
+            </SelectContent>
+          </Select>
+        </div>
+
+        <div className="sm:col-span-2">
+          <Label htmlFor={`${idPrefix}-city`}>City (optional)</Label>
+          <Select
+            value={form.city}
+            onValueChange={(value) => set("city", value)}
+          >
+            <SelectTrigger id={`${idPrefix}-city`} className="mt-2 w-full">
+              <SelectValue placeholder="Select your city" />
+            </SelectTrigger>
+            <SelectContent>
+              {INDIAN_CITIES.map((city) => (
+                <SelectItem key={city} value={city}>
+                  {city}
                 </SelectItem>
               ))}
             </SelectContent>
