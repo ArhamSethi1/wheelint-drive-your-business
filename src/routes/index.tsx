@@ -310,6 +310,13 @@ function HomePage() {
                 </div>
               ))}
             </Reveal>
+
+            <Reveal delay={160} className="mt-10">
+              <RequestDemoDialog
+                label="Request A Free Demo"
+                className="h-14 rounded-full px-9 text-base"
+              />
+            </Reveal>
           </div>
           <Reveal delay={80}>
             <div className="surface-panel hover-lift overflow-hidden rounded-3xl p-3">
