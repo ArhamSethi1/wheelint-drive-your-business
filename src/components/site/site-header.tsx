@@ -97,7 +97,7 @@ export function SiteHeader() {
               </span>
             </Button>
           </SheetTrigger>
-          <SheetContent side="top" className="h-[50vh] max-h-[50vh] w-full max-w-none border-0 bg-background p-0 [&>button]:hidden">
+          <SheetContent side="top" className="h-[62vh] max-h-[62vh] w-full max-w-none border-0 bg-background p-0 [&>button]:hidden">
             <SheetHeader className="bg-primary px-5 py-3">
               <div className="flex items-center justify-between">
                 <SheetTitle className="inline-flex items-center rounded-xl bg-background px-3 py-1.5 shadow-md">
