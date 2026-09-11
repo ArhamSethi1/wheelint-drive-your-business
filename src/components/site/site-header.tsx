@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { Menu } from "lucide-react";
+import { Menu, Phone, X } from "lucide-react";
 import { useState } from "react";
 
 import { wheelintLogo } from "@/assets/photos";
@@ -58,7 +58,7 @@ export function SiteHeader() {
               activeOptions={{ exact: item.to === "/" }}
               activeProps={{ className: "text-primary-foreground after:scale-x-100" }}
               inactiveProps={{ className: "text-primary-foreground/75" }}
-              className="relative py-2 text-base font-semibold transition-colors after:absolute after:inset-x-0 after:bottom-1 after:h-0.5 after:origin-left after:scale-x-0 after:bg-background after:transition-transform after:duration-300 hover:text-primary-foreground hover:after:scale-x-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-foreground/70"
+              className="relative py-2 text-base font-bold transition-colors after:absolute after:inset-x-0 after:bottom-1 after:h-0.5 after:origin-left after:scale-x-0 after:bg-background after:transition-transform after:duration-300 hover:text-primary-foreground hover:after:scale-x-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-foreground/70"
             >
               {item.label}
             </Link>
