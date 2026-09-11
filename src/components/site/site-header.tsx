@@ -81,7 +81,12 @@ export function SiteHeader() {
 
         <Sheet open={open} onOpenChange={setOpen}>
           <SheetTrigger asChild className="lg:hidden">
-            <Button variant="outline" size="icon" aria-label="Open menu" className="h-12 w-12">
+            <Button
+              variant="outline"
+              size="icon"
+              aria-label="Open menu"
+              className="h-12 w-12 border-white/40 bg-transparent text-white hover:bg-white/10 hover:text-white"
+            >
               <Menu className="h-6 w-6" />
             </Button>
           </SheetTrigger>
