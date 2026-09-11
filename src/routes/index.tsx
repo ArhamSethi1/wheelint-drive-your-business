@@ -351,7 +351,7 @@ function HomePage() {
             <Link to="/features">See all features in detail</Link>
           </Button>
           <RequestDemoDialog
-            label="Request Free Demo"
+            label="Request A Free Demo"
             className="h-14 w-full rounded-full px-9 text-base sm:w-auto"
           />
         </Reveal>

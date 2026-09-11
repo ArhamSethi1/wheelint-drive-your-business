@@ -63,9 +63,11 @@ export function SiteHeader() {
         </nav>
 
         <div className="ml-7 hidden shrink-0 lg:block">
-          <Button asChild size="lg" className="h-12 rounded-full px-7 text-base">
-            <Link to="/contact">Get started</Link>
-          </Button>
+          <RequestDemoDialog
+            label="Request A Free Demo"
+            className="h-12 rounded-full px-7 text-base"
+            size="default"
+          />
         </div>
 
         <Sheet open={open} onOpenChange={setOpen}>
