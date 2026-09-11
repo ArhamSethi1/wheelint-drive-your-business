@@ -26,12 +26,12 @@ function Wordmark() {
   return (
     <Link
       to="/"
-      className="flex items-center gap-2.5 rounded-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+      className="inline-flex items-center rounded-xl bg-white px-3 py-1.5 shadow-md transition-shadow hover:shadow-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/80"
     >
       <img
         src={wheelintLogo}
         alt="Wheelint"
-        className="h-11 w-auto lg:h-14"
+        className="h-10 w-auto lg:h-12"
       />
     </Link>
   );
@@ -41,31 +41,40 @@ export function SiteHeader() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-hairline bg-background/80 backdrop-blur-xl transition-colors">
-      <div className="mx-auto flex h-20 w-full max-w-[88rem] items-center gap-4 px-5 sm:px-8 lg:h-24">
+    <header className="sticky top-0 z-50 bg-primary shadow-md transition-colors">
+      <div className="relative mx-auto flex h-20 w-full max-w-[88rem] items-center gap-4 px-5 sm:px-8 lg:h-24">
         <div className="min-w-0 flex-1">
           <Wordmark />
         </div>
 
-        <nav aria-label="Main" className="hidden items-center gap-7 lg:flex">
+        <nav
+          aria-label="Main"
+          className="absolute left-1/2 hidden -translate-x-1/2 items-center gap-7 lg:flex"
+        >
           {NAV.map((item) => (
             <Link
               key={item.to}
               to={item.to}
               activeOptions={{ exact: item.to === "/" }}
-              activeProps={{ className: "text-foreground" }}
-              inactiveProps={{ className: "text-muted-foreground" }}
-              className="relative py-2 text-base font-semibold transition-colors after:absolute after:inset-x-0 after:bottom-1 after:h-px after:origin-left after:scale-x-0 after:bg-foreground after:transition-transform after:duration-300 hover:text-foreground hover:after:scale-x-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+              activeProps={{ className: "text-white after:scale-x-100" }}
+              inactiveProps={{ className: "text-white/75" }}
+              className="relative py-2 text-base font-semibold transition-colors after:absolute after:inset-x-0 after:bottom-1 after:h-0.5 after:origin-left after:scale-x-0 after:bg-white after:transition-transform after:duration-300 hover:text-white hover:after:scale-x-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/70"
             >
               {item.label}
             </Link>
           ))}
         </nav>
 
-        <div className="ml-7 hidden shrink-0 lg:block">
+        <div className="hidden shrink-0 items-center gap-3 lg:flex">
+          <a
+            href="tel:+919358002457"
+            className="inline-flex h-12 items-center rounded-full border border-white/40 px-6 text-base font-semibold text-white transition-colors hover:bg-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/70"
+          >
+            Call Now
+          </a>
           <RequestDemoDialog
             label="Request A Free Demo"
-            className="h-12 rounded-full px-7 text-base"
+            className="h-12 rounded-full border-0 bg-white px-7 text-base text-primary hover:bg-white/90"
             size="default"
           />
         </div>
